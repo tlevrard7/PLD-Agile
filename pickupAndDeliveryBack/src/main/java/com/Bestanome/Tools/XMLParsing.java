@@ -1,7 +1,5 @@
-import org.w3c.dom.*;
-import javax.xml.parsers.*;
+package com.Bestanome.Tools;
 
-import java.io.File;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
@@ -11,9 +9,8 @@ import java.nio.file.Paths;
 
 public class XMLParsing {
 
-    public static void main() {
+    public static JSONObject parseXMLFile(String filePath) {
         try {
-            String filePath = "../fichiersXMLPickupDelivery/myDeliverRequest.xml";
             // Read the XML file as a string
             String xmlContent = new String(Files.readAllBytes(Paths.get(filePath)));
 
@@ -28,11 +25,11 @@ public class XMLParsing {
             JSONObject resultObject = new JSONObject();
             resultObject.put(rootName, convertToJSONArray(rootObject));
 
-            // Print the final JSON structure
-            System.out.println(resultObject.toString(4)); // Pretty print with indentation
+            return resultObject;
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
 
