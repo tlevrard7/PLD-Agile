@@ -17,5 +17,5 @@
 - **Tournée** : Séquence de points définissant un ordre de passage à des points d'enlèvement ou de livraison. Une tournée débute et finit à l'entrepôt et est associée à un livreur.
 - **Carte** : Représentation graphique d'un plan de ville pouvant également contenir des points d'enlèvement et de livraison, des tournées ...
 - **Utilisateur** : Utilisateur de l'application. Celui-ci est un gestionnaire de livreurs, c'est à dire qu'il va assigner un livreur à chacune des livraisons pour ensuite calculer les tournées de ces livreurs.
-- **Client** : Personné liée à l'origine d'une demande de Pickup&Delivery
+- **Client** : Personné à l'origine d'une demande de Pickup&Delivery
 
