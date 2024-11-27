@@ -41,7 +41,7 @@ Enfin, la tournée calculée doit être la meilleure possible, c'est à dire cel
 
 L'utilisateur clique sur une ligne de la liste déroulante contenant les demandes de Pickup&Delivery pour sélectionner une demande en particulier. Il peut ensuite assigner un livreur à cette demande. 
 
-## Modifier le nombre de livreur 
+## Modifier le nombre de livreurs
 
 L'utiliseur décide de modifier le nombre de livreurs. Il indique donc un nombre désignant le nombre de livreurs souhaité.
 Par défaut, le nombre de livreur est défini à 1.
