@@ -1,17 +1,15 @@
 package com.Bestanome.Livraisons;
 
-import com.Bestanome.Plan.Point;
-
 public class Livraison {
-  private Point pickup;
-  private Point destination;
+  private Long pickup;
+  private Long destination;
 
-  public Livraison(Point start, Point end){
-    this.pickup = start;
-    this.destination = end;
+  public Livraison(Long idStart, Long idEnd){
+    this.pickup = idStart;
+    this.destination = idEnd;
   }
 
-  public Point[] itineraire(){
-    return new Point[] {this.pickup, this.destination};
+  public Long[] itineraire(){
+    return new Long[] {this.pickup, this.destination};
   }
 }
