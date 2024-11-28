@@ -7,7 +7,7 @@ import org.json.XML;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class XMLParsing {
+public class ParseurXML {
 
     public static JSONObject parseXMLFile(String filePath) {
         try {
