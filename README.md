@@ -30,7 +30,7 @@ The app will be accessible on http://localhost:3000.
 
 ## Backend
 
-The project uses [java](https://www.java.com) and [Spring Boot](https://spring.io/projects/spring-boot) and is located in the `pickupAndDeliveryBack` directory.
+The project uses [java 21](https://www.java.com) and [Spring Boot](https://spring.io/projects/spring-boot) and is located in the `pickupAndDeliveryBack` directory.
 
 You need to have [`maven`](https://maven.apache.org/install.html) and [`java 17+`](https://www.oracle.com/java/technologies/downloads/) installed to run it.
 
