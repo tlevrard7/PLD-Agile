@@ -25,5 +25,9 @@
 			<artifactId>json</artifactId>
 			<version>20230227</version> <!-- Check for the latest version -->
 		</dependency>
+		<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+	</dependency>
     </dependencies>
 </project>

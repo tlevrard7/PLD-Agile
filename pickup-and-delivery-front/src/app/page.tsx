@@ -1,7 +1,7 @@
-import { Button } from "antd";
-
+'use client'
+import Test from "@/pages/test";
 export default function Home() {
   return (
-    <Button>Hello world</Button>
+    <Test/>
   );
 }

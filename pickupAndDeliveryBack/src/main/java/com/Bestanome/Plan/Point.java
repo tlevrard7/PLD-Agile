@@ -1,7 +1,5 @@
 package com.Bestanome.Plan;
 
-import com.Bestanome.Plan.TypePoint;
-
 public class Point {
   // Atrributs
   private Long id;
