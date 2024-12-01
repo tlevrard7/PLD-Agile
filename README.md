@@ -6,6 +6,8 @@ The project uses [react](https://react.dev/) and [Next.js](https://nextjs.org/) 
 
 You need to have [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed tu run it. 
 
+This project uses [Ant-Design](https://ant.design/components/overview/) for its ui components
+
 ### Launching the project
 
 Before launching the project for the 1st time, run
