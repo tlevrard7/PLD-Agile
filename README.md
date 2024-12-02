@@ -1,6 +1,6 @@
 # PLD Agile
 
-<!--TODO : PRECISER LES CHEMINS-->
+<!--TODO : PRECISER LES CHEMINS SVP-->
 
 ## Web app
 
