@@ -9,7 +9,7 @@ import com.Bestanome.Model.Outils.ParseurXML;
 public class MyClassTest {
     @Test
     void testParseXMLtoJSON() {
-        JSONObject jsonCreated = ParseurXML.parseXMLFile("../fichiersXMLPickupDelivery/demandePetit1.xml");
+        JSONObject jsonCreated = ParseurXML.parseXMLFile("demandePetit1.xml");
         JSONObject jsonObject = new JSONObject();
         JSONObject demandeLivraison = new JSONObject();
         JSONObject entrepot = new JSONObject();

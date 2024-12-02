@@ -12,7 +12,7 @@ public class ParseurXML {
     public static JSONObject parseXMLFile(String filePath) {
         try {
             // Read the XML file as a string
-            String xmlContent = new String(Files.readAllBytes(Paths.get(filePath)));
+            String xmlContent = new String(Files.readAllBytes(Paths.get("../fichiersXMLPickupDelivery/" + filePath)));
 
             // Convert XML to JSONObject
             JSONObject jsonObject = XML.toJSONObject(xmlContent);
