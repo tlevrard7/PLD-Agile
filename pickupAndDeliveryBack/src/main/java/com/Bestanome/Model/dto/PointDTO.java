@@ -24,7 +24,7 @@ public class PointDTO implements Serializable {
         return new PointDTO(point.id(), point.coords()[0], point.coords()[1], point.type());
     }
 
-    public static ArrayList<PointDTO> fromListePoint(ArrayList<Point> points) {
+    public static ArrayList<PointDTO> fromListePoints(ArrayList<Point> points) {
         ArrayList<PointDTO> list = new ArrayList<PointDTO>();
 
         for (Point p : points) {

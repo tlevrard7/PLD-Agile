@@ -1,4 +1,4 @@
-Pickup And Delivery - Corentin JEANNE | Diego LARRAZ-MARTIN | Saad ELGHISSASSI | Harold MARTIN | Thomas LEVRARD
+ChronoPostIF - Corentin JEANNE | Diego LARRAZ-MARTIN | Saad ELGHISSASSI | Harold MARTIN | Thomas LEVRARD
 
 ---
 
@@ -6,23 +6,42 @@ Pickup And Delivery - Corentin JEANNE | Diego LARRAZ-MARTIN | Saad ELGHISSASSI |
 
 ## Architecture
 
-Notre projet est une application Web et se base de ce fait sur une architecture MVC. <br/>
-Nous utilisons REACT avec node.js pour pouvoir communiquer avec le Modèle développé en Java.<br/>
+Notre projet est une application Web et se base de ce fait sur une architecture MVC à 5 couches: 
+- Vue
+- Contrôleur
+- Services
+- Modèle
+- Données
+
+Nous utilisons REACT avec next.js pour pouvoir communiquer avec le Modèle développé en Java.<br/>
+Il faut préciser que REACT + next.js se comporte aussi comme contrôleur, requêtant le BACKEND et changeant le contenu de la VUE.<br/>
+De ce fait, nous avons du côté du back un controlleur qui permet de faire le lien entre le controlleur FRONT et le BACK.
 
 
-### Vue et Controlleur
-REACT assimille le rôle de Vue et Controlleur avec une structure modulaire permettant d'ajouter des modules et fonctionalités facilement et rapidement.
+### Vue
+REACT assimille le rôle de Vue avec une structure modulaire permettant d'ajouter des modules et fonctionalités facilement et rapidement. 
+La vue communique avec le Controller BACK qui lui renvoie ce dont elle a besoin.
+
+
+### Contrôleur
+Le contrôleur BACK mappe les requêtes et interroge les services associés pour le calcul. Suite au résultat des services il le renvoie au contrôleur FRONT pour l'affichage.
+Il existe un contrôleur par classe service.
+
+<br/>
+
+### Services
+Le Controller communique avec le Modèle avec l'intermédaire de la classe Services qui offre les fonctionalités qui lui seraient nécessaires.<br/>
+La classe Services s'en charge de réaliser des calculs sur les données.
+Il existe une classe service par fonctionalité majeure.
 
 ### Modèle
-Cette couche répresente le back-end qui va être intérrogé par le Controlleur pour mettre à jour la Vue.<br/>
+Cette couche répresente le back-end qui va être intérrogé par le Controller pour mettre à jour la Vue.<br/>
 Ici sont définies toutes les classes et données en Java. <br/>
+Une classe Data contient les données chargées pour le traitement.
 
-- #### Services
-Le Controlleur communique avec le Modèle avec l'intermédaire de la classe Services qui offre les fonctionalités qui lui seraient nécessaires.<br/>
-La classe Services s'en charge de réaliser des calculs sur les données et d'envoyer ce résultat au Controlleur pour l'affichage.
 
-- #### Données
-Les données, nottament des livraisons et le plan de la ville, sont stockées sous format XML et seront lues par la classe Services pour constituer le jeu de données sur lequel elle travaillera.
+### Données
+Les données, nottament des livraisons et le plan de la ville, sont stockées sous format XML et seront lues par la classe Services pour constituer le jeu de données (Data) sur lequel elle travaillera.
 
 <div style="page-break-after: always"></div>
 
@@ -34,28 +53,5 @@ Les données, nottament des livraisons et le plan de la ville, sont stockées so
 <div style="page-break-after: always"></div>
 
 
-## Unit tests
-
-### Application tests
-
-#### example test
-><ins>Description:</ins><br>
-> miau miau miau
-
-<ins>Pre-condition:</ins>
-- woof woof
-
-<ins>Post-condition:</ins>
-- squil squik
-
-<ins>Request:</ins>
-```console
-X:~$ skadooosh!
-```
-
-<ins>Output:</ins>
-```console
-boom!
-```
 
 
