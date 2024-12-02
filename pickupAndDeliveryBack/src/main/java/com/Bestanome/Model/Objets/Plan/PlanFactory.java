@@ -1,6 +1,7 @@
-package com.Bestanome.Plan;
+package com.Bestanome.Model.Objets.Plan;
 
-import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 public class PlanFactory {

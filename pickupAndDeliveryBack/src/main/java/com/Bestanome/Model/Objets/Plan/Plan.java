@@ -1,8 +1,6 @@
-package com.Bestanome.Plan;
+package com.Bestanome.Model.Objets.Plan;
 
 import java.util.ArrayList;
-import com.Bestanome.Plan.Point;
-import com.Bestanome.Plan.Segment;
 
 public class Plan {
   // Atrributs

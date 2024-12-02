@@ -1,11 +1,10 @@
-import org.junit.jupiter.api.Test;
-
-import com.Bestanome.Outils.ParseurXML;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.junit.jupiter.api.Test;
+
+import com.Bestanome.Model.Outils.ParseurXML;
 
 public class MyClassTest {
     @Test

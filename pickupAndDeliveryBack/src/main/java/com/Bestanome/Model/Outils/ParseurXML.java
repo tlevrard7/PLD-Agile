@@ -1,11 +1,11 @@
-package com.Bestanome.Outils;
+package com.Bestanome.Model.Outils;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class ParseurXML {
 

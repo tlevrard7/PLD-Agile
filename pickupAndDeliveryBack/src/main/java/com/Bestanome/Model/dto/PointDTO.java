@@ -1,9 +1,10 @@
-package com.Bestanome.dto;
+package com.Bestanome.Model.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
-import com.Bestanome.Plan.Point;
-import com.Bestanome.Plan.TypePoint;
+import com.Bestanome.Model.Objets.Plan.Point;
+import com.Bestanome.Model.Objets.Plan.TypePoint;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

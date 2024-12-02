@@ -1,8 +1,8 @@
-package com.Bestanome.dto;
+package com.Bestanome.Model.dto;
 
 import java.io.Serializable;
 
-import com.Bestanome.Livraisons.Livraison;
+import com.Bestanome.Model.Objets.Livraisons.Livraison;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

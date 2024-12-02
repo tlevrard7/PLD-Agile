@@ -2,13 +2,16 @@ package com.Bestanome.services;
 
 import java.util.Random;
 
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.Bestanome.Outils.ParseurXML;
-import com.Bestanome.Plan.Point;
-import com.Bestanome.Plan.TypePoint;
-import com.Bestanome.dto.PointDTO;
+import com.Bestanome.Model.Data;
+import com.Bestanome.Model.Objets.Plan.PlanFactory;
+import com.Bestanome.Model.Objets.Plan.Point;
+import com.Bestanome.Model.Objets.Plan.TypePoint;
+import com.Bestanome.Model.Outils.ParseurXML;
+import com.Bestanome.Model.dto.PlanDTO;
+import com.Bestanome.Model.dto.PointDTO;
 
 @Service
 public class MapService {
@@ -29,7 +32,7 @@ public class MapService {
 
     public PlanDTO chargerPlan(String pathFichier){
         JSONObject planSchemaJO = ParseurXML.parseXMLFile(pathFichier).getJSONObject("reseau");
-        this.planVille = PlanFactory.creerPlan(planSchemaJO);
+        Data.planVille = PlanFactory.creerPlan(planSchemaJO);
         return PlanDTO.fromPlan(this.planVille);
   }
 }

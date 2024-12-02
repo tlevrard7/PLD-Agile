@@ -1,4 +1,4 @@
-package com.Bestanome.Plan;
+package com.Bestanome.Model.Objets.Plan;
 
 public class Point {
   // Atrributs

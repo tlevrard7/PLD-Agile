@@ -1,4 +1,4 @@
-package com.Bestanome.Livraisons;
+package com.Bestanome.Model.Objets.Livraisons;
 
 public class Livraison {
   private Long pickup;
