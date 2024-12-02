@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import { useState } from "react";
-import MapService from "@/services/map-services";
+import MapServices from "@/services/map-services";
 import { Point } from "@/types/Plan";
 
 export default function Test() {
@@ -11,7 +11,7 @@ export default function Test() {
 
     async function onClickGet() {
         setLoading(true);
-        await MapService.getRandomPoint()
+        await MapServices.getRandomPoint()
             .then(p => setPoint(p))
             .finally(() => setLoading(false));
     }

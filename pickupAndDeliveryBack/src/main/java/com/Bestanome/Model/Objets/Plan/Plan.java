@@ -1,14 +1,13 @@
 package com.Bestanome.Plan;
 
 import java.util.ArrayList;
-import java.util.List;
 import com.Bestanome.Plan.Point;
 import com.Bestanome.Plan.Segment;
 
 public class Plan {
   // Atrributs
-  private List<Point> points;
-  private List<Segment> segments;
+  private ArrayList<Point> points;
+  private ArrayList<Segment> segments;
 
   public Plan(){
     this.points = new ArrayList<Point>();
@@ -23,11 +22,11 @@ public class Plan {
     points.add(point);
   }
 
-  public List<Point> points(){
+  public ArrayList<Point> points(){
     return this.points;
   }
 
-  public List<Segment> segments(){
+  public ArrayList<Segment> segments(){
     return this.segments;
   }
 }

@@ -26,4 +26,10 @@ public class MapService {
 
         return PointDTO.fromPoint(point);
     }
+
+    public PlanDTO chargerPlan(String pathFichier){
+        JSONObject planSchemaJO = ParseurXML.parseXMLFile(pathFichier).getJSONObject("reseau");
+        this.planVille = PlanFactory.creerPlan(planSchemaJO);
+        return PlanDTO.fromPlan(this.planVille);
+  }
 }
