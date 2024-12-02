@@ -1,8 +1,8 @@
-package com.Bestanome.Livraisons;
+package com.Bestanome.Model.Objets.Livraisons;
 
 import java.util.ArrayList;
 
-import com.Bestanome.Plan.Segment;
+import com.Bestanome.Model.Objets.Plan.Segment;
 
 public class Circuit {
   // Atrributs

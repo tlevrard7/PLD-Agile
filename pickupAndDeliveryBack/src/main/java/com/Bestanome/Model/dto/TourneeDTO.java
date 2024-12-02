@@ -1,8 +1,9 @@
-package com.Bestanome.dto;
+package com.Bestanome.Model.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
-import com.Bestanome.Livraisons.Tournee;
+import com.Bestanome.Model.Objets.Livraisons.Tournee;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

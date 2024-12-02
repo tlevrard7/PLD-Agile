@@ -1,18 +1,18 @@
-package com.Bestanome.Outils;
+package com.Bestanome.Model.Outils;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class ParseurXML {
 
     public static JSONObject parseXMLFile(String filePath) {
         try {
             // Read the XML file as a string
-            String xmlContent = new String(Files.readAllBytes(Paths.get(filePath)));
+            String xmlContent = new String(Files.readAllBytes(Paths.get("../fichiersXMLPickupDelivery/" + filePath)));
 
             // Convert XML to JSONObject
             JSONObject jsonObject = XML.toJSONObject(xmlContent);

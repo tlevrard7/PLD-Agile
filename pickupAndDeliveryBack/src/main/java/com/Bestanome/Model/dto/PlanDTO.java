@@ -1,8 +1,9 @@
-Planpackage com.Bestanome.dto;
+package com.Bestanome.Model.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
-import com.Bestanome.Plan.Plan;
+import com.Bestanome.Model.Objets.Plan.Plan;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

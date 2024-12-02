@@ -1,19 +1,17 @@
-package com.Bestanome.Plan;
+package com.Bestanome.Model;
 
-import com.Bestanome.Livraisons.Livraison;
-import com.Bestanome.Livraisons.Tournee;
-import com.Bestanome.Outils.ParseurXML;
-import com.Bestanome.Plan.Plan;
-import com.Bestanome.Plan.Point;
-import com.Bestanome.Plan.Segment;
-import com.Bestanome.Plan.TypePoint;
+import java.util.ArrayList;
+
+import com.Bestanome.Model.Objets.Livraisons.Livraison;
+import com.Bestanome.Model.Objets.Livraisons.Tournee;
+import com.Bestanome.Model.Objets.Plan.Plan;
 
 
 public class Data {
-  private static Plan planVille;
-  private static ArrayList<Livraison> livraisonsDues;
-  private static ArrayList<Tournee>  tourneesPrevues;
-  private static Long idEntrepot;
+  public static Plan planVille;
+  public static ArrayList<Livraison> livraisonsDues;
+  public static ArrayList<Tournee>  tourneesPrevues;
+  public static Long idEntrepot;
 
   public Data(){
     this.planVille = new Plan();
