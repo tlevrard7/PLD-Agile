@@ -29,7 +29,7 @@ public class PointDTO implements Serializable {
         ArrayList<PointDTO> list = new ArrayList<PointDTO>();
 
         for (Point p : points) {
-            list.add(PointDTO.fromPoint(p))
+            list.add(PointDTO.fromPoint(p));
         }
 
         return list;
