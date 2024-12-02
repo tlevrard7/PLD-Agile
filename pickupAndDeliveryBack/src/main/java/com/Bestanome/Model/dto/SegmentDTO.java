@@ -29,6 +29,6 @@ public class SegmentDTO implements Serializable {
     }
 
     public static SegmentDTO fromSegment(Segment Segment) {
-        return new SegmentDTO(Segment.nom(), Segment.longueur(), Segment.debut(), Segment.fin());
+        return new SegmentDTO(Segment.getNomRue(), Segment.getLongueur(), Segment.getOrigine(), Segment.getDestination());
     }
 }

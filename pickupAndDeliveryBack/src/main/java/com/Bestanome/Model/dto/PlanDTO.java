@@ -19,6 +19,6 @@ public class PlanDTO implements Serializable {
     private ArrayList<SegmentDTO> segments;
     
     public static PlanDTO fromPlan(Plan Plan) {
-        return new PlanDTO(PointDTO.fromListePoint(Plan.points), SegmentDTO.fromListeSegment(Plan.segments)); // Je pense qu'il faut faire un serialisateur ?
+        return new PlanDTO(PointDTO.fromListePoints(Plan.getPoints()), SegmentDTO.fromListeSegments(Plan.getSegments())); // Je pense qu'il faut faire un serialisateur ?
     }
 }

@@ -1,26 +1,63 @@
 package com.Bestanome.Model.Objets.Plan;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Segment {
-  private String nom;
-  private Double longueur;
-  private Long debut;
-  private Long fin;
 
-  public Segment(String n, Double l, Long start, Long end){
-    this.nom = n;
-    this.longueur = l;
-    this.debut = start;
-    this.fin = end;
-  }
+    @JsonProperty
+    private String nomRue;
 
-  public String nom(){
-    return this.nom;
-  }
-  public Double longueur(){
-    return this.longueur;
-  }
-  public Long[] extremus(){
-    return new Long[] {this.debut, this.fin};
-  }
+    @JsonProperty
+    private double longueur;
 
+    @JsonProperty
+    private long origine;
+
+    @JsonProperty
+    private long destination;
+
+    // Constructeur par défaut requis par Jackson
+    public Segment() {
+    }
+
+    // Constructeur complet
+    public Segment(String nomRue, double longueur, long origine, long destination) {
+        this.nomRue = nomRue;
+        this.longueur = longueur;
+        this.origine = origine;
+        this.destination = destination;
+    }
+
+    // Getters et Setters (requis pour Jackson)
+    public String getNomRue() {
+        return nomRue;
+    }
+
+    public void setNomRue(String nomRue) {
+        this.nomRue = nomRue;
+    }
+
+    public double getLongueur() {
+        return longueur;
+    }
+
+    public void setLongueur(double longueur) {
+        this.longueur = longueur;
+    }
+
+    public long getOrigine() {
+        return origine;
+    }
+
+    public void setOrigine(long origine) {
+        this.origine = origine;
+    }
+
+    public long getDestination() {
+        return destination;
+    }
+
+    public void setDestination(long destination) {
+        this.destination = destination;
+    }
 }

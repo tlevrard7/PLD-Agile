@@ -18,6 +18,6 @@ public class CircuitDTO implements Serializable {
     private ArrayList<SegmentDTO> segments;
 
     public static CircuitDTO fromCircuit(Circuit Circuit) {
-        return new CircuitDTO(Circuit.segments);
+        return new CircuitDTO(Circuit.getSegments());
     }
 }

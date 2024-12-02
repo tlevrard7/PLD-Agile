@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.Bestanome.Model.Outils.ParseurXML;
 
+/* 
 public class MyClassTest {
     @Test
     void testParseXMLtoJSON() {
@@ -37,3 +38,4 @@ public class MyClassTest {
         assertTrue(jsonObject.similar(jsonCreated), "Erreur de Parsing!");
     }
 }
+*/

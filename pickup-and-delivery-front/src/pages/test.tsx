@@ -1,43 +1,45 @@
-import { Button } from "antd";
+import { Button, Upload } from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import MapService from "@/services/map-service";
 import { Plan, Point, TypePoint } from "@/types/Plan";
 import DeliveryMap from "@/components/DeliveryMap";
-import { smallMap } from "./smallmap";
 
 export default function Test() {
-    
-    const [point, setPoint] = useState<Point|null>(null);
+    const [plan, setPlan] = useState<Plan|null>(null);
     const [loading, setLoading] = useState(false);
 
-    const plan: Plan = smallMap;
-    // const plan: Plan = {
-    //     points: [
-    //         { id: 0, latitude: 46.0, longitude: 46.0, type: 'ENTREPOT' },
-    //         { id: 3, latitude: 47.0, longitude: 46.0, type: 'ENTREPOT' },
-    //         { id: 2, latitude: 47.0, longitude: 47.0, type: 'ENTREPOT' },
-    //         { id: 1, latitude: 46.0, longitude: 47.0, type: 'ENTREPOT' },
-    //     ],
-    //     segments: [
-    //         {origine: 0, destination: 2, longueur: 0, nomRue: ""},
-    //     ]
-    // }
-
-    async function onClickGet() {
+    async function onUpload(file: File) {
         setLoading(true);
-        await MapService.getRandomPoint()
-            .then(p => setPoint(p))
-            .finally(() => setLoading(false));
+        try {
+            const uploadedPlan = await MapService.uploadMap(file);
+            setPlan(uploadedPlan);
+        } catch (error) {
+            console.error("Failed to upload map:", error);
+            alert("Error uploading map. Check the console for details.");
+        } finally {
+            setLoading(false);
+        }
     }
 
-    return <>
-        <p>
-            <Button onClick={onClickGet} loading={loading}>Fetch a random point</Button>
-        </p>
-        <p>
-            Random point: {loading ? <><LoadingOutlined/> Fetching point...</> : JSON.stringify(point)}
-        </p>
-        <DeliveryMap style={{ backgroundColor: 'gray', width: '50vw', height: '50vh'}} plan={plan}/>
-    </>
+    return (
+        <div>
+            <h1>Map Upload and Display</h1>
+            <Upload 
+                beforeUpload={(file) => {
+                    onUpload(file);
+                    return false; // Prevent default upload
+                }}
+                showUploadList={false}
+            >
+                <Button loading={loading}>Upload Map</Button>
+            </Upload>
+            {plan && (
+                <div>
+                    <h2>Map Visualization</h2>
+                    <DeliveryMap style={{ backgroundColor: 'gray', width: '50vw', height: '50vh' }} plan={plan} />
+                </div>
+            )}
+        </div>
+    );
 }
