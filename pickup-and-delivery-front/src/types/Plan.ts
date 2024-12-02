@@ -11,14 +11,10 @@ export interface Point {
 }
 
 export interface Segment {
-    id: number;
-    pointA: number
-    pointB: number
+    nomRue: string
+    longueur: number
+    origine: number
+    destination: number
 }
 
-export enum TypePoint {
-    ENTREPOT = 'ENTREPOT',
-    INTERSECTION = 'INTERSECTION',
-    PICKUP = 'PICKUP',
-    DESTINATION = 'DESTINATION',
-}
+export type TypePoint = 'ENTREPOT' | 'INTERSECTION' | 'INTERSECTION' | 'DESTINATION' | 'PICKUP'

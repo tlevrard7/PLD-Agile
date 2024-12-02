@@ -8,7 +8,7 @@ export interface MapsProps extends Omit<CanvasProps, 'draw'> {
 
 export default function DeliveryMap({ plan, ...canvasProps }: MapsProps) {
     const pointsCoords: {[id: number]: { x: number, y: number }} = useMemo(() => {
-        const margin = 1
+        const margin = 0
         const allLats = plan.points.map(p => p.latitude).sort();
         const allLongs = plan.points.map(p => p.longitude).sort();
         const normalize = (value: number, min: number, max: number) => (value - (min - margin)) / (max - min + 2 * margin)
@@ -34,13 +34,14 @@ export default function DeliveryMap({ plan, ...canvasProps }: MapsProps) {
 
         for (const s of plan.segments) {
             ctx.beginPath()
-            ctx.moveTo(pointsCoords[s.pointA].x * ctx.canvas.width, pointsCoords[s.pointA].y * ctx.canvas.height)
-            ctx.lineTo(pointsCoords[s.pointB].x * ctx.canvas.width, pointsCoords[s.pointB].y * ctx.canvas.height)
+            ctx.moveTo(pointsCoords[s.origine].x * ctx.canvas.width, pointsCoords[s.origine].y * ctx.canvas.height)
+            ctx.lineTo(pointsCoords[s.destination].x * ctx.canvas.width, pointsCoords[s.destination].y * ctx.canvas.height)
             ctx.stroke()
         }
-        for (const i in plan.points) {
+        console.log(pointsCoords)
+        for (const p of plan.points) {
             ctx.beginPath()
-            ctx.arc(pointsCoords[i].x * ctx.canvas.width, pointsCoords[i].y * ctx.canvas.height, 1, 0, 2 * Math.PI)
+            ctx.arc(pointsCoords[p.id].x * ctx.canvas.width, pointsCoords[p.id].y * ctx.canvas.height, 1, 0, 2 * Math.PI)
             ctx.fill()
         }
     }
