@@ -1,5 +1,7 @@
 # PLD Agile
 
+<!--TODO : PRECISER LES CHEMINS-->
+
 ## Web app
 
 The project uses [react](https://react.dev/) and [Next.js](https://nextjs.org/) and is located in the `pickup-and-delivery-front` directory.
