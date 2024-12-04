@@ -43,12 +43,12 @@ export default function PlanPanel({ ...canvasProps }: MapsProps) {
             ctx.fill()
         }
     }
-    return <div>
+    return <div className="map-panel flex flex-col">
         <h2>Map Visualization</h2>
         {
             plan == null ?
             <p>Load a plan 1st</p>:
-            <Canvas draw={drawMap} {...canvasProps} />
+            <Canvas draw={drawMap} {...canvasProps} style={{backgroundColor: 'gray', flexGrow: 1}} />
         }
     </div>
 }
