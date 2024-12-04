@@ -1,16 +1,21 @@
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import com.Bestanome.Model.Outils.ParseurXML;
 
-/* 
+
 public class MyClassTest {
     @Test
-    void testParseXMLtoJSONLivraison() {
-        JSONObject jsonCreated = ParseurXML.parseXMLFile("demandePetit1.xml");
+    void testParseXMLtoJSONLivraison() throws IOException {
+        String xmlContent = new String(Files.readAllBytes(Paths.get("../fichiersXMLPickupDelivery/demandePetit1.xml")));
+        JSONObject jsonCreated = ParseurXML.parseXMLFileContent(xmlContent);
         JSONObject jsonObject = new JSONObject();
         JSONObject demandeLivraison = new JSONObject();
         JSONObject entrepot = new JSONObject();
@@ -40,8 +45,9 @@ public class MyClassTest {
 
     
     @Test
-    void testParseXMLtoJSONMap() {
-        JSONObject jsonCreated = ParseurXML.parseXMLFile("mapTest.xml");
+    void testParseXMLtoJSONMap() throws IOException {
+        String xmlContent = new String(Files.readAllBytes(Paths.get("../fichiersXMLPickupDelivery/mapTest.xml")));
+        JSONObject jsonCreated = ParseurXML.parseXMLFileContent(xmlContent);
         JSONObject jsonObject = new JSONObject();
         JSONObject reseau = new JSONObject();
         JSONObject noeud = new JSONObject();
@@ -86,4 +92,3 @@ public class MyClassTest {
 
     }
 }
-*/

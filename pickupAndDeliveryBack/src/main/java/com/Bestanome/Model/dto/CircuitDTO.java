@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.Bestanome.Model.Objets.Livraisons.Circuit;
-import com.Bestanome.Model.dto.SegmentDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

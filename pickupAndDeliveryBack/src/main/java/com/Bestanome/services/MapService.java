@@ -4,22 +4,15 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.Bestanome.Model.Data;
 import com.Bestanome.Model.Objets.Plan.PlanFactory;
 import com.Bestanome.Model.Objets.Plan.Point;
-import com.Bestanome.Model.Objets.Plan.Segment;
-import com.Bestanome.Model.Objets.Plan.Plan;
 import com.Bestanome.Model.Objets.Plan.TypePoint;
 import com.Bestanome.Model.Outils.ParseurXML;
-import com.Bestanome.Model.dto.PlanDTO;
-import com.Bestanome.Model.dto.PointDTO;
 
 @Service
 public class MapService {
