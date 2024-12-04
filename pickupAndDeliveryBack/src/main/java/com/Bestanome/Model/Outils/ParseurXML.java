@@ -1,16 +1,18 @@
 package com.Bestanome.Model.Outils;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
+import org.springframework.web.multipart.MultipartFile;
 
 public class ParseurXML {
 
-    public static JSONObject parseXMLFileContent(String xmlContent) {
+    public static JSONObject parseXMLFileContent(MultipartFile file) {
         try {
+            // Lire le contenu du fichier XML
+            String xmlContent = new String(file.getBytes(), StandardCharsets.UTF_8);
             JSONObject jsonObject = XML.toJSONObject(xmlContent);
             String rootName = jsonObject.keys().next();
             JSONObject rootObject = jsonObject.getJSONObject(rootName);

@@ -10,24 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.Bestanome.Model.Data;
-import com.Bestanome.Model.Objets.Plan.Plan;
-import com.Bestanome.Model.dto.PointDTO;
 import com.Bestanome.Model.dto.PlanDTO;
+import com.Bestanome.Model.dto.PointDTO;
 import com.Bestanome.services.MapService;
 
 @RestController
 @RequestMapping("/map")
 public class MapController {
 
-    private MapService mapService;
-
-    public MapController(MapService mapService) {
-        this.mapService = mapService;
-    }
-
     @GetMapping("/random-point")
     public ResponseEntity<PointDTO> getRandomPoint() throws InterruptedException {
-        return ResponseEntity.ok(PointDTO.fromPoint(mapService.getRandomPoint()));
+        return ResponseEntity.ok(PointDTO.fromPoint(MapService.getRandomPoint()));
     }
 
     @PostMapping("/upload-xml")
@@ -37,7 +30,7 @@ public class MapController {
         }
 
         try {
-            mapService.chargerPlan(file);
+            MapService.chargerPlan(file);
             ResponseEntity<PlanDTO> planDTO = ResponseEntity.ok(PlanDTO.fromPlan(Data.planVille));
 
             return planDTO ; // Retourne l'objet Plan en JSON
