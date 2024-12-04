@@ -1,13 +1,12 @@
 import { Button, Upload } from "antd";
-import { LoadingOutlined } from '@ant-design/icons';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MapService from "@/services/map-service";
-import { Plan, Point, TypePoint } from "@/types/Plan";
 import DeliveryMap from "@/components/DeliveryMap";
+import { CurrentPlanContext } from "@/app/page";
 
 export default function Test() {
-    const [plan, setPlan] = useState<Plan|null>(null);
     const [loading, setLoading] = useState(false);
+    const { plan, setPlan } = useContext(CurrentPlanContext)
 
     async function onUpload(file: File) {
         setLoading(true);
@@ -34,12 +33,6 @@ export default function Test() {
             >
                 <Button loading={loading}>Upload Map</Button>
             </Upload>
-            {plan && (
-                <div>
-                    <h2>Map Visualization</h2>
-                    <DeliveryMap style={{ backgroundColor: 'gray', width: '50vw', height: '50vh' }} plan={plan} />
-                </div>
-            )}
         </div>
     );
 }

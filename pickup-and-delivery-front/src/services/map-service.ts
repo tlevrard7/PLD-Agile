@@ -1,4 +1,4 @@
-import { Point } from "@/types/Plan";
+import { Plan, Point } from "@/model/Plan";
 const root = process.env.NEXT_PUBLIC_API_URL + '/map';
 
 export default class MapService {
