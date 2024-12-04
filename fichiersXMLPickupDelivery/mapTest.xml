@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<reseau>
+<noeud id="25175791" latitude="45.75406" longitude="4.857418"/>
+<noeud id="2129259178" latitude="45.750404" longitude="4.8744674"/>
+<troncon destination="55475018" longueur="96.57731" nomRue="Rue Édouard Aynard" origine="208769499"/>
+<troncon destination="26033277" longueur="78.72686" nomRue="Rue Danton" origine="975886496"/>
+</reseau>

@@ -8,7 +8,7 @@ import com.Bestanome.Model.Outils.ParseurXML;
 
 public class MyClassTest {
     @Test
-    void testParseXMLtoJSON() {
+    void testParseXMLtoJSONLivraison() {
         JSONObject jsonCreated = ParseurXML.parseXMLFile("demandePetit1.xml");
         JSONObject jsonObject = new JSONObject();
         JSONObject demandeLivraison = new JSONObject();
@@ -34,6 +34,54 @@ public class MyClassTest {
         // System.out.println(jsonCreated.toString());
         // System.out.println(jsonObject.toString());
 
-        assertTrue(jsonObject.similar(jsonCreated), "Erreur de Parsing!");
+        assertTrue(jsonObject.similar(jsonCreated), "Erreur de Parsing de la Livraison!");
+    }
+
+    
+    @Test
+    void testParseXMLtoJSONMap() {
+        JSONObject jsonCreated = ParseurXML.parseXMLFile("mapTest.xml");
+        JSONObject jsonObject = new JSONObject();
+        JSONObject reseau = new JSONObject();
+        JSONObject noeud = new JSONObject();
+        JSONArray noeudArray = new JSONArray();
+        JSONObject troncon = new JSONObject();
+        JSONArray tronconArray = new JSONArray();
+
+        noeud.put("id", 25175791);
+        noeud.put("latitude", 45.75406);
+        noeud.put("longitude", 4.857418);
+        noeudArray.put(noeud);
+
+        noeud = new JSONObject();
+        noeud.put("id", 2129259178);
+        noeud.put("latitude", 45.750404);
+        noeud.put("longitude", 4.8744674);
+        noeudArray.put(noeud);
+
+        reseau.put("noeud", noeudArray);
+
+        troncon.put("destination", 55475018);
+        troncon.put("longueur", 96.57731);
+        troncon.put("nomRue", "Rue Édouard Aynard");
+        troncon.put("origine", 208769499);
+        tronconArray.put(troncon);
+
+        troncon = new JSONObject();
+        troncon.put("destination", 26033277);
+        troncon.put("longueur", 78.72686);
+        troncon.put("nomRue", "Rue Danton");
+        troncon.put("origine", 975886496);
+        tronconArray.put(troncon);
+
+        reseau.put("troncon", tronconArray);
+
+        jsonObject.put("reseau", reseau);
+
+        // System.out.println(jsonCreated.toString());
+        // System.out.println(jsonObject.toString());
+
+        assertTrue(jsonObject.similar(jsonCreated), "Erreur de Parsing de la Map!");
+
     }
 }
