@@ -22,7 +22,11 @@ public class PointDTO implements Serializable {
     private TypePoint type;
 
     public static PointDTO fromPoint(Point point) {
-        return new PointDTO(point.id(), point.coords()[0], point.coords()[1], point.type());
+        return new PointDTO(
+                point.getId(),
+                point.getLongitude(),
+                point.getLatitude(),
+                point.getType());
     }
 
     public static ArrayList<PointDTO> fromListePoints(ArrayList<Point> points) {

@@ -1,30 +1,45 @@
 package com.Bestanome.Model.Objets.Plan;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Plan {
-  // Atrributs
-  private ArrayList<Point> points;
-  private ArrayList<Segment> segments;
 
-  public Plan(){
-    this.points = new ArrayList<Point>();
-    this.segments = new ArrayList<Segment>();
-  }
+    @JsonProperty
+    private ArrayList<Point> points;
 
-  public void ajouterSegment(Segment segment){
-    this.segments.add(segment);
-  }
+    @JsonProperty
+    private ArrayList<Segment> segments;
 
-  public void ajouterPoint(Point point){
-    points.add(point);
-  }
+    public Plan() {
+        this.points = new ArrayList<>();
+        this.segments = new ArrayList<>();
+    }
 
-  public ArrayList<Point> points(){
-    return this.points;
-  }
+    public void ajouterPoint(Point point) {
+        this.points.add(point);
+    }
 
-  public ArrayList<Segment> segments(){
-    return this.segments;
-  }
+    public void ajouterSegment(Segment segment) {
+        this.segments.add(segment);
+    }
+
+    public ArrayList<Point> getPoints() {
+        return points;
+    }
+
+    public void setPoints(ArrayList<Point> points) {
+        this.points = points;
+    }
+
+    public ArrayList<Segment> getSegments() {
+        return this.segments;
+    }
+
+    public void setSegments(ArrayList<Segment> segments) {
+        this.segments = segments;
+    }
+
 }

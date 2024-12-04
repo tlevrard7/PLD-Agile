@@ -19,6 +19,6 @@ public class TourneeDTO implements Serializable {
     private CircuitDTO circuit;
 
     public static TourneeDTO fromTournee(Tournee Tournee) {
-        return new TourneeDTO(Tournee.livraisons, Tournee.circuit);
+        return new TourneeDTO(Tournee.livraisons(), Tournee.circuit());
     }
 }

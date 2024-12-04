@@ -8,15 +8,15 @@ public class Circuit {
   // Atrributs
   private ArrayList<Segment> segments;
 
-  public Circuit(){
+  public Circuit() {
     this.segments = new ArrayList<Segment>();
   }
 
-  public void ajouterSegment(Segment segment){
+  public void ajouterSegment(Segment segment) {
     this.segments.add(segment);
   }
 
-  public ArrayList<Segment> segments(){
+  public ArrayList<Segment> getSegments() {
     return this.segments;
   }
 }

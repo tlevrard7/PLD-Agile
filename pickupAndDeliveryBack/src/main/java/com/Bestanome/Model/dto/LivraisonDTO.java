@@ -19,8 +19,7 @@ public class LivraisonDTO implements Serializable {
     private int dureeEnlevement;
     private int dureeLivraison;
 
-
     public static LivraisonDTO fromLivraison(Livraison Livraison) {
-        return new LivraisonDTO(Livraison.pickup,Livraison.destination,Livraison.dureeEnlevement,Livraison.dureeLivraison);
+        return new LivraisonDTO(Livraison.getItineraire()[0], Livraison.getItineraire()[1], Livraison.getDureeEnlevement(), Livraison.getDureeLivraison());
     }
 }

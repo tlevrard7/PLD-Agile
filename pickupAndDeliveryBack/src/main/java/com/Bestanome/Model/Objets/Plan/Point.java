@@ -1,28 +1,58 @@
 package com.Bestanome.Model.Objets.Plan;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Point {
-  // Atrributs
-  private Long id;
-  private Double longitude;
-  private Double latitude;
-  private TypePoint type;
 
-  public Point(long id, Double lat, Double lng, TypePoint t){
-    this.longitude = lng;
-    this.latitude = lat;
-    this.type = t;
-    this.id = id;
-  }
+    @JsonProperty
+    private Long id;
 
-  public TypePoint type(){
-    return this.type;
-  }
+    @JsonProperty
+    private double latitude;
 
-  public Double[] coords(){
-    return new Double[] {this.latitude, this.longitude};
-  }
+    @JsonProperty
+    private double longitude;
 
-  public Long id(){
-    return this.id;
-  }
+    @JsonProperty
+    private TypePoint type;
+
+    // Constructors, getters, and setters
+    public Point(Long id, double latitude, double longitude, TypePoint type) {
+        this.id = id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.type = type;
+    }
+
+    // Getters and setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public TypePoint getType() {
+        return type;
+    }
+
+    public void setType(TypePoint type) {
+        this.type = type;
+    }
 }
