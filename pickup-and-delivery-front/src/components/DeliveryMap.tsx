@@ -41,7 +41,7 @@ export default function DeliveryMap({ plan, ...canvasProps }: MapsProps) {
         console.log(pointsCoords)
         for (const p of plan.points) {
             ctx.beginPath()
-            ctx.arc(pointsCoords[p.id].x * ctx.canvas.width, pointsCoords[p.id].y * ctx.canvas.height, 1, 0, 2 * Math.PI)
+            ctx.arc(pointsCoords[p.id].x * ctx.canvas.width, pointsCoords[p.id].y * ctx.canvas.height, 2, 0, 2 * Math.PI)
             ctx.fill()
         }
     }

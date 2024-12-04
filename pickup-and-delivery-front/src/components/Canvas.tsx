@@ -14,6 +14,8 @@ export default function Canvas({ draw, width, height, ...props }: CanvasProps) {
         let animationFrameId = 0;
         
         if (canvas != null && context != null) {
+            canvas.width = 1000;
+            canvas.height = 1000;
             let frameCount = 0
             const render = () => {
                 draw(context, frameCount)
