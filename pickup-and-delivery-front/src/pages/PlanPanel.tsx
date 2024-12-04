@@ -43,7 +43,7 @@ export default function PlanPanel({ ...canvasProps }: MapsProps) {
             ctx.fill()
         }
     }
-    return <div className="map-panel flex flex-col">
+    return <div className="map-panel">
         <h2>Map Visualization</h2>
         {
             plan == null ?

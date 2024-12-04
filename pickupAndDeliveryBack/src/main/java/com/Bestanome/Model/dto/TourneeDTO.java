@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.Bestanome.Model.Objets.Livraisons.Tournee;
-import com.Bestanome.Model.dto.LivraisonDTO;
-import com.Bestanome.Model.dto.CircuitDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
