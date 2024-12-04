@@ -9,17 +9,37 @@ export default function Test() {
     const { plan, setPlan } = useContext(CurrentPlanContext)
 
     async function onUpload(file: File) {
-        setLoading(true);
-        try {
-            const uploadedPlan = await MapService.uploadMap(file);
-            setPlan(uploadedPlan);
-        } catch (error) {
-            console.error("Failed to upload map:", error);
-            alert("Error uploading map. Check the console for details.");
-        } finally {
-            setLoading(false);
+        if (!file) {
+          console.error("No file selected");
+          return;
         }
-    }
+      
+        setLoading(true);
+      
+        try {
+          const formData = new FormData();
+          formData.append("file", file);
+      
+          const response = await fetch(
+            `${process.env.NEXT_PUBLIC_API_URL}/map/upload-xml`,
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
+      
+          if (!response.ok) {
+            throw new Error(`Failed to upload map: ${response.statusText}`);
+          }
+      
+          const planData = await response.json();
+          setPlan(planData);
+        } catch (error) {
+          console.error("Failed to upload map:", error);
+        } finally {
+          setLoading(false);
+        }
+      }
 
     return (
         <div>

@@ -15,6 +15,7 @@ export default class MapService {
             body: formData,
         }).then((res) => {
             if (!res.ok) throw new Error('Failed to upload map.');
+            console.log(res.json());
             return res.json();
         });
     }

@@ -9,7 +9,7 @@ public enum TypePoint {
             case INTERSECTION: return "INTERSECTION";
             case PICKUP: return "PICKUP";
             case DESTINATION: return "DESTINATION";
-            default: return "UNCONNU";
+            default: return "INCONNU";
         }
     }
 }
