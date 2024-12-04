@@ -13,12 +13,6 @@ public class Data {
   public static ArrayList<Tournee>  tourneesPrevues;
   public static Long idEntrepot;
 
-  public Data(){
-    this.planVille = new Plan();
-    this.livraisonsDues = new ArrayList<Livraison>();
-    this.tourneesPrevues = new ArrayList<Tournee>();
-  }
-
   // Setters et Getters
   public void setIdEntrepot(Long idPoint){
     this.idEntrepot = idPoint;

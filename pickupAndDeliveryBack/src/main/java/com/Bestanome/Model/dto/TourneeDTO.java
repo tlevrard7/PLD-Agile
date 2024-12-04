@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.Bestanome.Model.Objets.Livraisons.Tournee;
+import com.Bestanome.Model.dto.LivraisonDTO;
+import com.Bestanome.Model.dto.CircuitDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +21,7 @@ public class TourneeDTO implements Serializable {
     private CircuitDTO circuit;
 
     public static TourneeDTO fromTournee(Tournee Tournee) {
-        return new TourneeDTO(Tournee.livraisons(), Tournee.circuit());
+        return new TourneeDTO(LivraisonsDTO.fromListeLivraisons(Tournee.getLivraisons()),
+                CircuitDTO.fromCircuit(Tournee.getCircuit()));
     }
 }

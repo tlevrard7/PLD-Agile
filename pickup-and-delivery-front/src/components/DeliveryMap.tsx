@@ -31,7 +31,7 @@ export default function DeliveryMap({ plan, ...canvasProps }: MapsProps) {
         if (frameCount != 0) return
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
         ctx.fillStyle = '#ff0000'
-
+        
         for (const s of plan.segments) {
             ctx.beginPath()
             ctx.moveTo(pointsCoords[s.origine].x * ctx.canvas.width, pointsCoords[s.origine].y * ctx.canvas.height)

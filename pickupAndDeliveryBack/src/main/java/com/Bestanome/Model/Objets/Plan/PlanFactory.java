@@ -6,21 +6,30 @@ import org.json.JSONObject;
 public class PlanFactory {
 
   public static Plan creerPlan(JSONObject planSchemaJO) {
-    Plan planVille = new Plan();
-    JSONArray noeuds = planSchemaJO.getJSONArray("noeud");
-    JSONArray troncons = planSchemaJO.getJSONArray("troncon");
+
+    Plan plan = new Plan();
+    JSONArray noeuds = planSchemaJO.getJSONObject("reseau").getJSONArray("noeud");
+    JSONArray troncons = planSchemaJO.getJSONObject("reseau").getJSONArray("troncon");
 
     for (int i = 0; i < noeuds.length(); i++) {
-      JSONObject jo = noeuds.getJSONObject(i);
-      planVille.ajouterPoint(
-          new Point(jo.getLong("id"), jo.getDouble("latitude"), jo.getDouble("longitude"), TypePoint.INTERSECTION));
+      JSONObject node = noeuds.getJSONObject(i);
+      plan.ajouterPoint(new Point(
+          node.getLong("id"),
+          node.getDouble("latitude"),
+          node.getDouble("longitude"),
+          TypePoint.INTERSECTION));
     }
 
     for (int i = 0; i < troncons.length(); i++) {
-      JSONObject jo = troncons.getJSONObject(i);
-      planVille.ajouterSegment(new Segment(jo.getString("nomRue"), jo.getDouble("longueur"), jo.getLong("origine"),
-          jo.getLong("destination")));
+      JSONObject troncon = troncons.getJSONObject(i);
+      // Access keys
+      String nomRue = troncon.getString("nomRue");
+      double longueur = troncon.getDouble("longueur");
+      long origine = troncon.getLong("origine");
+      long destination = troncon.getLong("destination");
+      plan.ajouterSegment(new Segment(nomRue, longueur, origine, destination));
     }
+
     return plan;
   }
 

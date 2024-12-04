@@ -30,15 +30,15 @@ public class MapService {
         // return "Hello World!";
     }
 
-    public PointDTO getRandomPoint() throws InterruptedException {
+    public Point getRandomPoint() throws InterruptedException {
         Random rand = new Random();
         Point point = new Point(0L, rand.nextDouble(-90, 90), rand.nextDouble(-180, 180), TypePoint.INTERSECTION);
         Thread.sleep(500); // Hardcoded delay to simulate compute time
 
-        return PointDTO.fromPoint(point);
+        return point;
     }
 
-    public Plan parseMapFile(MultipartFile file) throws IOException {
+    public void chargerPlan(MultipartFile file) throws IOException {
         // Lire le contenu du fichier XML
         String xmlContent = new String(file.getBytes(), StandardCharsets.UTF_8);
 
@@ -46,32 +46,6 @@ public class MapService {
         JSONObject jsonObject = ParseurXML.parseXMLFileContent(xmlContent);
 
         // Construire le Plan à partir du JSON
-        Plan plan = new Plan();
-        JSONArray noeuds = jsonObject.getJSONObject("reseau").getJSONArray("noeud");
-        JSONArray troncons = jsonObject.getJSONObject("reseau").getJSONArray("troncon");
-
-        for (int i = 0; i < noeuds.length(); i++) {
-            JSONObject node = noeuds.getJSONObject(i);
-            plan.ajouterPoint(new Point(
-                    node.getLong("id"),
-                    node.getDouble("latitude"),
-                    node.getDouble("longitude"),
-                    TypePoint.INTERSECTION));
-        }
-
-        for (int i = 0; i < troncons.length(); i++) {
-            JSONObject troncon = troncons.getJSONObject(i);
-            System.out.println("Troncon data: " + troncon.toString(4)); // Debugging log
-            // Access keys
-            String nomRue = troncon.getString("nomRue");
-            double longueur = troncon.getDouble("longueur");
-            long origine = troncon.getLong("origine");
-            long destination = troncon.getLong("destination");
-
-            System.out.printf("Adding segment: %s, %.2f, %d -> %d%n", nomRue, longueur, origine, destination);
-            plan.ajouterSegment(new Segment(nomRue, longueur, origine, destination));
-        }
-
-        return plan;
+        Data.planVille = PlanFactory.creerPlan(jsonObject);
     }
 }

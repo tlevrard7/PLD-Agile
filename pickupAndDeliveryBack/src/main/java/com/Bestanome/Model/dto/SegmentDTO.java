@@ -17,8 +17,8 @@ import lombok.Setter;
 public class SegmentDTO implements Serializable {
     private String nom;
     private Double longueur;
-    private Long debut;
-    private Long fin;
+    private Long origine;
+    private Long destination;
 
     public static ArrayList<SegmentDTO> fromListeSegments(ArrayList<Segment> segments) {
         ArrayList<SegmentDTO> segmentsDTO = new ArrayList<SegmentDTO>();

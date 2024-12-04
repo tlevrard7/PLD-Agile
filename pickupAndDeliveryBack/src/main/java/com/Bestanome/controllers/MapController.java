@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.Bestanome.Model.Data;
 import com.Bestanome.Model.Objets.Plan.Plan;
 import com.Bestanome.Model.dto.PointDTO;
+import com.Bestanome.Model.dto.PlanDTO;
 import com.Bestanome.services.MapService;
 
 @RestController
@@ -25,22 +27,24 @@ public class MapController {
 
     @GetMapping("/random-point")
     public ResponseEntity<PointDTO> getRandomPoint() throws InterruptedException {
-        return ResponseEntity.ok(mapService.getRandomPoint());
+        return ResponseEntity.ok(PointDTO.fromPoint(mapService.getRandomPoint()));
     }
 
     @PostMapping("/upload-xml")
-    public ResponseEntity<Plan> uploadMap(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<PlanDTO> uploadMap(@RequestParam("file") MultipartFile file) {
         if (file.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
-    
+
         try {
-            Plan plan = mapService.parseMapFile(file);
-            return ResponseEntity.ok(plan); // Retourne l'objet Plan en JSON
+            mapService.chargerPlan(file);
+            ResponseEntity<PlanDTO> planDTO = ResponseEntity.ok(PlanDTO.fromPlan(Data.planVille));
+
+            return planDTO ; // Retourne l'objet Plan en JSON
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
-    
+
 }
