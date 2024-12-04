@@ -21,7 +21,7 @@ public class TourneeDTO implements Serializable {
     private CircuitDTO circuit;
 
     public static TourneeDTO fromTournee(Tournee Tournee) {
-        return new TourneeDTO(LivraisonsDTO.fromListeLivraisons(Tournee.getLivraisons()),
+        return new TourneeDTO(LivraisonDTO.fromListeLivraisons(Tournee.getLivraisons()),
                 CircuitDTO.fromCircuit(Tournee.getCircuit()));
     }
 }
