@@ -14,6 +14,8 @@ This project uses [Ant-Design](https://ant.design/components/overview/) for its 
 
 Before launching the project for the 1st time, run
 ```bash
+npm install leaflet react-leaflet
+npm install --save-dev @types/leaflet
 npm install
 ```
 

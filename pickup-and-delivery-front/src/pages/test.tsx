@@ -1,58 +1,84 @@
-import { Button, Upload } from "antd";
-import { useContext, useState } from "react";
-import MapService from "@/services/map-service";
-import DeliveryMap from "@/components/DeliveryMap";
-import { CurrentPlanContext } from "@/app/page";
+import { Upload, Button, message } from "antd";
+import { Plan } from "@/types/Plan";
+import { Livraison } from "@/types/Livraison";
 
-export default function Test() {
-    const [loading, setLoading] = useState(false);
-    const { plan, setPlan } = useContext(CurrentPlanContext)
+interface TestProps {
+  setPlan: (plan: Plan) => void;
+  setLivraisons: (livraisons: Livraison[]) => void;
+}
 
-    async function onUpload(file: File) {
-        if (!file) {
-          console.error("No file selected");
-          return;
-        }
-      
-        setLoading(true);
-      
-        try {
-          const formData = new FormData();
-          formData.append("file", file);
-      
-          const response = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/map/upload-xml`,
-            {
-              method: "POST",
-              body: formData,
-            }
-          );
-      
-          if (!response.ok) {
-            throw new Error(`Failed to upload map: ${response.statusText}`);
-          }
-      
-          const planData = await response.json();
-          setPlan(planData);
-        } catch (error) {
-          console.error("Failed to upload map:", error);
-        } finally {
-          setLoading(false);
-        }
+export default function Test({ setPlan, setLivraisons }: TestProps) {
+  const handleUploadMap = async (file: File) => {
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/map/upload-xml`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Erreur lors de l'upload : ${response.statusText}`);
       }
 
-    return (
-        <div>
-            <h1>Map Upload and Display</h1>
-            <Upload 
-                beforeUpload={(file) => {
-                    onUpload(file);
-                    return false; // Prevent default upload
-                }}
-                showUploadList={false}
-            >
-                <Button loading={loading}>Upload Map</Button>
-            </Upload>
-        </div>
-    );
+      const uploadedPlan = await response.json();
+      setPlan(uploadedPlan);
+      message.success("Carte importée avec succès !");
+    } catch (error) {
+      console.error("Erreur lors de l'upload de la carte :", error);
+      message.error("Erreur lors de l'importation de la carte.");
+    }
+  };
+
+  const handleUploadLivraisons = async (file: File) => {
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/map/upload-livraisons`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Erreur lors de l'upload : ${response.statusText}`);
+      }
+
+      const uploadedLivraisons = await response.json();
+      setLivraisons(uploadedLivraisons);
+      message.success("Demandes de livraisons importées avec succès !");
+    } catch (error) {
+      console.error("Erreur lors de l'upload des livraisons :", error);
+      message.error("Erreur lors de l'importation des livraisons.");
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center h-full space-y-4">
+      <Upload
+        beforeUpload={(file) => {
+          handleUploadMap(file);
+          return false;
+        }}
+        showUploadList={false}
+      >
+        <Button type="primary" className="bg-blue-500 hover:bg-blue-400 text-white border-none">
+          Importer une carte
+        </Button>
+      </Upload>
+
+      <Upload
+        beforeUpload={(file) => {
+          handleUploadLivraisons(file);
+          return false;
+        }}
+        showUploadList={false}
+      >
+        <Button type="primary" className="bg-blue-500 hover:bg-blue-400 text-white border-none">
+          Importer une demande de livraisons
+        </Button>
+      </Upload>
+    </div>
+  );
 }
