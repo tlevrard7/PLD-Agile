@@ -6,18 +6,13 @@ export default class MapService {
         const formData = new FormData();
         formData.append("file", file);
 
-        const response = await fetch(`${root}/upload-xml`, {
+        return fetch(`${root}/upload-xml`, {
             method: "POST",
             body: formData,
+        }).then(response => response.json())
+        .catch(error => {
+            throw new Error(`Erreur lors de l'upload : ${error}`);
+
         });
-
-        console.log("Response status:", response.status); // Ajoutez ce log
-        const json = await response.json();
-        console.log("Response JSON:", json); // Ajoutez ce log
-
-        if (!response.ok) {
-            throw new Error("Failed to upload map.");
-        }
-        return json;
     }
 }
