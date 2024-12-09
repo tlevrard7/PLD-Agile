@@ -1,6 +1,8 @@
 package com.Bestanome.Model.Outils;
 
 import java.nio.charset.StandardCharsets;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,7 +19,7 @@ public class ParseurXML {
             String rootName = jsonObject.keys().next();
             JSONObject rootObject = jsonObject.getJSONObject(rootName);
 
-            // Transforme les enfants en JSONArray si nécessaire
+            // Transforme les enfants en JSONArray si nécessaire tout en supprimant les doublons
             JSONObject resultObject = new JSONObject();
             resultObject.put(rootName, convertToJSONArray(rootObject));
 
@@ -30,16 +32,37 @@ public class ParseurXML {
 
     private static JSONObject convertToJSONArray(JSONObject object) {
         JSONObject transformedObject = new JSONObject();
+        Set<String> uniqueDeliveries = new HashSet<>();
 
         for (String key : object.keySet()) {
             Object value = object.get(key);
+            JSONArray array;
+
             if (value instanceof JSONArray) {
-                transformedObject.put(key, value);
+                array = (JSONArray) value;
             } else {
-                JSONArray array = new JSONArray();
+                array = new JSONArray();
                 array.put(value);
-                transformedObject.put(key, array);
             }
+
+            JSONArray uniqueArray = new JSONArray();
+
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject item = array.getJSONObject(i);
+
+                // Créez une clé unique pour chaque livraison en combinant pickup, destination, dureeEnlevement et dureeLivraison
+                String uniqueKey = item.optString("pickup") + "|" +
+                                   item.optString("destination") + "|" +
+                                   item.optString("dureeEnlevement") + "|" +
+                                   item.optString("dureeLivraison");
+
+                if (!uniqueDeliveries.contains(uniqueKey)) {
+                    uniqueDeliveries.add(uniqueKey);
+                    uniqueArray.put(item);
+                }
+            }
+
+            transformedObject.put(key, uniqueArray);
         }
 
         return transformedObject;
