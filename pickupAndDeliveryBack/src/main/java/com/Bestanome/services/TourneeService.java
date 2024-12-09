@@ -15,7 +15,9 @@ public class TourneeService {
     // Méthode pour charger des livraisons à partir d'un fichier XML
     public static void chargerLivraisons(MultipartFile file) throws IOException {
         JSONObject PlanLivraisonsJO = ParseurXML.parseXMLFileContent(file);
+        System.out.println(PlanLivraisonsJO.toString());
         Data.livraisonsDues = LivraisonFactory.creerListeLivraisons(PlanLivraisonsJO);
+        System.out.println(Data.livraisonsDues);
         JSONObject demandeDeLivraisons = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons");
         JSONObject entrepot = demandeDeLivraisons.getJSONObject("entrepot");
         Data.idEntrepot = entrepot.getLong("adresse");
