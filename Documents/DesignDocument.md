@@ -72,4 +72,5 @@ Nous transformons tout object envoyé vers le front en une DTO, exemple: PlanDTO
 <div style="page-break-after: always"></div>
 
 
+## Diagramme de Classes
 

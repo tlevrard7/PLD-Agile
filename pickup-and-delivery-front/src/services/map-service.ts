@@ -1,4 +1,4 @@
-import { Point } from "@/types/Plan";
+import { Point, Plan } from "@/types/Plan";
 const root = process.env.NEXT_PUBLIC_API_URL + '/map';
 
 export default class MapService {
@@ -6,7 +6,7 @@ export default class MapService {
         const formData = new FormData();
         formData.append("file", file);
 
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/map/upload-xml`, {
+        const response = await fetch(`${root}/upload-xml`, {
             method: "POST",
             body: formData,
         });
