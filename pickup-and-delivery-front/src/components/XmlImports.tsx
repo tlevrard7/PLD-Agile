@@ -9,7 +9,7 @@ interface TestProps {
   setLivraisons: (livraisons: Livraison[]) => void;
 }
 
-export default function Test({ setPlan, setLivraisons }: TestProps) {
+export default function XmlImports({ setPlan, setLivraisons }: TestProps) {
   const handleUploadMap = async (file: File) => {
     try {
       const uploadedPlan = await MapService.uploadMap(file);
@@ -33,27 +33,29 @@ export default function Test({ setPlan, setLivraisons }: TestProps) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full space-y-4">
+    <div className="flex flex-col space-y-4 place-items-stretch">
       <Upload
+        className="upload-stretch"
         beforeUpload={(file) => {
           handleUploadMap(file);
           return false;
         }}
         showUploadList={false}
       >
-        <Button type="primary" className="bg-blue-500 hover:bg-blue-400 text-white border-none">
+        <Button type="primary" className="w-full">
           Importer une carte
         </Button>
       </Upload>
 
       <Upload
+        className="upload-stretch"
         beforeUpload={(file) => {
           handleUploadLivraisons(file);
           return false;
         }}
         showUploadList={false}
       >
-        <Button type="primary" className="bg-blue-500 hover:bg-blue-400 text-white border-none">
+        <Button type="primary" className="w-full">
           Importer une demande de livraisons
         </Button>
       </Upload>

@@ -23,6 +23,12 @@ body {
   overflow: hidden;
 }
 
+.upload-stretch {
+  & .ant-upload-select {
+    width: 100%;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

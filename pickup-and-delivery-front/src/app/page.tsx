@@ -2,16 +2,15 @@
 
 import { useState } from "react";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Sidebar from "@/components/Sidebar";
 import MapPlaceholder from "@/components/MapPlaceholder";
-import Test from "@/pages/test";
+import XmlImports from "@/components/XmlImports";
 import DeliveryManagementPanel from "@/components/DeliveryManagementPanel";
 import { Plan } from "@/types/Plan";
 import { Livraison } from "@/types/Livraison";
+import { Button } from "antd";
+import XmlExports from "@/components/XmlExports";
 
 export default function Home() {
-  const [selectedTab, setSelectedTab] = useState("settings");
   const [plan, setPlan] = useState<Plan | null>(null);
   const [livraisons, setLivraisons] = useState<Livraison[]>([]);
 
@@ -26,16 +25,13 @@ export default function Home() {
         </div>
 
         {/* Sidebar et contenu dynamique à droite */}
-        <div className="w-1/3 bg-blue-100 p-4 flex flex-col">
-          <Sidebar onTabSelect={setSelectedTab} />
-          <div className="flex-1 mt-4 overflow-y-auto">
-            {selectedTab === "settings" && <Test setPlan={setPlan} setLivraisons={setLivraisons} />}
-            {selectedTab === "deliveries" && <DeliveryManagementPanel livraisons={livraisons} />}
-          </div>
+        <div className="w-1/3 bg-blue-100 p-4 flex flex-col place-items-stretch">
+          <XmlImports setPlan={setPlan} setLivraisons={setLivraisons} />
+          <DeliveryManagementPanel livraisons={livraisons}/>
+          <XmlExports/>
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 }
