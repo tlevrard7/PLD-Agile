@@ -19,8 +19,8 @@ import com.Bestanome.services.TourneeService;
 public class TourneeController {
 
     // Endpoint pour charger des livraisons depuis un fichier XML
-    @PostMapping("/upload-livraisons")
-    public ResponseEntity<ArrayList<LivraisonDTO>> uploadLivraisons(@RequestParam("file") MultipartFile file) {
+    @PostMapping("/upload-deliveries")
+    public ResponseEntity<ArrayList<LivraisonDTO>> uploadDeliveries(@RequestParam("file") MultipartFile file) {
         if (file.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }

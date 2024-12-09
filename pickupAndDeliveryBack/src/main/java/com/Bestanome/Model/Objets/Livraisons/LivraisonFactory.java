@@ -7,7 +7,7 @@ import org.json.JSONObject;
 
 public class LivraisonFactory {
 
-  public static ArrayList<Livraison> creerLivraison(JSONObject planSchemaJO) {
+  public static ArrayList<Livraison> creerListeLivraisons(JSONObject planSchemaJO) {
 
     ArrayList<Livraison> livraisons = new ArrayList<Livraison>();
 

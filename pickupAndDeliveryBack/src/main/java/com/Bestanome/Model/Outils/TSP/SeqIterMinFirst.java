@@ -16,6 +16,8 @@ public class SeqIterMinFirst implements Iterator<Integer> {
 	 * @param g
 	 */
 	public SeqIterMinFirst(Collection<Integer> unvisited, int currentVertex, Graph g){
+
+		
 		this.candidates = new Integer[unvisited.size()];
 		for (Integer s : unvisited){
 			if (g.isArc(currentVertex, s))

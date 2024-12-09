@@ -6,7 +6,7 @@ export default class TourneeService {
         const formData = new FormData();
         formData.append("file", file);
 
-        const response = await fetch(`${root}/map/upload-livraisons`, {
+        const response = await fetch(`${root}/map/upload-deliveries`, {
             method: "POST",
             body: formData,
         });
