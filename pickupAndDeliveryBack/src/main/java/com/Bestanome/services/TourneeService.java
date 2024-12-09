@@ -16,7 +16,7 @@ public class TourneeService {
     public static void chargerLivraisons(MultipartFile file) throws IOException {
         JSONObject PlanLivraisonsJO = ParseurXML.parseXMLFileContent(file);
         Data.livraisonsDues = LivraisonFactory.creerListeLivraisons(PlanLivraisonsJO);
-        Data.idEntrepot = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons").getLong("entrepot");
+        Data.idEntrepot = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons").getJSONObject("entrepot").getLong("adresse");
     }
 }
     
