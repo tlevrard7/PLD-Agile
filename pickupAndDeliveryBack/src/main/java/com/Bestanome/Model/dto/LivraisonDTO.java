@@ -2,6 +2,7 @@ package com.Bestanome.Model.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.Bestanome.Model.Objets.Livraisons.Livraison;
 
@@ -20,16 +21,22 @@ public class LivraisonDTO implements Serializable {
     private int dureeEnlevement;
     private int dureeLivraison;
 
-    public static ArrayList<LivraisonDTO> fromListeLivraisons(ArrayList<Livraison> livraisons) {
-        ArrayList<LivraisonDTO> livraisonsDTO = new ArrayList<LivraisonDTO>();
+    /**
+     * Convertit une liste de livraisons en une liste de LivraisonDTO.
+     *
+     * @param livraisons La liste des objets Livraison à convertir.
+     * @return Une liste de LivraisonDTO.
+     */
+    public static List<LivraisonDTO> fromListeLivraisons(List<Livraison> livraisons) {
+        List<LivraisonDTO> livraisonsDTO = new ArrayList<>();
         for (Livraison l : livraisons) {
-            livraisonsDTO.add(LivraisonDTO.fromLivraison(l));
+            livraisonsDTO.add(new LivraisonDTO(
+                l.getPickup(),
+                l.getDestination(),
+                l.getDureeEnlevement(),
+                l.getDureeLivraison()
+            ));
         }
         return livraisonsDTO;
-    }
-
-    public static LivraisonDTO fromLivraison(Livraison Livraison) {
-        return new LivraisonDTO(Livraison.getItineraire()[0], Livraison.getItineraire()[1],
-                Livraison.getDureeEnlevement(), Livraison.getDureeLivraison());
     }
 }

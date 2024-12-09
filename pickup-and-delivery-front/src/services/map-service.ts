@@ -1,22 +1,23 @@
-import { Plan, Point } from "@/model/Plan";
+import { Point } from "@/types/Plan";
 const root = process.env.NEXT_PUBLIC_API_URL + '/map';
 
 export default class MapService {
-    public static getRandomPoint(): Promise<Point> {
-        return fetch(root+'/random-point').then(data => data.json());
-    }
-
-    public static uploadMap(file: File): Promise<Plan> {
+    public static async uploadMap(file: File): Promise<Plan> {
         const formData = new FormData();
         formData.append("file", file);
 
-        return fetch(root + '/upload-xml', {
-            method: 'POST',
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/map/upload-xml`, {
+            method: "POST",
             body: formData,
-        }).then((res) => {
-            if (!res.ok) throw new Error('Failed to upload map.');
-            console.log(res.json());
-            return res.json();
         });
+
+        console.log("Response status:", response.status); // Ajoutez ce log
+        const json = await response.json();
+        console.log("Response JSON:", json); // Ajoutez ce log
+
+        if (!response.ok) {
+            throw new Error("Failed to upload map.");
+        }
+        return json;
     }
 }

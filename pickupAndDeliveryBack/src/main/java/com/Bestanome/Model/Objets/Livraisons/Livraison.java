@@ -1,27 +1,33 @@
 package com.Bestanome.Model.Objets.Livraisons;
 
 public class Livraison {
-  private Long pickup;
-  private Long destination;
-  private int dureeEnlevement;
-  private int dureeLivraison;
+    private Long pickup;
+    private Long destination;
+    private int dureeEnlevement;
+    private int dureeLivraison;
 
-  public Livraison(Long idStart, Long idEnd, int dEnlevement, int dLivraison) {
-    this.pickup = idStart;
-    this.destination = idEnd;
-    this.dureeEnlevement = dEnlevement;
-    this.dureeLivraison = dLivraison;
-  }
+    // Constructeur
+    public Livraison(Long pickup, Long destination, int dureeEnlevement, int dureeLivraison) {
+        this.pickup = pickup;
+        this.destination = destination;
+        this.dureeEnlevement = dureeEnlevement;
+        this.dureeLivraison = dureeLivraison;
+    }
 
-  public Long[] getItineraire() {
-    return new Long[] { this.pickup, this.destination };
-  }
-  
-  public int getDureeEnlevement() {
-    return this.dureeEnlevement;
-  }
+    // Getters
+    public Long getPickup() {
+        return pickup;
+    }
 
-  public int getDureeLivraison() {
-    return this.dureeLivraison;
-  }
+    public Long getDestination() {
+        return destination;
+    }
+
+    public int getDureeEnlevement() {
+        return dureeEnlevement;
+    }
+
+    public int getDureeLivraison() {
+        return dureeLivraison;
+    }
 }
