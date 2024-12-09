@@ -35,12 +35,12 @@ export default function InteractiveMap({ plan, livraisons }: InteractiveMapProps
       const pickup = plan.points.find((p) => p.id === livraison.pickup);
       const delivery = plan.points.find((p) => p.id === livraison.destination);
       if (pickup == null || delivery == null) continue;
-      const color = `hsl(${i / livraisons.length * 360}, 100%, 33%)`
+      const color = `hsl(${i / livraisons.length * 360}, 100%, 50%)`
 
       const styleDickupstyleColor = `background-color: ${color};`
 
       const iconPickup = divIcon({ html: `<span class="map-marker map-marker-pickup" style="${styleDickupstyleColor}"/>` })
-      const iconDelivery = divIcon({ html: `<span class="map-marker" style="${styleDickupstyleColor}"/>` })
+      const iconDelivery = divIcon({ html: `<span class="map-marker map-marker-delivery" style="${styleDickupstyleColor}"/>` })
       markers.push({position: new LatLng(pickup.latitude, pickup.longitude), icon:iconPickup})
       markers.push({ position: new LatLng(delivery.latitude, delivery.longitude), icon: iconDelivery })
     }

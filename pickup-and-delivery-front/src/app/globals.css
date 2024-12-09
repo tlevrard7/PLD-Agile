@@ -40,7 +40,11 @@ body {
   border: 1px solid #000000;
 }
 .map-marker-pickup {
-  border-radius: 1.5rem 1.5rem 0;
+  border-radius: 0.75rem 0.75rem 0;
+}
+
+.map-marker-delivery {
+  border-radius: 0;
 }
 
 @layer utilities {
