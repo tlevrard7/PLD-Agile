@@ -2,7 +2,6 @@ package com.Bestanome.Model.Outils;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,7 +13,7 @@ import com.Bestanome.Model.Objets.Livraisons.Livraison;
 
 public class ParseurLivraisonXML {
 
-    public static List<Livraison> parseXMLFileContent(MultipartFile file) {
+    public static ArrayList<Livraison> parseXMLFileContent(MultipartFile file) {
         try {
             // Lire le contenu du fichier XML
             String xmlContent = new String(file.getBytes(), StandardCharsets.UTF_8);
@@ -27,7 +26,7 @@ public class ParseurLivraisonXML {
             Data.idEntrepot = adresseEntrepot;
 
             // Extraire les livraisons
-            List<Livraison> livraisons = new ArrayList<>();
+            ArrayList<Livraison> livraisons = new ArrayList<>();
             JSONArray livraisonsArray = demandeDeLivraisons.optJSONArray("livraison");
             if (livraisonsArray == null) {
                 livraisonsArray = new JSONArray();

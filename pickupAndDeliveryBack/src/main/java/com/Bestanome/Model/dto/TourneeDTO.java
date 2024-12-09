@@ -1,7 +1,7 @@
 package com.Bestanome.Model.dto;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.ArrayList;
 
 import com.Bestanome.Model.Objets.Livraisons.Tournee;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TourneeDTO implements Serializable {
-    private List<LivraisonDTO> livraisons;
+    private ArrayList<LivraisonDTO> livraisons;
     private CircuitDTO circuit;
 
     public static TourneeDTO fromTournee(Tournee tournee) {
