@@ -2,6 +2,7 @@ import { Upload, Button, message } from "antd";
 import { Plan } from "@/types/Plan";
 import { Livraison } from "@/types/Livraison";
 import TourneeService from "@/services/tournee-service";
+import MapService from "@/services/map-service";
 
 interface TestProps {
   setPlan: (plan: Plan) => void;
@@ -11,19 +12,7 @@ interface TestProps {
 export default function XmlImports({ setPlan, setLivraisons }: TestProps) {
   const handleUploadMap = async (file: File) => {
     try {
-      const formData = new FormData();
-      formData.append("file", file);
-
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/map/upload-xml`, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error(`Erreur lors de l'upload : ${response.statusText}`);
-      }
-
-      const uploadedPlan = await response.json();
+      const uploadedPlan = await MapService.uploadMap(file);
       setPlan(uploadedPlan);
       message.success("Carte importée avec succès !");
     } catch (error) {
@@ -34,8 +23,8 @@ export default function XmlImports({ setPlan, setLivraisons }: TestProps) {
 
   const handleUploadLivraisons = async (file: File) => {
     try {
-      const uploadedLivraisons = TourneeService.uploadLivraisons(file);
-      console.log(uploadedLivraisons);
+      const uploadedLivraisons = await TourneeService.uploadLivraisons(file);
+      setLivraisons(uploadedLivraisons);
       message.success("Demandes de livraisons importées avec succès !");
     } catch (error) {
       console.error("Erreur lors de l'upload des livraisons :", error);
