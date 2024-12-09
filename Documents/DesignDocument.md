@@ -72,5 +72,15 @@ Nous transformons tout object envoyé vers le front en une DTO, exemple: PlanDTO
 <div style="page-break-after: always"></div>
 
 
-## Diagramme de Classes
+## Retour sur les itérations:
+
+### itérations 1
+Un début difficile car par le choix d'architecture avec REACT il y avait beaucoup de dépendencies à mettre en place et télécharger avant même de coder.
+Il fallait de même concevoir les classes et se former en REACT.
+En conséquence nous avions un itération trop chargée à 5 personnes et donc la prevision aux erreurs (dont on a eu à l'installaltion avec springboot et java 23) n'était pas prevue.
+Nous avons parcontre reussit à bien définir le sujet et avoir un bon debut avec un projet web sur lequel travailler.
+
+### itération 2
+Prévoyant moins de charge et une meilleure coordination nous avons réussit à livrer le 
+
 
