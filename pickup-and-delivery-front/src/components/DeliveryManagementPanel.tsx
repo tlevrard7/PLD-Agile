@@ -1,7 +1,7 @@
 import { Livraison } from "@/types/Livraison";
 
 interface DeliveryManagementPanelProps {
-  livraisons: Livraison[];
+  livraisons: Livraison[] | null | undefined;
 }
 
 export default function DeliveryManagementPanel({ livraisons }: DeliveryManagementPanelProps) {
