@@ -18,9 +18,7 @@ public class TourneeService {
         System.out.println(PlanLivraisonsJO.toString());
         Data.livraisonsDues = LivraisonFactory.creerListeLivraisons(PlanLivraisonsJO);
         System.out.println(Data.livraisonsDues);
-        JSONObject demandeDeLivraisons = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons");
-        JSONObject entrepot = demandeDeLivraisons.getJSONObject("entrepot");
-        Data.idEntrepot = entrepot.getLong("adresse");
+        Data.idEntrepot = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons").getJSONArray("entrepot").getJSONObject(0).getLong("adresse");
     }
 }
     

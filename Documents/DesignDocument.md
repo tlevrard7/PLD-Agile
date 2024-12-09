@@ -67,7 +67,6 @@ Nous transformons tout object envoyé vers le front en une DTO, exemple: PlanDTO
 
 ## Diagramme de Classes
 
-
 ![Diagramme de classes MVC](./ClassDiagramm.svg)
 
 <div style="page-break-after: always"></div>
