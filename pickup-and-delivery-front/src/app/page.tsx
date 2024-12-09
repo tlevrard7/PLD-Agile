@@ -21,7 +21,7 @@ export default function Home() {
       <div className="flex flex-1 overflow-hidden">
         {/* Section Carte à gauche */}
         <div className="flex-1 bg-gray-200">
-          <MapPlaceholder plan={plan} />
+          <MapPlaceholder plan={plan} livraisons={livraisons}/>
         </div>
 
         {/* Sidebar et contenu dynamique à droite */}
