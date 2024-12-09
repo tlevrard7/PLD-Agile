@@ -35,7 +35,7 @@ export default function XmlImports({ setPlan, setLivraisons }: TestProps) {
   const handleUploadLivraisons = async (file: File) => {
     try {
       const uploadedLivraisons = TourneeService.uploadLivraisons(file);
-      setLivraisons(uploadedLivraisons);
+      console.log(uploadedLivraisons);
       message.success("Demandes de livraisons importées avec succès !");
     } catch (error) {
       console.error("Erreur lors de l'upload des livraisons :", error);
