@@ -1,6 +1,7 @@
 import { Upload, Button, message } from "antd";
 import { Plan } from "@/types/Plan";
 import { Livraison } from "@/types/Livraison";
+import TourneeService from "@/services/tournee-service";
 
 interface TestProps {
   setPlan: (plan: Plan) => void;
@@ -36,16 +37,7 @@ export default function Test({ setPlan, setLivraisons }: TestProps) {
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/map/upload-livraisons`, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error(`Erreur lors de l'upload : ${response.statusText}`);
-      }
-
-      const uploadedLivraisons = await response.json();
+      const uploadedLivraisons = TourneeService.uploadLivraisons(File);
       setLivraisons(uploadedLivraisons);
       message.success("Demandes de livraisons importées avec succès !");
     } catch (error) {
