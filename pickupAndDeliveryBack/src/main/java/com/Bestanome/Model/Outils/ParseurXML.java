@@ -32,37 +32,15 @@ public class ParseurXML {
 
     private static JSONObject convertToJSONArray(JSONObject object) {
         JSONObject transformedObject = new JSONObject();
-        Set<String> uniqueDeliveries = new HashSet<>();
-
         for (String key : object.keySet()) {
             Object value = object.get(key);
-            JSONArray array;
-
             if (value instanceof JSONArray) {
-                array = (JSONArray) value;
+                transformedObject.put(key, value);
             } else {
-                array = new JSONArray();
+                JSONArray array = new JSONArray();
                 array.put(value);
+                transformedObject.put(key, array);
             }
-
-            JSONArray uniqueArray = new JSONArray();
-
-            for (int i = 0; i < array.length(); i++) {
-                JSONObject item = array.getJSONObject(i);
-
-                // Créez une clé unique pour chaque livraison en combinant pickup, destination, dureeEnlevement et dureeLivraison
-                String uniqueKey = item.optString("pickup") + "|" +
-                                   item.optString("destination") + "|" +
-                                   item.optString("dureeEnlevement") + "|" +
-                                   item.optString("dureeLivraison");
-
-                if (!uniqueDeliveries.contains(uniqueKey)) {
-                    uniqueDeliveries.add(uniqueKey);
-                    uniqueArray.put(item);
-                }
-            }
-
-            transformedObject.put(key, uniqueArray);
         }
 
         return transformedObject;
