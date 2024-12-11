@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<demandeDeLivraisons>
+    <livraison>
+        <pickup>21992645</pickup>
+        <destination>55444215</destination>
+        <dureeEnlevement>360</dureeEnlevement>
+        <dureeLivraison>480</dureeLivraison>
+    </livraison>
+</demandeDeLivraisons>

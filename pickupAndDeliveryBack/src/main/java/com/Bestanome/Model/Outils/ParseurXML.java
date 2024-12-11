@@ -1,6 +1,8 @@
 package com.Bestanome.Model.Outils;
 
 import java.nio.charset.StandardCharsets;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,7 +19,7 @@ public class ParseurXML {
             String rootName = jsonObject.keys().next();
             JSONObject rootObject = jsonObject.getJSONObject(rootName);
 
-            // Transforme les enfants en JSONArray si nécessaire
+            // Transforme les enfants en JSONArray si nécessaire tout en supprimant les doublons
             JSONObject resultObject = new JSONObject();
             resultObject.put(rootName, convertToJSONArray(rootObject));
 
@@ -30,7 +32,6 @@ public class ParseurXML {
 
     private static JSONObject convertToJSONArray(JSONObject object) {
         JSONObject transformedObject = new JSONObject();
-
         for (String key : object.keySet()) {
             Object value = object.get(key);
             if (value instanceof JSONArray) {

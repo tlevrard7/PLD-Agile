@@ -1,12 +1,12 @@
-import { Point, Plan } from "@/types/Plan";
-const root = process.env.NEXT_PUBLIC_API_URL + '/map';
+import { Livraison } from "@/types/Livraison";
+const root = process.env.NEXT_PUBLIC_API_URL + '/delivery';
 
-export default class MapService {
-    public static async uploadMap(file: File): Promise<Plan> {
+export default class TourneeService {
+    public static async uploadLivraisons(file: File): Promise<Livraison[]> {
         const formData = new FormData();
         formData.append("file", file);
 
-        return fetch(`${root}/upload-xml`, {
+        return fetch(`${root}/upload-deliveries`, {
             method: "POST",
             body: formData,
         }).then(response => response.json())
@@ -16,3 +16,5 @@ export default class MapService {
         });
     }
 }
+
+
