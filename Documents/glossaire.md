@@ -14,8 +14,8 @@
 - **Demande de Pickup&Delivery = Livraison** : Combinaison d'un point d'enlèvement, d'un point de livraison, d'une durée d'enlèvement et d'une durée de livraison.
 - **Livreur** : Personne qui peut effectuer des livraisons.
 - **Programme de Pickup&Delivery** : Ensemble de livraisons encore non assignés à un livreur
-- **Tournée** : Programme de livraisons assignées à un livreur. Elle comporte le circuit optimal à prendre par ce livreur et les livraisons reálisées.
-- **Circuit** : Séquence de segemnts parcourus pour réaliser une tournée. Un circuit débute et se finit à l'entrepôt en passant par tous les points Pickup et Destination assignés.
+- **Tournée** : Programme de livraisons assignées à un livreur. Elle comporte le circuit optimal à prendre par ce livreur et les livraisons réalisées.
+- **Circuit** : Séquence de segments parcourus pour réaliser une tournée. Un circuit débute et se finit à l'entrepôt en passant par tous les points Pickup et Destination assignés.
 - **Utilisateur** : Utilisateur de l'application. Celui-ci est un gestionnaire de livreurs, c'est à dire qu'il va assigner un livreur à chacune des livraisons pour ensuite calculer les tournées de ces livreurs.
-- **Client** : Personné à l'origine d'une demande de Livraison.
+- **Client** : Personne à l'origine d'une demande de Livraison.
 
