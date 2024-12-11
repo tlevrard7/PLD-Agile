@@ -13,6 +13,11 @@ public class Tournee {
     this.livraisons = new ArrayList<Livraison>();
   }
 
+  public Tournee(ArrayList<Livraison> livraisons) {
+    this.circuit = new Circuit();
+    this.livraisons = livraisons;
+  }
+
   public void ajouterLivraison(Livraison liv) {
     this.livraisons.add(liv);
   }

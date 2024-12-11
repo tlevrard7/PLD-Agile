@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.Bestanome.Model.Objets.Livraisons.Circuit;
 import com.Bestanome.Model.Objets.Livraisons.Tournee;
 import com.Bestanome.Model.Objets.Plan.Plan;
 import com.Bestanome.Model.Objets.Plan.Point;
@@ -19,6 +20,23 @@ public class TSPRunner {
 	public TSPRunner(){
 		mapPoint = new HashMap<>();
 		mapSegment = new HashMap<>();
+	}
+
+	public void findCircuit(Tournee tournee){
+		State initialState = new State(tournee.getLivraisons());
+		Circuit circuit = runTSP(initialState, 1d);
+		
+	}
+
+	private Circuit predsToCircuit(Map<Long, Long> predecessors){
+		Circuit circuit = new Circuit();
+		System.out.println("res");
+		for(Long dest : predecessors.keySet()){
+			Segment s = mapSegment.get(predecessors.get(dest)).get(dest);
+			circuit.ajouterSegment(s);
+			System.out.println(s.getNomRue());
+		}
+		return circuit;
 	}
 
 	public void loadMap(Plan plan){
@@ -98,7 +116,9 @@ public class TSPRunner {
 
 	private ArrayList<Segment> action(State state){
 		Map<Long, Segment> innerMap = mapSegment.get(state.point);
-		ArrayList<Segment> adjacentSegments = new ArrayList<Segment>(innerMap.values());
+		ArrayList<Segment> adjacentSegments;
+		if(innerMap != null)adjacentSegments  = new ArrayList<Segment>(innerMap.values());
+		else adjacentSegments = new ArrayList<Segment>();
 		return adjacentSegments;
 	}
 
@@ -109,9 +129,8 @@ public class TSPRunner {
 		
 		for (int i = 0; i < state.deliveryInfo.length; i++) {
 			Pair<Long, Boolean> firstPairCopy = Pair.of(state.deliveryInfo[i].getKey().getLeft(), state.deliveryInfo[i].getKey().getRight());
-            Pair<Long, Boolean> secondPairCopy = Pair.of(state.deliveryInfo[i].getValue().getLeft(), state.deliveryInfo[i].getValue().getRight());
-
-            newState.deliveryInfo[i] = Pair.of(firstPairCopy, secondPairCopy);
+      Pair<Long, Boolean> secondPairCopy = Pair.of(state.deliveryInfo[i].getValue().getLeft(), state.deliveryInfo[i].getValue().getRight());
+			newState.deliveryInfo[i] = Pair.of(firstPairCopy, secondPairCopy);
 		}
 		
 		return newState; 
@@ -140,7 +159,7 @@ public class TSPRunner {
 		return pred;
 	}
 
-	public Map<Long, Long> runTSP(State initialState, Double w){
+	public Circuit runTSP(State initialState, Double w){
 		// Fonction AWA*(E, F, A, einit, actions, t, h, w){
 			// Initialisations
 			Double borne = Double.MAX_VALUE;
@@ -166,6 +185,8 @@ public class TSPRunner {
 							borne = g.get(possibleState.point);
 							// Test if borne suffisante return pred;
 							System.out.println(borne);
+							return predsToCircuit(pred);
+							//if((60.0 * borne / 25000.0) < 5) return pred; // if time taken udner 5min return
 						}
 						else if(g.get(possibleState.point) + heristic(possibleState) < borne) {
 							opened.add(possibleState);
@@ -176,7 +197,7 @@ public class TSPRunner {
 				opened.remove(currentState);
 				closed.add(currentState);
 			}
-			return pred;
+			return predsToCircuit(pred);
 			
 			
 			

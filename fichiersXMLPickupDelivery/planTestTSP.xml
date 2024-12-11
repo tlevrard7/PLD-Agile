@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<reseau>
+<noeud id="1" latitude="45.73406" longitude="4.857418"/>
+<noeud id="2" latitude="45.720404" longitude="4.8744674"/>
+<noeud id="3" latitude="45.74171" longitude="4.8704023"/>
+<noeud id="4" latitude="45.76171" longitude="4.8718166"/>
+<noeud id="5" latitude="45.750896" longitude="4.859119"/>
+<noeud id="6" latitude="45.754536" longitude="4.866525"/>
+<noeud id="7" latitude="45.74979" longitude="4.87572"/>
+<troncon destination="2" longueur="100.0" nomRue="1->2" origine="1"/>
+<troncon destination="3" longueur="60.0" nomRue="1->3" origine="1"/>
+<troncon destination="4" longueur="210.0" nomRue="1->4" origine="1"/>
+<troncon destination="5" longueur="72.0" nomRue="1->5" origine="1"/>
+<troncon destination="1" longueur="100.0" nomRue="2->1" origine="2"/>
+<troncon destination="3" longueur="113.0" nomRue="2->3" origine="2"/>
+<troncon destination="4" longueur="233.0" nomRue="2->4" origine="2"/>
+<troncon destination="1" longueur="60.0" nomRue="3->1" origine="3"/>
+<troncon destination="2" longueur="113.0" nomRue="3->2" origine="3"/>
+<troncon destination="5" longueur="50.0" nomRue="3->5" origine="3"/>
+<troncon destination="1" longueur="210.0" nomRue="4->1" origine="4"/>
+<troncon destination="6" longueur="41.0" nomRue="4->6" origine="4"/>
+<troncon destination="3" longueur="50.0" nomRue="5->3" origine="5"/>
+<troncon destination="4" longueur="68.0" nomRue="5->4" origine="5"/>
+<troncon destination="4" longueur="41.0" nomRue="6->4" origine="6"/>
+<troncon destination="7" longueur="39.0" nomRue="6->7" origine="6"/>
+<troncon destination="6" longueur="39.0" nomRue="7->6" origine="7"/>
+</reseau>
