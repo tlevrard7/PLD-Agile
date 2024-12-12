@@ -129,7 +129,11 @@ public class TSPRunner {
 		
 		for (int i = 0; i < state.deliveryInfo.length; i++) {
 			Pair<Long, Boolean> firstPairCopy = Pair.of(state.deliveryInfo[i].getKey().getLeft(), state.deliveryInfo[i].getKey().getRight());
-      Pair<Long, Boolean> secondPairCopy = Pair.of(state.deliveryInfo[i].getValue().getLeft(), state.deliveryInfo[i].getValue().getRight());
+      		if (!firstPairCopy.getRight() && firstPairCopy.getLeft() == newState.point)
+				firstPairCopy.of(newState.point, true);
+			Pair<Long, Boolean> secondPairCopy = Pair.of(state.deliveryInfo[i].getValue().getLeft(), state.deliveryInfo[i].getValue().getRight());
+			if (firstPairCopy.getRight() && !secondPairCopy.getRight() && secondPairCopy.getLeft() == newState.point)
+				secondPairCopy.of(newState.point, true);
 			newState.deliveryInfo[i] = Pair.of(firstPairCopy, secondPairCopy);
 		}
 		
