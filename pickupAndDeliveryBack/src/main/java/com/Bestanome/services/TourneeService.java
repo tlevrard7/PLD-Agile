@@ -20,10 +20,10 @@ public class TourneeService {
         Data.livraisonsDues = LivraisonFactory.creerListeLivraisons(PlanLivraisonsJO);
         Data.idEntrepot = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons").getJSONArray("entrepot").getJSONObject(0).getLong("adresse");
 
-        TSPRunner tspRunner = new TSPRunner();
-        tspRunner.loadMap(Data.planVille);
+        TSPRunner.initiate();
+        TSPRunner.loadMap(Data.planVille);
         Tournee t = new Tournee(Data.livraisonsDues);
-        tspRunner.findCircuit(t);
+        TSPRunner.findCircuit(t);
     }
 }
     
