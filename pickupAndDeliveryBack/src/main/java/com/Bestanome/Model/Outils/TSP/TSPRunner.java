@@ -3,7 +3,6 @@ package com.Bestanome.Model.Outils.TSP;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
@@ -75,7 +74,7 @@ public class TSPRunner {
 			throw new IllegalStateException("TSP wasn't initiated with a valid graph");
 		}
 
-		List<Long> points = PlanificateurLivraisons.ordonnancer(tournee.getLivraisons(),
+		ArrayList<Long> points = PlanificateurLivraisons.ordonnancer(tournee.getLivraisons(),
 				PlanificateurLivraisons::NNLivraisons);
 
 		// points.add(Data.idEntrepot); // Point de départ : l'entrepôt
@@ -97,7 +96,7 @@ public class TSPRunner {
 
 			if (result.found) {
 				Long current = end;
-				List<Segment> segments = new ArrayList<>();
+				ArrayList<Segment> segments = new ArrayList<>();
 
 				// Reconstruire le chemin en utilisant les prédécesseurs
 				while (!current.equals(start)) {

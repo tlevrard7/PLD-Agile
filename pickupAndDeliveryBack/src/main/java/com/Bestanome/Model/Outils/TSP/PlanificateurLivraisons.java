@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.Bestanome.Model.Data;
 import com.Bestanome.Model.Objets.Livraisons.Livraison;
-import static com.Bestanome.Model.Outils.TSP.TSPRunner.getHarvensineLength;
+import static com.Bestanome.Model.Outils.TSP.TSPRunner.getHaversineLength;
 
 
 public class PlanificateurLivraisons {
@@ -49,7 +49,8 @@ public class PlanificateurLivraisons {
       Etat etatActuel = new Etat(livraisons);
       ArrayList<Long> planning = new ArrayList<>();
       planning.add(Data.idEntrepot);
-      for(int i = 0; i < livraisons.size(); i++){
+      System.out.println(etatActuel);
+      for(int i = 0; i < livraisons.size()*2; i++){
           // Choissir le prochain point
           int hIndex = h.calculer(etatActuel);
           Long choixHeuristique = etatActuel.ouverts.remove(hIndex);
@@ -68,7 +69,7 @@ public class PlanificateurLivraisons {
       int minIndex = 0;
       int i = 0;
       for(Long pointPossible: s.ouverts){
-          Double longeur = getHarvensineLength(s.point, pointPossible);
+          Double longeur = getHaversineLength(s.point, pointPossible);
           if(longeur < min){
             minIndex = i;
             min = longeur;
