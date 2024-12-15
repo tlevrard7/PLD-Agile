@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.upload-stretch {
+  & .ant-upload-select {
+    width: 100%;
+  }
+}
+
+.map-marker {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  left: -0.75rem;
+  top: -1.5rem;
+  position: relative;
+  transform: translate(5px, -1px);
+  border: 1px solid #000000;
+}
+.map-marker-pickup {
+  @extend .map-marker;
+  border-radius: 0.75rem 0.75rem 0;
+  transform: translate(5px, -1px) rotate(45deg);
+}
+.map-marker-delivery {
+  @extend .map-marker;
+  border-radius: 0;
+  transform: translate(5px, -1px) rotate(45deg);
+}
+.map-marker-warehouse {
+  @extend .map-marker;
+  border-radius: 0;
+  background-color: gray;
+}
+.map-marker-icon {
+  width: 1em;
+  height: 1em;
+  display: block;
+  left: -0.5rem;
+  top: -1em;
+  position: relative;
+  transform: translate(7px, -1px);
+  border: 1px solid #000000;
+  border-radius: 0.5em;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Importer le CSS de Leaflet */
+@import "leaflet/dist/leaflet.css";

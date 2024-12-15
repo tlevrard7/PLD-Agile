@@ -69,14 +69,17 @@ Tester le cas où le fichier XML contient des livraisons en doublon.
 ### Réponse attendue :
 
 ```json
-[
-    {
-        "pickup": 26464256,
-        "destination": 239603465,
-        "dureeEnlevement": 0,
-        "dureeLivraison": 600
-    }
-]
+{
+    "livraisons": [
+        {
+            "pickup": 26464256,
+            "destination": 239603465,
+            "dureeEnlevement": 0,
+            "dureeLivraison": 600
+        }
+    ],
+    "idEntrepot": 25327124
+}
 ```
 
 Le doublon est éliminé
@@ -116,6 +119,7 @@ The server has encountered a situation it does not know how to handle
 Côté Front : 
 ```
 Erreur lors de l'importation des livraisons.
+```
 
 ---
 
@@ -150,62 +154,65 @@ Tester le cas où le fichier envoyé est un `.txt` au lieu d'un `.xml`.
 ### Réponse attendue :
 
 ```json
-[
-    {
-        "pickup": 26464256,
-        "destination": 239603465,
-        "dureeEnlevement": 0,
-        "dureeLivraison": 600
-    },
-    {
-        "pickup": 25319255,
-        "destination": 1370403192,
-        "dureeEnlevement": 600,
-        "dureeLivraison": 120
-    },
-    {
-        "pickup": 984553611,
-        "destination": 1368674802,
-        "dureeEnlevement": 60,
-        "dureeLivraison": 480
-    },
-    {
-        "pickup": 1678996781,
-        "destination": 26084216,
-        "dureeEnlevement": 420,
-        "dureeLivraison": 600
-    },
-    {
-        "pickup": 1301805013,
-        "destination": 25310896,
-        "dureeEnlevement": 420,
-        "dureeLivraison": 240
-    },
-    {
-        "pickup": 59654812,
-        "destination": 25316399,
-        "dureeEnlevement": 120,
-        "dureeLivraison": 60
-    },
-    {
-        "pickup": 130144280,
-        "destination": 25499154,
-        "dureeEnlevement": 240,
-        "dureeLivraison": 120
-    },
-    {
-        "pickup": 26035105,
-        "destination": 25624158,
-        "dureeEnlevement": 480,
-        "dureeLivraison": 300
-    },
-    {
-        "pickup": 1362204817,
-        "destination": 843129906,
-        "dureeEnlevement": 180,
-        "dureeLivraison": 540
-    }
-]
+{
+    "livraisons": [
+        {
+            "pickup": 26464256,
+            "destination": 239603465,
+            "dureeEnlevement": 0,
+            "dureeLivraison": 600
+        },
+        {
+            "pickup": 25319255,
+            "destination": 1370403192,
+            "dureeEnlevement": 600,
+            "dureeLivraison": 120
+        },
+        {
+            "pickup": 984553611,
+            "destination": 1368674802,
+            "dureeEnlevement": 60,
+            "dureeLivraison": 480
+        },
+        {
+            "pickup": 1678996781,
+            "destination": 26084216,
+            "dureeEnlevement": 420,
+            "dureeLivraison": 600
+        },
+        {
+            "pickup": 1301805013,
+            "destination": 25310896,
+            "dureeEnlevement": 420,
+            "dureeLivraison": 240
+        },
+        {
+            "pickup": 59654812,
+            "destination": 25316399,
+            "dureeEnlevement": 120,
+            "dureeLivraison": 60
+        },
+        {
+            "pickup": 130144280,
+            "destination": 25499154,
+            "dureeEnlevement": 240,
+            "dureeLivraison": 120
+        },
+        {
+            "pickup": 26035105,
+            "destination": 25624158,
+            "dureeEnlevement": 480,
+            "dureeLivraison": 300
+        },
+        {
+            "pickup": 1362204817,
+            "destination": 843129906,
+            "dureeEnlevement": 180,
+            "dureeLivraison": 540
+        }
+    ],
+    "idEntrepot": 25327124
+}
 ```
 
 ---
@@ -272,14 +279,17 @@ Tester le cas où le fichier XML n'a pas de sauts de ligne entre les balises.
 ### Réponse attendue :
 
 ```json
-[
-    {
-        "pickup": 26464256,
-        "destination": 239603465,
-        "dureeEnlevement": 0,
-        "dureeLivraison": 600
-    }
-]
+{
+    "livraisons": [
+        {
+            "pickup": 26464256,
+            "destination": 239603465,
+            "dureeEnlevement": 0,
+            "dureeLivraison": 600
+        }
+    ],
+    "idEntrepot": 25327124
+}
 ```
 
 

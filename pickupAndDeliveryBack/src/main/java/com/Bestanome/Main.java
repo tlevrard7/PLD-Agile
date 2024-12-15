@@ -8,11 +8,14 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.Bestanome.Model.Data;
+
 @SpringBootApplication
 @Configuration
 @EnableWebMvc
 public class Main implements WebMvcConfigurer {
     public static void main(String[] args) {
+        Data.initialiserLivreurs(); // Initialiser les livreurs au démarrage
         SpringApplication.run(Main.class, args);
     }
 

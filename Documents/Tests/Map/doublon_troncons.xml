@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<reseau>
+    <noeud id="25175791" latitude="45.75406" longitude="4.857418"/>
+    <noeud id="26079801" latitude="45.754852" longitude="4.8574104"/>
+    <troncon destination="25175791" longueur="88.53801" nomRue="Rue Danton" origine="26079801"/>
+    <troncon destination="25175791" longueur="88.53801" nomRue="Rue Danton" origine="26079801"/>
+</reseau>

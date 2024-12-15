@@ -1,7 +1,5 @@
 package com.Bestanome.controllers;
 
-import java.util.ArrayList;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.Bestanome.Model.Data;
-import com.Bestanome.Model.dto.LivraisonDTO;
+import com.Bestanome.Model.dto.LivraisonsEntrepotDOT;
 import com.Bestanome.services.TourneeService;
 
 @RestController
@@ -20,14 +18,14 @@ public class TourneeController {
 
     // Endpoint pour charger des livraisons depuis un fichier XML
     @PostMapping("/upload-deliveries")
-    public ResponseEntity<ArrayList<LivraisonDTO>> uploadDeliveries(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<LivraisonsEntrepotDOT> uploadDeliveries(@RequestParam("file") MultipartFile file) {
         if (file.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
 
         try {
             TourneeService.chargerLivraisons(file);
-            return ResponseEntity.ok(LivraisonDTO.fromListeLivraisons(Data.livraisonsDues));
+            return ResponseEntity.ok(LivraisonsEntrepotDOT.fromLivraisonsEntrepot(Data.livraisonsDues, Data.idEntrepot));
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);

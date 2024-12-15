@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.Bestanome.Model.Data;
+import com.Bestanome.Model.Outils.TSP.TSPRunner;
 import com.Bestanome.Model.dto.PlanDTO;
 import com.Bestanome.services.MapService;
 
@@ -24,8 +25,13 @@ public class MapController {
         }
 
         try {
+            // Charger le plan
             MapService.chargerPlan(file);
-            return ResponseEntity.ok(PlanDTO.fromPlan(Data.planVille)); // Retourne l'objet Plan en JSON
+
+            // Initialiser le TSPRunner avec le plan chargé
+            TSPRunner.initiate(Data.getPlanVille());
+
+            return ResponseEntity.ok(PlanDTO.fromPlan(Data.getPlanVille()));
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);

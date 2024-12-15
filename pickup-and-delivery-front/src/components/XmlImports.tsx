@@ -4,13 +4,15 @@ import { Plan } from "@/types/Plan";
 import { Livraison } from "@/types/Livraison";
 import TourneeService from "@/services/tournee-service";
 import MapService from "@/services/map-service";
+import { Dispatch, SetStateAction } from "react";
 
 interface TestProps {
-  setPlan: (plan: Plan) => void;
-  setLivraisons: (livraisons: Livraison[]) => void;
+  setPlan: Dispatch<SetStateAction<Plan | null>>
+  setLivraisons: Dispatch<SetStateAction<Livraison[]>>;
+  setEntrepot: Dispatch<SetStateAction<number | null>>;
 }
 
-export default function XmlImports({ setPlan, setLivraisons }: TestProps) {
+export default function XmlImports({ setPlan, setLivraisons, setEntrepot }: TestProps) {
   const handleUploadMap = async (file: File) => {
     try {
       const uploadedPlan = await MapService.uploadMap(file);
@@ -25,7 +27,8 @@ export default function XmlImports({ setPlan, setLivraisons }: TestProps) {
   const handleUploadLivraisons = async (file: File) => {
     try {
       const uploadedLivraisons = await TourneeService.uploadLivraisons(file);
-      setLivraisons(uploadedLivraisons);
+      setLivraisons(uploadedLivraisons.livraisons);
+      setEntrepot(uploadedLivraisons.idEntrepot);
       message.success("Demandes de livraisons importées avec succès !");
     } catch (error) {
       console.error("Erreur lors de l'upload des livraisons :", error);

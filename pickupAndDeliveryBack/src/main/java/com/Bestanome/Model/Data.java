@@ -1,8 +1,10 @@
 package com.Bestanome.Model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.Bestanome.Model.Objets.Livraisons.Livraison;
+import com.Bestanome.Model.Objets.Livraisons.Livreur;
 import com.Bestanome.Model.Objets.Livraisons.Tournee;
 import com.Bestanome.Model.Objets.Plan.Plan;
 
@@ -11,6 +13,7 @@ public class Data {
     public static ArrayList<Livraison> livraisonsDues = new ArrayList<>();
     public static ArrayList<Tournee> tourneesPrevues = new ArrayList<>();
     public static Long idEntrepot;
+    public static List<Livreur> livreurs = new ArrayList<>();
 
     // Setter pour idEntrepot
     public static void setIdEntrepot(Long idPoint) {
@@ -48,5 +51,18 @@ public class Data {
         Data.livraisonsDues.clear();
         Data.tourneesPrevues.clear();
         Data.idEntrepot = null;
+    }
+
+    // Méthode pour initialiser les livreurs
+    public static void initialiserLivreurs() {
+        livreurs.add(new Livreur(1, "Corentin", "Jeanne"));
+        livreurs.add(new Livreur(2, "Harold", "Martin"));
+        livreurs.add(new Livreur(3, "Saad", "Elghissassi"));
+        livreurs.add(new Livreur(4, "Thomas", "Levrard"));
+    }
+
+    // Getter pour les livreurs
+    public static List<Livreur> getLivreurs() {
+        return livreurs;
     }
 }

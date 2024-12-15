@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<reseau>
+    <noeud id="25175791" latitude="45.75406" longitude="4.857418"/>
+    <noeud id="25175778" latitude="45.75343" longitude="4.8574653"/>
+    <noeud id="195266" latitude="45.75" longitude="4.8644643"/>
+    <noeud id="25321302" latitude="45.749954" longitude="4.8637676"/>
+    <troncon destination="25175778" longueur="69.979805" nomRue="Rue Danton" origine="25175791"/>
+    <troncon destination="195266" longueur="54.717278" nomRue="Rue du Dauphiné" origine="25321302"/>
+</reseau>
