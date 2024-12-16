@@ -19,6 +19,28 @@ export default function Home() {
   const [entrepot, setEntrepot] = useState<number | null>(null);
   const [circuit, setCircuit] = useState<{ segments: Segment[] } | null>(null);
 
+  // Fonction pour mettre à jour le pickup
+  const handleUpdatePickup = (updatedLivraison: Livraison) => {
+    setLivraisons((prevLivraisons) =>
+      prevLivraisons.map((livraison) =>
+        livraison.destination === updatedLivraison.destination
+          ? { ...livraison, pickup: updatedLivraison.pickup }
+          : livraison
+      )
+    );
+  };
+
+// Fonction pour mettre à jour le delivery
+const handleUpdateDelivery = (updatedLivraison: Livraison) => {
+  setLivraisons((prevLivraisons) =>
+    prevLivraisons.map((livraison) =>
+      livraison.pickup === updatedLivraison.pickup
+        ? { ...livraison, destination: updatedLivraison.destination }
+        : livraison
+    )
+  );
+};
+
   return (
     <div className="flex flex-col h-screen overflow-hidden">
       <Header />
@@ -26,7 +48,14 @@ export default function Home() {
       <div className="flex flex-1 overflow-hidden">
         {/* Section Carte à gauche */}
         <div className="flex-1 bg-gray-200">
-          <MapPlaceholder plan={plan} livraisons={livraisons} entrepot={entrepot} circuit={circuit} />
+        <MapPlaceholder
+        plan={plan}
+        livraisons={livraisons}
+        entrepot={entrepot}
+        circuit={circuit}
+        onUpdatePickup={handleUpdatePickup}       
+        onUpdateDelivery={handleUpdateDelivery}   
+        />
         </div>
 
         {/* Sidebar et contenu dynamique à droite */}

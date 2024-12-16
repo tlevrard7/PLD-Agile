@@ -30,4 +30,23 @@ public class Livraison {
     public int getDureeLivraison() {
         return dureeLivraison;
     }
+
+    // Setters
+    public void setPickup(Long pickup) {
+        this.pickup = pickup;
+    }
+
+    public void setDestination(Long destination) {
+        this.destination = destination;
+    }
+
+    public void setDureeEnlevement(int dureeEnlevement) {
+        this.dureeEnlevement = dureeEnlevement;
+    }
+
+    public void setDureeLivraison(int dureeLivraison) {
+        this.dureeLivraison = dureeLivraison;
+    }
+
+
 }

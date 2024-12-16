@@ -36,7 +36,11 @@ export default function LivreurPanel({ setCircuit }: LivreurPanelProps) {
       const circuit = await LivreurService.getTournee(livreurId);
       setCircuit(circuit);
     } catch (err) {
-      setError(`Erreur lors de la récupération de la tournée : ${err.message}`);
+      if (err.message.includes("400")) {
+        alert("Pas de livraison assignée à ce livreur.");
+      } else {
+        setError(`Erreur lors de la récupération de la tournée : ${err.message}`);
+      }
     }
   };
 

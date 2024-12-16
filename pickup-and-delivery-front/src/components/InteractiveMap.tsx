@@ -17,6 +17,8 @@ export interface InteractiveMapProps {
   livraisons: Livraison[];
   entrepot: number | null;
   circuit: { segments: Segment[] } | null;
+  onUpdatePickup: (updatedLivraison: Livraison) => void;
+  onUpdateDelivery: (updatedLivraison: Livraison) => void;
 }
 
 export default function InteractiveMap({
@@ -24,8 +26,131 @@ export default function InteractiveMap({
   livraisons,
   entrepot,
   circuit,
+  onUpdatePickup,
+  onUpdateDelivery,
 }: InteractiveMapProps) {
-  const [filter, setFilter] = useState<"all" | "aller" | "retour">("all");
+  const [playIndex, setPlayIndex] = useState<number>(0);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
+  // Fonction pour mettre à jour une livraison
+  const handleDragEnd = async (index: number, newPosition: LatLng) => {
+    // Log pour vérifier les points du plan
+    console.log("Points du plan :", plan.points);
+
+    const validPoints = plan.points.filter(
+      (point) =>
+        point.type === "DESTINATION" ||
+        point.type === "PICKUP" ||
+        point.type === "INTERSECTION"
+    );
+
+    // Log pour vérifier les points valides après le filtre
+    console.log("Points valides pour le déplacement :", validPoints);
+
+    if (validPoints.length === 0) {
+      alert("Aucun point valide trouvé pour le déplacement.");
+      return;
+    }
+
+    const nearestPoint = validPoints.reduce((closest, point) => {
+      const distance = newPosition.distanceTo(
+        new LatLng(point.latitude, point.longitude)
+      );
+      return distance <
+        newPosition.distanceTo(new LatLng(closest.latitude, closest.longitude))
+        ? point
+        : closest;
+    });
+
+    console.log("Nearest point after drag:", nearestPoint);
+
+    // Mettre à jour la livraison avec le nouvel identifiant de destination
+    const oldDestination = livraisons[index].destination;
+    const updatedLivraison = {
+      ...livraisons[index],
+      destination: nearestPoint.id,
+    };
+
+    try {
+      // Appel API pour mettre à jour la livraison sur le backend
+      const response = await fetch(
+        `http://localhost:8080/api/delivery/update-delivery?oldDestination=${oldDestination}&newDestination=${nearestPoint.id}`,
+        {
+          method: "POST",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Erreur HTTP ${response.status}`);
+      }
+
+      console.log("Livraison mise à jour avec succès.");
+
+      // Mettre à jour l'état du frontend après la mise à jour réussie
+      onUpdateDelivery(updatedLivraison);
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour de la livraison :", error);
+      alert(`Erreur lors de la mise à jour de la livraison : ${error.message}`);
+    }
+  };
+
+  // Fonction pour mettre à jour le pickup
+  const handlePickupDragEnd = async (index: number, newPosition: LatLng) => {
+    console.log("Points du plan :", plan.points);
+  
+    const validPoints = plan.points.filter(
+      (point) =>
+        point.type === "DESTINATION" ||
+        point.type === "PICKUP" ||
+        point.type === "INTERSECTION"
+    );
+  
+    console.log("Points valides pour le déplacement :", validPoints);
+  
+    if (validPoints.length === 0) {
+      alert("Aucun point valide trouvé pour le déplacement.");
+      return;
+    }
+  
+    const nearestPoint = validPoints.reduce((closest, point) => {
+      const distance = newPosition.distanceTo(
+        new LatLng(point.latitude, point.longitude)
+      );
+      return distance <
+        newPosition.distanceTo(new LatLng(closest.latitude, closest.longitude))
+        ? point
+        : closest;
+    });
+  
+    console.log("Nearest point after drag:", nearestPoint);
+  
+    const oldPickup = livraisons[index].pickup;
+    const updatedPickup = {
+      ...livraisons[index],
+      pickup: nearestPoint.id,
+    };
+  
+    try {
+      const response = await fetch(
+        `http://localhost:8080/api/delivery/update-pickup?oldPickup=${oldPickup}&newPickup=${nearestPoint.id}`,
+        {
+          method: "POST",
+        }
+      );
+    
+      if (!response.ok) {
+        throw new Error(`Erreur HTTP ${response.status}`);
+      }
+    
+      console.log("Pickup mis à jour avec succès.");
+    
+      // Mettre à jour l'état du frontend après la mise à jour réussie
+      onUpdatePickup(updatedPickup);
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour de la livraison :", error);
+      alert(`Erreur lors de la mise à jour de la livraison : ${error.message}`);
+    }
+  };
 
   // Polylines pour le plan de base
   const polylines = useMemo(
@@ -47,71 +172,47 @@ export default function InteractiveMap({
     [plan]
   );
 
-  // Diviser le circuit en aller et retour
-  const [allerPolylines, retourPolylines] = useMemo(() => {
-    if (
-      !circuit?.segments ||
-      circuit.segments.length === 0 ||
-      livraisons.length === 0
-    ) {
-      return [[], []];
-    }
+  // Fonction pour jouer le circuit progressivement
+  const playCircuit = () => {
+    if (!circuit || circuit.segments.length === 0) return;
 
-    const deliveryDestinations = new Set(
-      livraisons.map((livraison) => livraison.destination)
-    );
+    setIsPlaying(true);
+    setPlayIndex(0);
 
-    // Trouver l'indice du dernier point de livraison dans le circuit
-    let lastDeliveryIndex = -1;
-    for (let i = 0; i < circuit.segments.length; i++) {
-      if (deliveryDestinations.has(circuit.segments[i].destination)) {
-        lastDeliveryIndex = i;
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index >= circuit.segments.length - 1) {
+        clearInterval(interval);
+        setIsPlaying(false);
+      } else {
+        index++;
+        setPlayIndex(index);
       }
-    }
+    }, 0.1); // 0.1 ms par segment
+  };
 
-    let aller = [];
-    let retour = [];
-
-    for (let i = 0; i < circuit.segments.length; i++) {
-      const segment = circuit.segments[i];
+  // Segments pour le chemin joué en rose
+  const playedPolylines = useMemo(() => {
+    if (!circuit || circuit.segments.length === 0) return [];
+    return circuit.segments.slice(0, playIndex + 1).map((segment) => {
       const origine = plan.points.find((p) => p.id === segment.origine);
       const destination = plan.points.find((p) => p.id === segment.destination);
-
-      if (origine && destination) {
-        const polyline = [
-          [origine.latitude, origine.longitude],
-          [destination.latitude, destination.longitude],
-        ];
-
-        if (i <= lastDeliveryIndex) {
-          aller.push(polyline);
-          console.log(
-            `Aller Segment: ${segment.nom} (${origine.id} -> ${destination.id})`
-          );
-        } else {
-          retour.push(polyline);
-          console.log(
-            `Retour Segment: ${segment.nom} (${origine.id} -> ${destination.id})`
-          );
-        }
-      }
-    }
-
-    console.log("Circuit complet :", circuit.segments);
-    console.log("Circuit aller :", aller);
-    console.log("Circuit retour :", retour);
-
-    return [aller, retour];
-  }, [circuit, livraisons, plan]);
+      return origine && destination
+        ? [
+            [origine.latitude, origine.longitude],
+            [destination.latitude, destination.longitude],
+          ]
+        : null;
+    });
+  }, [circuit, playIndex, plan]);
 
   // Marqueurs pour les livraisons
-  const livraisonMarkers = useMemo(() => {
-    const markers: MarkerProps[] = [];
-    for (let i = 0; i < livraisons.length; i++) {
-      const livraison = livraisons[i];
+  {
+    livraisons.map((livraison, index) => {
       const pickup = plan.points.find((p) => p.id === livraison.pickup);
       const delivery = plan.points.find((p) => p.id === livraison.destination);
-      if (pickup == null || delivery == null) continue;
+      if (!pickup || !delivery) return null;
+
       const color = getStableColor(livraison.pickup);
 
       const stylePickupColor = `background-color: ${color};`;
@@ -122,17 +223,29 @@ export default function InteractiveMap({
       const iconDelivery = divIcon({
         html: `<span class="map-marker-delivery" style="${stylePickupColor}"/>`,
       });
-      markers.push({
-        position: new LatLng(pickup.latitude, pickup.longitude),
-        icon: iconPickup,
-      });
-      markers.push({
-        position: new LatLng(delivery.latitude, delivery.longitude),
-        icon: iconDelivery,
-      });
-    }
-    return markers;
-  }, [livraisons, plan]);
+
+      return (
+        <div key={index}>
+          <Marker
+            position={[pickup.latitude, pickup.longitude]}
+            icon={iconPickup}
+            draggable={true} // Rend le marqueur draggable
+            eventHandlers={{
+              dragend: (e) => handlePickupDragEnd(index, e.target.getLatLng()), // Appelle handleDragEnd avec la nouvelle position
+            }}
+          />
+          <Marker
+            position={[delivery.latitude, delivery.longitude]}
+            icon={iconDelivery}
+            draggable={true} // Rend le marqueur draggable
+            eventHandlers={{
+              dragend: (e) => handleDragEnd(index, e.target.getLatLng()), // Appelle handleDragEnd avec la nouvelle position
+            }}
+          />
+        </div>
+      );
+    });
+  }
 
   // Marqueur pour l'entrepôt
   const warehouseMarker: MarkerProps | null = useMemo(() => {
@@ -162,74 +275,88 @@ export default function InteractiveMap({
           <Polyline key={index} positions={polyline} color="blue" />
         ))}
 
-        {/* Circuit en fonction du filtre */}
-        {filter === "all" &&
-          circuit?.segments.map((segment, index) => {
-            const origine = plan.points.find((p) => p.id === segment.origine);
-            const destination = plan.points.find(
-              (p) => p.id === segment.destination
-            );
-            return origine && destination ? (
-              <Polyline
-                key={`all-${index}`}
-                positions={[
-                  [origine.latitude, origine.longitude],
-                  [destination.latitude, destination.longitude],
-                ]}
-                color="yellow"
-                weight={4}
-              />
-            ) : null;
-          })}
-
-        {filter === "aller" &&
-          allerPolylines.map((polyline, index) => (
+        {/* Circuit complet */}
+        {circuit?.segments.map((segment, index) => {
+          const origine = plan.points.find((p) => p.id === segment.origine);
+          const destination = plan.points.find(
+            (p) => p.id === segment.destination
+          );
+          return origine && destination ? (
             <Polyline
-              key={`aller-${index}`}
-              positions={polyline}
-              color="red"
+              key={`all-${index}`}
+              positions={[
+                [origine.latitude, origine.longitude],
+                [destination.latitude, destination.longitude],
+              ]}
+              color="yellow"
               weight={4}
             />
-          ))}
+          ) : null;
+        })}
 
-        {filter === "retour" &&
-          retourPolylines.map((polyline, index) => (
-            <Polyline
-              key={`retour-${index}`}
-              positions={polyline}
-              color="green"
-              weight={4}
-            />
-          ))}
+        {/* Chemin joué en rose */}
+        {playedPolylines.map((polyline, index) => (
+          <Polyline
+            key={`play-${index}`}
+            positions={polyline}
+            color="hotpink"
+            weight={8}
+          />
+        ))}
 
         {/* Marqueurs des livraisons */}
-        {livraisonMarkers.map((props, index) => (
-          <Marker {...props} key={index} />
-        ))}
+        {livraisons.map((livraison, index) => {
+          const pickup = plan.points.find((p) => p.id === livraison.pickup);
+          const delivery = plan.points.find(
+            (p) => p.id === livraison.destination
+          );
+          if (!pickup || !delivery) return null;
+
+          const color = getStableColor(livraison.pickup);
+
+          const stylePickupColor = `background-color: ${color};`;
+
+          const iconPickup = divIcon({
+            html: `<span class="map-marker-pickup" style="${stylePickupColor}"/>`,
+          });
+          const iconDelivery = divIcon({
+            html: `<span class="map-marker-delivery" style="${stylePickupColor}"/>`,
+          });
+
+          return (
+            <div key={index}>
+              <Marker
+                position={[pickup.latitude, pickup.longitude]}
+                icon={iconPickup}
+                draggable={true} // Rend le marqueur draggable
+                eventHandlers={{
+                  dragend: (e) => handlePickupDragEnd(index, e.target.getLatLng()), // Appelle handleDragEnd avec la nouvelle position
+                }}
+              />
+              <Marker
+                position={[delivery.latitude, delivery.longitude]}
+                icon={iconDelivery}
+                draggable={true} // Rend le marqueur draggable
+                eventHandlers={{
+                  dragend: (e) => handleDragEnd(index, e.target.getLatLng()), // Appelle handleDragEnd avec la nouvelle position
+                }}
+              />
+            </div>
+          );
+        })}
 
         {/* Marqueur de l'entrepôt */}
         {warehouseMarker && <Marker {...warehouseMarker} />}
       </MapContainer>
 
-      {/* Légende et boutons */}
-      <div className="bg-white p-2 shadow-md flex justify-center space-x-4">
+      {/* Bouton Play */}
+      <div className="bg-white p-2 shadow-md flex justify-center">
         <button
-          onClick={() => setFilter("all")}
-          className="bg-yellow-500 text-white px-4 py-1 rounded"
+          onClick={playCircuit}
+          className="bg-pink-500 text-white px-4 py-1 rounded"
+          disabled={isPlaying}
         >
-          Circuit
-        </button>
-        <button
-          onClick={() => setFilter("aller")}
-          className="bg-red-500 text-white px-4 py-1 rounded"
-        >
-          Aller
-        </button>
-        <button
-          onClick={() => setFilter("retour")}
-          className="bg-green-500 text-white px-4 py-1 rounded"
-        >
-          Retour
+          Play
         </button>
       </div>
     </div>
