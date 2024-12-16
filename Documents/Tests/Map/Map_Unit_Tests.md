@@ -10,6 +10,8 @@ Pour l'affichage de la carte, nous avons au préalable testé que les trois cart
 Pour chaque cas, aller dans Body > form-data et sélectionner la clé du cas correspondant
 Dans tous les cas, lorsqu'une réponse Json est correctement envoyée du Back au Front, elle s'affiche correctement dans le Front.
 
+# Tests Backend
+
 ## **Cas 1 : XML Valide avec des Nœuds et des Tronçons**
 
 ### Description  
@@ -322,3 +324,18 @@ Les doublons sont éliminés :
 }
 
 Côté front : Pas de "double ligne" Rue Danton
+
+<br/>
+
+# Tests Frontend
+
+## **Cas 1 :Import d'une livraison sans import de la map**
+
+### Description
+
+Importer une demande de livraisons sans avoir importé de map.
+
+### Réponse visuelle attendue :
+
+Importe la démande correctement. Les livraisons sont affichées sur le panneau de droite de l'IHM.
+
