@@ -14,12 +14,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class LivraisonsEntrepotDOT implements Serializable {
+public class LivraisonsEntrepotDTO implements Serializable {
     private ArrayList<LivraisonDTO> livraisons;
     private Long idEntrepot;
 
-    public static LivraisonsEntrepotDOT fromLivraisonsEntrepot(ArrayList<Livraison> livraisons, Long idEntrepot) {
-        return new LivraisonsEntrepotDOT(
+    public static LivraisonsEntrepotDTO fromLivraisonsEntrepot(ArrayList<Livraison> livraisons, Long idEntrepot) {
+        return new LivraisonsEntrepotDTO(
             LivraisonDTO.fromListeLivraisons(livraisons),
             idEntrepot);
     }
