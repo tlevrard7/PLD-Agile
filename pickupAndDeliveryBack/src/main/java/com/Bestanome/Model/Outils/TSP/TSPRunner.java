@@ -77,16 +77,6 @@ public class TSPRunner {
 		ArrayList<Long> points = PlanificateurLivraisons.ordonnancer(tournee.getLivraisons(),
 				PlanificateurLivraisons::NNLivraisons);
 
-		// points.add(Data.idEntrepot); // Point de départ : l'entrepôt
-
-		// // Ajouter tous les points pickup et destination des livraisons
-		// tournee.getLivraisons().forEach(livraison -> {
-		// points.add(livraison.getPickup());
-		// points.add(livraison.getDestination());
-		// });
-
-		// points.add(Data.idEntrepot); // Retour à l'entrepôt
-
 		// Construire le circuit en utilisant runWA pour chaque paire de points
 		Circuit circuit = new Circuit();
 		for (int i = 0; i < points.size() - 1; i++) {

@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -125,5 +126,47 @@ public class LivreurController {
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(tournees);
+    }
+
+    @DeleteMapping("/unassign")
+    public ResponseEntity<String> unassignDelivery(@RequestParam int livreurId, @RequestParam Long pickup,
+            @RequestParam Long destination) {
+        logger.info("Unassign request received for Livreur ID: {}, Pickup: {}, Destination: {}", livreurId, pickup,
+                destination);
+
+        // Rechercher le livreur
+        Livreur livreur = Data.getLivreurs().stream()
+                .filter(l -> l.getId() == livreurId)
+                .findFirst()
+                .orElse(null);
+
+        if (livreur == null) {
+            logger.error("Livreur non trouvé pour ID: {}", livreurId);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Livreur non trouvé");
+        }
+
+        // Rechercher la livraison parmi celles assignées au livreur
+        Livraison livraisonToRemove = livreur.getLivraisonsAssignees().stream()
+                .filter(l -> l.getPickup().equals(pickup) && l.getDestination().equals(destination))
+                .findFirst()
+                .orElse(null);
+
+        if (livraisonToRemove == null) {
+            logger.error("Livraison non trouvée pour Pickup: {} et Destination: {}", pickup, destination);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Livraison non trouvée parmi les livraisons assignées au livreur");
+        }
+
+        logger.info("Livraison trouvée, en cours de désassignation...");
+
+        // Désassigner la livraison
+        livreur.getLivraisonsAssignees().remove(livraisonToRemove);
+
+        // Ajouter la livraison de retour à la liste des livraisons disponibles
+        Data.getLivraisonsDues().add(livraisonToRemove);
+
+        logger.info("Livraison désassignée avec succès");
+
+        return ResponseEntity.ok("Livraison désassignée avec succès");
     }
 }

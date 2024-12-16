@@ -15,6 +15,7 @@ import { getStableColor } from "@/utils/delivery-utils";
 export interface InteractiveMapProps {
   plan: Plan;
   livraisons: Livraison[];
+  assignedDeliveries: Livraison[];
   entrepot: number | null;
   circuit: { segments: Segment[] } | null;
   onUpdatePickup: (updatedLivraison: Livraison) => void;
@@ -24,6 +25,7 @@ export interface InteractiveMapProps {
 export default function InteractiveMap({
   plan,
   livraisons,
+  assignedDeliveries,
   entrepot,
   circuit,
   onUpdatePickup,
@@ -31,6 +33,8 @@ export default function InteractiveMap({
 }: InteractiveMapProps) {
   const [playIndex, setPlayIndex] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
+  console.log("assignedDeliveries in InteractiveMap:", assignedDeliveries);
 
   // Fonction pour mettre à jour une livraison
   const handleDragEnd = async (index: number, newPosition: LatLng) => {
@@ -97,21 +101,21 @@ export default function InteractiveMap({
   // Fonction pour mettre à jour le pickup
   const handlePickupDragEnd = async (index: number, newPosition: LatLng) => {
     console.log("Points du plan :", plan.points);
-  
+
     const validPoints = plan.points.filter(
       (point) =>
         point.type === "DESTINATION" ||
         point.type === "PICKUP" ||
         point.type === "INTERSECTION"
     );
-  
+
     console.log("Points valides pour le déplacement :", validPoints);
-  
+
     if (validPoints.length === 0) {
       alert("Aucun point valide trouvé pour le déplacement.");
       return;
     }
-  
+
     const nearestPoint = validPoints.reduce((closest, point) => {
       const distance = newPosition.distanceTo(
         new LatLng(point.latitude, point.longitude)
@@ -121,15 +125,15 @@ export default function InteractiveMap({
         ? point
         : closest;
     });
-  
+
     console.log("Nearest point after drag:", nearestPoint);
-  
+
     const oldPickup = livraisons[index].pickup;
     const updatedPickup = {
       ...livraisons[index],
       pickup: nearestPoint.id,
     };
-  
+
     try {
       const response = await fetch(
         `http://localhost:8080/api/delivery/update-pickup?oldPickup=${oldPickup}&newPickup=${nearestPoint.id}`,
@@ -137,13 +141,13 @@ export default function InteractiveMap({
           method: "POST",
         }
       );
-    
+
       if (!response.ok) {
         throw new Error(`Erreur HTTP ${response.status}`);
       }
-    
+
       console.log("Pickup mis à jour avec succès.");
-    
+
       // Mettre à jour l'état du frontend après la mise à jour réussie
       onUpdatePickup(updatedPickup);
     } catch (error) {
@@ -153,32 +157,32 @@ export default function InteractiveMap({
   };
 
   // Polylines pour le plan de base
-  const polylines = useMemo(
-    () =>
-      plan.segments
-        .map((segment) => {
-          const origine = plan.points.find((p) => p.id === segment.origine);
-          const destination = plan.points.find(
-            (p) => p.id === segment.destination
-          );
-          return origine && destination
-            ? [
-                [origine.latitude, origine.longitude],
-                [destination.latitude, destination.longitude],
-              ]
-            : null;
-        })
-        .filter(Boolean) as [number, number][][],
-    [plan]
-  );
+  const polylines = useMemo(() => {
+    if (!plan || !plan.segments || !plan.points) return [];
+    return plan.segments
+      .map((segment) => {
+        const origine = plan.points.find((p) => p.id === segment.origine);
+        const destination = plan.points.find((p) => p.id === segment.destination);
+        return origine && destination
+          ? [
+              [origine.latitude, origine.longitude],
+              [destination.latitude, destination.longitude],
+            ]
+          : null;
+      })
+      .filter(Boolean) as [number, number][][];
+  }, [plan]);
 
   // Fonction pour jouer le circuit progressivement
   const playCircuit = () => {
-    if (!circuit || circuit.segments.length === 0) return;
-
+    if (!circuit || !circuit.segments || circuit.segments.length === 0) {
+      alert("Aucun circuit disponible pour jouer.");
+      return;
+    }
+  
     setIsPlaying(true);
     setPlayIndex(0);
-
+  
     let index = 0;
     const interval = setInterval(() => {
       if (index >= circuit.segments.length - 1) {
@@ -188,7 +192,7 @@ export default function InteractiveMap({
         index++;
         setPlayIndex(index);
       }
-    }, 0.1); // 0.1 ms par segment
+    }, 0.1); // Augmentez le délai pour une meilleure visibilité
   };
 
   // Segments pour le chemin joué en rose
@@ -205,47 +209,6 @@ export default function InteractiveMap({
         : null;
     });
   }, [circuit, playIndex, plan]);
-
-  // Marqueurs pour les livraisons
-  {
-    livraisons.map((livraison, index) => {
-      const pickup = plan.points.find((p) => p.id === livraison.pickup);
-      const delivery = plan.points.find((p) => p.id === livraison.destination);
-      if (!pickup || !delivery) return null;
-
-      const color = getStableColor(livraison.pickup);
-
-      const stylePickupColor = `background-color: ${color};`;
-
-      const iconPickup = divIcon({
-        html: `<span class="map-marker-pickup" style="${stylePickupColor}"/>`,
-      });
-      const iconDelivery = divIcon({
-        html: `<span class="map-marker-delivery" style="${stylePickupColor}"/>`,
-      });
-
-      return (
-        <div key={index}>
-          <Marker
-            position={[pickup.latitude, pickup.longitude]}
-            icon={iconPickup}
-            draggable={true} // Rend le marqueur draggable
-            eventHandlers={{
-              dragend: (e) => handlePickupDragEnd(index, e.target.getLatLng()), // Appelle handleDragEnd avec la nouvelle position
-            }}
-          />
-          <Marker
-            position={[delivery.latitude, delivery.longitude]}
-            icon={iconDelivery}
-            draggable={true} // Rend le marqueur draggable
-            eventHandlers={{
-              dragend: (e) => handleDragEnd(index, e.target.getLatLng()), // Appelle handleDragEnd avec la nouvelle position
-            }}
-          />
-        </div>
-      );
-    });
-  }
 
   // Marqueur pour l'entrepôt
   const warehouseMarker: MarkerProps | null = useMemo(() => {
@@ -312,6 +275,11 @@ export default function InteractiveMap({
           );
           if (!pickup || !delivery) return null;
 
+          const isAssigned = assignedDeliveries.some(
+            (assigned) =>
+              assigned.pickup === livraison.pickup &&
+              assigned.destination === livraison.destination
+          );
           const color = getStableColor(livraison.pickup);
 
           const stylePickupColor = `background-color: ${color};`;
@@ -328,17 +296,18 @@ export default function InteractiveMap({
               <Marker
                 position={[pickup.latitude, pickup.longitude]}
                 icon={iconPickup}
-                draggable={true} // Rend le marqueur draggable
+                draggable={!isAssigned} // Rend le marqueur draggable uniquement si la livraison n'est pas assignée
                 eventHandlers={{
-                  dragend: (e) => handlePickupDragEnd(index, e.target.getLatLng()), // Appelle handleDragEnd avec la nouvelle position
+                  dragend: (e) =>
+                    handlePickupDragEnd(index, e.target.getLatLng()),
                 }}
               />
               <Marker
                 position={[delivery.latitude, delivery.longitude]}
                 icon={iconDelivery}
-                draggable={true} // Rend le marqueur draggable
+                draggable={!isAssigned} // Rend le marqueur draggable uniquement si la livraison n'est pas assignée
                 eventHandlers={{
-                  dragend: (e) => handleDragEnd(index, e.target.getLatLng()), // Appelle handleDragEnd avec la nouvelle position
+                  dragend: (e) => handleDragEnd(index, e.target.getLatLng()),
                 }}
               />
             </div>

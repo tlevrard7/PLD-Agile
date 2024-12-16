@@ -37,12 +37,12 @@ public class Data {
 
     // Getter pour les livraisons dues
     public static ArrayList<Livraison> getLivraisonsDues() {
-        return new ArrayList<>(Data.livraisonsDues); // Retourne une copie pour éviter les modifications directes
+        return new ArrayList<>(Data.livraisonsDues);
     }
 
     // Getter pour les tournées prévues
     public static ArrayList<Tournee> getTourneesPrevues() {
-        return new ArrayList<>(Data.tourneesPrevues); // Retourne une copie pour éviter les modifications directes
+        return new ArrayList<>(Data.tourneesPrevues);
     }
 
     // Méthode pour réinitialiser les données
@@ -51,6 +51,8 @@ public class Data {
         Data.livraisonsDues.clear();
         Data.tourneesPrevues.clear();
         Data.idEntrepot = null;
+        Data.livreurs.clear(); // Réinitialiser les livreurs
+        initialiserLivreurs(); // Ré-initialise les livreurs
     }
 
     // Méthode pour initialiser les livreurs

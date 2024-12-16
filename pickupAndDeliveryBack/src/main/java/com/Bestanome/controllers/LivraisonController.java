@@ -15,7 +15,7 @@ import com.Bestanome.services.TourneeService;
 
 @RestController
 @RequestMapping("/delivery")
-public class TourneeController {
+public class LivraisonController {
 
     // Endpoint pour charger des livraisons depuis un fichier XML
     @PostMapping("/upload-deliveries")

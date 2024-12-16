@@ -21,6 +21,10 @@ public class Main implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(@NonNull CorsRegistry registry) {
-        registry.addMapping("/**");
+        registry.addMapping("/**")
+                .allowedOrigins("http://localhost:3000") // Spécifiez l'origine du frontend
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Méthodes autorisées
+                .allowedHeaders("*") // Autorise tous les en-têtes
+                .allowCredentials(true); // Permet l'envoi de cookies ou d'identifiants
     }
 }
