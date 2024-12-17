@@ -49,7 +49,6 @@ public class PlanificateurLivraisons {
       Etat etatActuel = new Etat(livraisons);
       ArrayList<Long> planning = new ArrayList<>();
       planning.add(Data.idEntrepot);
-      System.out.println(etatActuel);
       for(int i = 0; i < livraisons.size()*2; i++){
           // Choissir le prochain point
           int hIndex = h.calculer(etatActuel);
