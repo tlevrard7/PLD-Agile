@@ -37,10 +37,10 @@ export default function LivreurPanel({
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
-  const calculateTotalDistance = (segments: Segment[]) => {
-    if (!segments || segments.length === 0) return 0;
-    return segments.reduce((total, segment) => total + segment.longueur, 0);
-  };
+  // const calculateTotalDistance = (segments: Segment[]) => {
+  //   if (!segments || segments.length === 0) return 0;
+  //   return segments.reduce((total, segment) => total + segment.longueur, 0);
+  // };
 
   const calculateDuration = (distance: number) => {
     const speed = (15 * 1000) / 3600; // 15 km/h en mètres par seconde
@@ -71,7 +71,7 @@ export default function LivreurPanel({
       setCircuit(circuit);
   
       // Calculer et stocker la distance totale et la durée pour le livreur
-      const totalDistance = calculateTotalDistance(circuit.segments);
+      const totalDistance = circuit.longueur//calculateTotalDistance(circuit.segments);
       const duree = calculateDuration(totalDistance);
       setLivreurInfos((prev) => ({
         ...prev,

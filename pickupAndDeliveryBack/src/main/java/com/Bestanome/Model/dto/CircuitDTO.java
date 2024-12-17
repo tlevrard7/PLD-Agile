@@ -17,8 +17,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CircuitDTO implements Serializable {
     private ArrayList<SegmentDTO> segments;
+    private Double longueur;
 
-    public static CircuitDTO fromCircuit(Circuit Circuit) {
-        return new CircuitDTO(SegmentDTO.fromListeSegments(Circuit.getSegments()));
+    public static CircuitDTO fromCircuit(Circuit circuit) {
+        return new CircuitDTO(SegmentDTO.fromListeSegments(circuit.getSegments()), circuit.getLongueur());
     }
 }
