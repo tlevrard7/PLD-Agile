@@ -6,34 +6,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+import com.Bestanome.Model.Data;
 import com.Bestanome.Model.Objets.Livraisons.Circuit;
+import com.Bestanome.Model.Objets.Livraisons.Livraison;
 import com.Bestanome.Model.Objets.Livraisons.Tournee;
 import com.Bestanome.Model.Objets.Plan.Plan;
 import com.Bestanome.Model.Objets.Plan.Point;
 import com.Bestanome.Model.Objets.Plan.Segment;
 
+
 public class TSPRunner {
 	private static Map<Long, Point> mapPoint; // id Point -> objet Point
 	private static Map<Long, Map<Long, Segment>> mapSegment; // id Point origine -> (id Point destination -> Segment)
-	private static Long temporaryObjective; // Objectif temporaire pour l'algorithme
+	private static Long temporaryObjective; // Objectif temporaire pour l'algorithme WA*
 	private static boolean initiated = false;
+	private static Double WA_weight = 1.0;
 
 	public static boolean isInitiated() {
 		return initiated;
-	}
-
-	private static class StateComparator implements Comparator<Long> {
-		@Override
-		public int compare(Long p1, Long p2) {
-			return Double.compare(getHaversineLength(p1, temporaryObjective),
-					getHaversineLength(p2, temporaryObjective));
-		}
-	}
-
-	private static class RunResult {
-		public boolean found = false;
-		public Map<Long, Long> predecessors = new HashMap<>();
-		public Map<Long, Double> costs = new HashMap<>();
 	}
 
 	/**
@@ -63,13 +53,50 @@ public class TSPRunner {
 				+ mapPoint.size() + " points et " + mapSegment.size() + " segments.");
 	}
 
+	public static class FindCircuitState{
+		public Long point;
+		public Map<Long, ArrayList<Long>> pickUPtoDelivery;
+		public Circuit circuit;
+		public ArrayList<Long> opened;
+
+		public FindCircuitState(ArrayList<Livraison> deliveries){
+				this.point = Data.idEntrepot;
+				this.opened = new ArrayList<>();
+				this.pickUPtoDelivery = new HashMap<>();
+				for(Livraison delviery : deliveries){
+					opened.add(delviery.getPickup());
+					pickUPtoDelivery.computeIfAbsent(delviery.getPickup(), key -> new ArrayList<>()).add(delviery.getDestination());
+				}
+				this.circuit = new Circuit();
+		}
+
+		public void addNewPossibilities(Long pickup){
+			if(pickUPtoDelivery.containsKey(pickup)) opened.addAll(pickUPtoDelivery.get(pickup));
+		}
+
+		public void addSegmentsToStateCircuit(Long destPoint, WARunResult result){
+			Long current = destPoint;
+			ArrayList<Segment> segments = new ArrayList<>();
+			while (!current.equals(this.point)) {
+				Long predecessor = result.predecessors.get(current);
+				if (predecessor == null) {
+					throw new IllegalStateException("No path found between " + this.point + " and " + destPoint);
+				}
+				Segment segment = mapSegment.get(predecessor).get(current);
+				segments.add(0, segment); // Ajouter le segment au début de la liste
+				current = predecessor;
+			}
+			segments.forEach(this.circuit::ajouterSegment);
+		}
+	}
+
 	/**
 	 * Trouve et retourne le circuit optimal pour une tournée donnée.
 	 *
 	 * @param tournee La tournée à optimiser.
 	 * @return Le circuit optimal.
 	 */
-	public static Circuit findCircuit(Tournee tournee) {
+	public static Circuit findQuickCircuit(Tournee tournee) {
 		if (!initiated) {
 			throw new IllegalStateException("TSP wasn't initiated with a valid graph");
 		}
@@ -77,12 +104,11 @@ public class TSPRunner {
 		ArrayList<Long> points = PlanificateurLivraisons.ordonnancer(tournee.getLivraisons(),
 				PlanificateurLivraisons::NNLivraisons);
 
-		// Construire le circuit en utilisant runWA pour chaque paire de points
 		Circuit circuit = new Circuit();
 		for (int i = 0; i < points.size() - 1; i++) {
 			Long start = points.get(i);
 			Long end = points.get(i + 1);
-			RunResult result = runWA(start, end, 1.0); // Utilise le poids w = 1.0
+			WARunResult result = runWA(start, end, 1.0); // Utilise le poids w = 1.0
 
 			if (result.found) {
 				Long current = end;
@@ -107,6 +133,50 @@ public class TSPRunner {
 		}
 
 		return circuit;
+	}
+
+
+	public static Circuit findCircuit(Tournee tournee) {
+		if (!initiated) {
+			throw new IllegalStateException("TSP wasn't initiated with a valid graph");
+		}
+		FindCircuitState state = new FindCircuitState(tournee.getLivraisons());
+		do{
+			// Find greedy circuit (nearest neighbour)
+			WARunResult greedyResult = new WARunResult();
+			Double minCost = Double.MAX_VALUE;
+			Long minPoint = null;
+			for(Long possiblePoint : state.opened){
+				WARunResult possibleResult = runWA(state.point, possiblePoint, WA_weight);
+				if(possibleResult.found && possibleResult.costs.get(possiblePoint) < minCost){
+					minCost = possibleResult.costs.get(possiblePoint);
+					minPoint = possiblePoint;
+					greedyResult = possibleResult;
+					System.out.println(possibleResult.found + " " + minPoint);
+				}
+			}
+			
+			if (greedyResult.found && minPoint != null) {
+				// Add greedy circuit to resulting circuit from predecessors
+				state.addSegmentsToStateCircuit(minPoint, greedyResult);
+
+				// Add new possible delivery points if passed by a pickup
+				state.addNewPossibilities(minPoint);
+
+				// Prepare for finding next point
+				state.point = minPoint;
+				state.opened.remove(minPoint);
+
+			} else {
+				throw new IllegalStateException("No path found between " + state.point + " and " + minPoint);
+			}
+		}while(!state.opened.isEmpty());
+
+		// Go back to pickup
+		WARunResult backToWarehouseResult = runWA(state.point, Data.idEntrepot, WA_weight);
+		state.addSegmentsToStateCircuit(Data.idEntrepot, backToWarehouseResult);
+		
+		return state.circuit;
 	}
 
 	/**
@@ -149,14 +219,28 @@ public class TSPRunner {
 		return mapSegment.getOrDefault(state, new HashMap<>()).values();
 	}
 
-	public static RunResult runWA(Long initialState, Long endState, Double w) {
+	private static class WARunResult {
+		public boolean found = false;
+		public Map<Long, Long> predecessors = new HashMap<>();
+		public Map<Long, Double> costs = new HashMap<>();
+	}
+
+	private static class WAStateComparator implements Comparator<Long> {
+		@Override
+		public int compare(Long p1, Long p2) {
+			return Double.compare(getHaversineLength(p1, temporaryObjective),
+					getHaversineLength(p2, temporaryObjective));
+		}
+	}
+
+	public static WARunResult runWA(Long initialState, Long endState, Double w) {
 		if (!initiated) {
 			throw new IllegalStateException("TSP wasn't initiated with a valid graph");
 		}
 
 		temporaryObjective = endState;
-		PriorityQueue<Long> opened = new PriorityQueue<>(new StateComparator());
-		RunResult result = new RunResult();
+		PriorityQueue<Long> opened = new PriorityQueue<>(new WAStateComparator());
+		WARunResult result = new WARunResult();
 		result.costs.put(initialState, 0.0);
 		opened.add(initialState);
 

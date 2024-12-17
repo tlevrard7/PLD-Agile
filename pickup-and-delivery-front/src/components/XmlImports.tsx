@@ -6,6 +6,8 @@ import TourneeService from "@/services/tournee-service";
 import MapService from "@/services/map-service";
 import { Dispatch, SetStateAction, useState } from "react";
 import { RedoOutlined } from "@ant-design/icons";
+import { v4 as uuidv4 } from 'uuid'; // Installer uuid : npm install uuid
+
 
 interface XmlImportsProps {
   setPlan: Dispatch<SetStateAction<Plan | null>>;
@@ -14,7 +16,9 @@ interface XmlImportsProps {
   setAssignedDeliveries: Dispatch<SetStateAction<Livraison[]>>;
   setCircuit: Dispatch<SetStateAction<{ segments: Segment[] } | null>>;
   setLivreurs: Dispatch<SetStateAction<Livreur[]>>;
-  setLivreurInfos: Dispatch<SetStateAction<{ [key: number]: { distance: number; duree: number } }>>;
+  setLivreurInfos: Dispatch<
+    SetStateAction<{ [key: number]: { distance: number; duree: number } }>
+  >;
 }
 
 export default function XmlImports({
@@ -45,9 +49,12 @@ export default function XmlImports({
   const handleUploadLivraisons = async (file: File) => {
     try {
       const uploadedLivraisons = await TourneeService.uploadLivraisons(file);
-      setLivraisons(uploadedLivraisons.livraisons);
+      const livraisonsWithIds = uploadedLivraisons.livraisons.map((livraison) => ({
+        ...livraison,
+        id: uuidv4(), // Assigne un identifiant unique à chaque livraison
+      }));
+      setLivraisons(livraisonsWithIds);
       setEntrepot(uploadedLivraisons.idEntrepot);
-      setIsDeliveryUploaded(true);
       message.success("Demandes de livraisons importées avec succès !");
     } catch (error) {
       console.error("Erreur lors de l'upload des livraisons :", error);
@@ -65,8 +72,8 @@ export default function XmlImports({
       setEntrepot(null);
       setAssignedDeliveries([]);
       setCircuit(null);
-      setLivreurs([]);           // Réinitialise la liste des livreurs
-      setLivreurInfos({});       // Réinitialise les informations des livreurs
+      setLivreurs([]); // Réinitialise la liste des livreurs
+      setLivreurInfos({}); // Réinitialise les informations des livreurs
       setIsMapUploaded(false);
       setIsDeliveryUploaded(false);
       message.success("Réinitialisation réussie !");
@@ -101,12 +108,21 @@ export default function XmlImports({
         showUploadList={false}
         disabled={!isMapUploaded || isDeliveryUploaded}
       >
-        <Button type="primary" className="w-full" disabled={!isMapUploaded || isDeliveryUploaded}>
+        <Button
+          type="primary"
+          className="w-full"
+          disabled={!isMapUploaded || isDeliveryUploaded}
+        >
           Importer une demande de livraisons
         </Button>
       </Upload>
 
-      <Button type="primary" danger icon={<RedoOutlined />} onClick={handleReset}>
+      <Button
+        type="primary"
+        danger
+        icon={<RedoOutlined />}
+        onClick={handleReset}
+      >
         Réinitialiser
       </Button>
     </div>

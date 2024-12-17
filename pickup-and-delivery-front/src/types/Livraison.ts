@@ -4,6 +4,7 @@ export interface LivraisonsEntrepot {
 }
 
 export interface Livraison {
+  id: number;
   pickup: number;
   destination: number;
   dureeEnlevement: number;

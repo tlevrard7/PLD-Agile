@@ -15,6 +15,7 @@ This project uses [Ant-Design](https://ant.design/components/overview/) for its 
 Before launching the project for the 1st time, run
 ```bash
 npm install
+npm install uuid
 ```
 
 To launch the app, run

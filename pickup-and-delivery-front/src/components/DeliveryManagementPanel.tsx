@@ -35,14 +35,9 @@ export default function DeliveryManagementPanel({
   // Initialiser les livraisons à assigner lorsque le composant est monté
   useEffect(() => {
     setRemainingDeliveries(
-      livraisons
-        .filter(
-          (livraison) =>
-            !assignedDeliveries.some(
-              (assigned) => assigned.pickup === livraison.pickup
-            )
-        )
-        .map((livraison) => ({ ...livraison, livreurId: null }))
+      livraisons.filter(
+        (livraison) => !assignedDeliveries.some((assigned) => assigned.id === livraison.id)
+      )
     );
   }, [livraisons, assignedDeliveries]);
 
@@ -54,22 +49,14 @@ export default function DeliveryManagementPanel({
   }, []);
 
   const handleLivreurChange = (index: number, livreurId: number) => {
-    setRemainingDeliveries((prevDeliveries) => {
-      const updatedDeliveries = [...prevDeliveries];
+    setRemainingDeliveries((prev) => {
+      const updatedDeliveries = [...prev];
       updatedDeliveries[index] = { ...updatedDeliveries[index], livreurId };
       return updatedDeliveries;
     });
   };
 
   const handleAssignDelivery = async (livraison: Livraison) => {
-    console.log("Assigning delivery with:", {
-      livreurId: livraison.livreurId,
-      pickup: livraison.pickup,
-      destination: livraison.destination,
-      dureeEnlevement: livraison.dureeEnlevement,
-      dureeLivraison: livraison.dureeLivraison,
-    });
-  
     if (!livraison.livreurId) {
       alert("Veuillez sélectionner un livreur avant d'assigner une livraison.");
       return;
@@ -85,17 +72,9 @@ export default function DeliveryManagementPanel({
       const livreur = livreurs.find((l) => l.id === livraison.livreurId);
       if (livreur) {
         setAssignedDeliveries((prev) => [...prev, { ...livraison, livreur }]);
-  
-        // Retirer uniquement la livraison spécifique qui a été assignée
-        setRemainingDeliveries((prev) =>
-          prev.filter(
-            (l) =>
-              l.pickup !== livraison.pickup ||
-              l.destination !== livraison.destination ||
-              l.dureeEnlevement !== livraison.dureeEnlevement ||
-              l.dureeLivraison !== livraison.dureeLivraison
-          )
-        );
+        
+        // Retirer uniquement la livraison assignée en utilisant son id unique
+        setRemainingDeliveries((prev) => prev.filter((l) => l.id !== livraison.id));
       }
     } catch (error) {
       alert(`Erreur lors de l'assignation : ${error.message}`);
@@ -114,25 +93,11 @@ export default function DeliveryManagementPanel({
         }
       );
   
-      setAssignedDeliveries((prev) =>
-        prev.filter((assigned) => assigned.pickup !== livraison.pickup)
-      );
-  
-      setRemainingDeliveries((prev) => [
-        ...prev,
-        { ...livraison, livreurId: null },
-      ]);
+      setAssignedDeliveries((prev) => prev.filter((assigned) => assigned.id !== livraison.id));
+      setRemainingDeliveries((prev) => [...prev, { ...livraison, livreurId: null }]);
     } catch (error) {
       alert(`Erreur lors de la désassignation : ${error.message}`);
     }
-  };
-
-  if (error) {
-    return (
-      <p className="text-red-500 font-bold text-center mt-4">
-        Erreur : {error}
-      </p>
-    );
   };
 
   return (
@@ -190,8 +155,8 @@ export default function DeliveryManagementPanel({
               </tr>
             </thead>
             <tbody>
-              {remainingDeliveries.map((livraison, index) => (
-                <tr key={index}>
+              {remainingDeliveries.map((livraison,index) => (
+                <tr key={livraison.id}>
                   <td>
                     <span
                       className="map-marker-icon"
