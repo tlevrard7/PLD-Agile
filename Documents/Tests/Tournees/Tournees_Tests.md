@@ -447,13 +447,13 @@ SAAD
 ```
 ---
 
-## **Test 16 : Changer la demande de livraisons**
+## **Test 17 : "Play" la tournée sans l'avoir affiché**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation et déplacement)
 
 ### Description  
-Cliquer sur "play" sans avoir affiché uen tournée.
+Cliquer sur "play" sans avoir affiché une tournée.
 Deux variantes:
 - sans carte
 - avec carte
@@ -466,7 +466,7 @@ Rien ne se passe
 
 ---
 
-## **Test 17 : Assigner un livreur à une livraison**
+## **Test 18 : Assigner un livreur à une livraison**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation)
@@ -485,7 +485,7 @@ Livraison assignée avec succès
 
 ---
 
-## **Test 18 : Désassigner un livreur à sa livraison**
+## **Test 19 : Désassigner un livreur à sa livraison**
 
 ### Interfaces utilisées:
 - Postman: [Lien 5](https://pldagile.postman.co/workspace/PLD_AGILE-Workspace~3bd4dbed-30d6-4a78-840f-6fb5cfd48a2b/request/40136526-9ed198ac-79bd-45a6-9549-ea750636a5ea?action=share&creator=40455199&ctx=documentation) à utiliser pour ce test.
@@ -499,6 +499,67 @@ Avoir effectué le Test 17 : Assigner un livreur à une livraison
 ### Réponse attendue :
 '''
 Livraison désassignée avec succès
+'''
+
+---
+
+## **Test 20 : Afficher tournée pour même personne après clique sur "play"**
+
+### Interfaces utilisées:
+- IHM 
+
+### Description  
+Test de recalcule et de réaffichage du trajet sur la carte.
+
+### Pré-requis:
+Avoir chargé une carte et des livraisons.
+Avoir assigné des livraisons à un livreur et avoir calculé son trajet et avoir visualisé son chemin avec le bouton "Play".
+
+### Procédure
+Changer les livraisons du livreurs.<br/>
+Puis recalculer le trajet.
+
+### Réponse attendue :
+'''
+Le trajet change pour s'adapter aux nouvelles livraisons.
+'''
+
+---
+
+## **Test 21 : Import d'un fichier de livraison avec des anciennes livraison affectées**
+
+### Interfaces utilisées:
+- IHM 
+
+### Description  
+Test de la réinitialisation des anciennes livraisons pour mettre à la place les nouvelles.
+
+### Pré-requis:
+Avoir chargé une carte et des livraisons.<br/>
+Avoir assigné des livraisons à un livreur.
+
+### Réponse attendue :
+'''
+L'ancienne demande de livraison est retirée pour laisser place aux nouvelles livraison
+'''
+
+---
+
+## **Test 22 : Actualiser/Recharger la page**
+
+### Interfaces utilisées:
+- IHM 
+
+### Description  
+Test de la réinitialisation totale de la demande de livraison lorsque la page est rechargée.
+
+### Pré-requis:
+Avoir chargé une carte et des livraisons.<br/>
+Avoir assigné des livraisons à un livreur.
+
+### Réponse attendue :
+'''
+La page est totalement réinitialisée.
 '''
 
 ---
