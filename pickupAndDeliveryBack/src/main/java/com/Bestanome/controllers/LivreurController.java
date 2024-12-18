@@ -47,7 +47,7 @@ public class LivreurController {
         }
 
         // Rechercher la livraison
-        Livraison livraison = LivraisonService.getDueByPickup(pickup);
+        Livraison livraison = LivraisonService.getDue(pickup, destination);
 
         if (livraison == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Livraison non trouvée");

@@ -18,9 +18,25 @@ public class LivraisonService {
         return Data.getLivraisonsDues();
     }
 
+    public static Livraison getDue(Long pickup, Long destination) {
+        for (var livraison : Data.getLivraisonsDues()) {
+            if (livraison.getPickup().equals(pickup) && livraison.getDestination().equals(destination))
+                return livraison;
+        }
+        return null;
+    }
+
     public static Livraison getDueByPickup(Long pickup) {
         for (var livraison : Data.getLivraisonsDues()) {
-            if (livraison.getPickup() == pickup)
+            if (livraison.getPickup().equals(pickup))
+                return livraison;
+        }
+        return null;
+    }
+
+    public static Livraison getDueByDestination(Long destination) {
+        for (var livraison : Data.getLivraisonsDues()) {
+            if (livraison.getDestination().equals(destination))
                 return livraison;
         }
         return null;

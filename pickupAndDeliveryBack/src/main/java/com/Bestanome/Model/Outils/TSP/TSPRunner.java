@@ -90,52 +90,6 @@ public class TSPRunner {
 		}
 	}
 
-	/**
-	 * Trouve et retourne le circuit optimal pour une tournée donnée.
-	 *
-	 * @param tournee La tournée à optimiser.
-	 * @return Le circuit optimal.
-	 */
-	public static Circuit findQuickCircuit(Tournee tournee) {
-		if (!initiated) {
-			throw new IllegalStateException("TSP wasn't initiated with a valid graph");
-		}
-
-		ArrayList<Long> points = PlanificateurLivraisons.ordonnancer(tournee.getLivraisons(),
-				PlanificateurLivraisons::NNLivraisons);
-
-		Circuit circuit = new Circuit();
-		for (int i = 0; i < points.size() - 1; i++) {
-			Long start = points.get(i);
-			Long end = points.get(i + 1);
-			WARunResult result = runWA(start, end, 1.0); // Utilise le poids w = 1.0
-
-			if (result.found) {
-				Long current = end;
-				ArrayList<Segment> segments = new ArrayList<>();
-
-				// Reconstruire le chemin en utilisant les prédécesseurs
-				while (!current.equals(start)) {
-					Long predecessor = result.predecessors.get(current);
-					if (predecessor == null) {
-						throw new IllegalStateException("No path found between " + start + " and " + end);
-					}
-					Segment segment = mapSegment.get(predecessor).get(current);
-					segments.add(0, segment); // Ajouter le segment au début de la liste
-					current = predecessor;
-				}
-
-				// Ajouter les segments au circuit
-				segments.forEach(circuit::ajouterSegment);
-			} else {
-				throw new IllegalStateException("No path found between " + start + " and " + end);
-			}
-		}
-
-		return circuit;
-	}
-
-
 	public static Circuit findCircuit(Tournee tournee) {
 		if (!initiated) {
 			throw new IllegalStateException("TSP wasn't initiated with a valid graph");

@@ -53,7 +53,7 @@ public class LivraisonController {
 
     @PostMapping("/update-delivery")
     public ResponseEntity<String> updateDelivery(@RequestParam Long oldDestination, @RequestParam Long newDestination) {
-        Livraison livraison = LivraisonService.getDueByPickup(oldDestination);
+        Livraison livraison = LivraisonService.getDueByDestination(oldDestination);
 
         if (livraison == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Livraison non trouvée pour la destination donnée.");
