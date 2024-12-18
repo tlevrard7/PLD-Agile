@@ -1,0 +1,1593 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="2131px" height="2601px" viewBox="-0.5 -0.5 2131 2601" content="&lt;mxfile&gt;&lt;diagram name=&quot;Page-1&quot; id=&quot;c4acf3e9-155e-7222-9cf6-157b1a14988f&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <path d="M 0 940 L 0 910 L 169 910 L 169 940 M 0 940 L 2130 940 L 2130 2600 L 0 2600 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 925px; margin-left: 55px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                Model
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="55" y="929" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    Model
+                </text>
+            </switch>
+        </g>
+        <path d="M 710 1056.85 L 710 1026.85 L 820 1026.85 L 820 1056.85 M 710 1056.85 L 2106.2 1056.85 L 2106.2 1909.76 L 710 1909.76 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1042px; margin-left: 765px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                Objets
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="765" y="1046" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    Objets
+                </text>
+            </switch>
+        </g>
+        <path d="M 777.02 1138.69 L 777.02 1108.69 L 887.02 1108.69 L 887.02 1138.69 M 777.02 1138.69 L 1352.86 1138.69 L 1352.86 1736.85 L 777.02 1736.85 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1124px; margin-left: 832px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                Livraisons
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="832" y="1127" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    Livraisons
+                </text>
+            </switch>
+        </g>
+        <rect x="1080" y="1170" width="257.02" height="162.95" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 259px; height: 163px; padding-top: 1170px; margin-left: 1080px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 257px; height: 163px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        Tournee
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - livraisons: Liste&lt;Livraison&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - circuit: Circuit
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + ajouterLivraison(Livraison): void
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + ajouterSegCircuit(Segment): void
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + assignerLivraison(livraison: Livraison)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1080" y="1184" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="801" y="1170" width="256.02" height="162.95" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 258px; height: 163px; padding-top: 1170px; margin-left: 801px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 256px; height: 163px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        Livreur
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - nom: String
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        - prenom: String
+                                    </span>
+                                    <span style="background-color: initial;">
+                                    </span>
+                                </p>
+                                - livraisonsAssignees: Liste&lt;Livraison&gt;
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + ajouterLivraison(Livraison): void
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + ajouterSegCircuit(Segment): void
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="801" y="1184" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <path d="M 1469.37 1139.61 L 1469.37 1109.61 L 1579.37 1109.61 L 1579.37 1139.61 M 1469.37 1139.61 L 2050.19 1139.61 L 2050.19 1726.85 L 1469.37 1726.85 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1124px; margin-left: 1525px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                Plan
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1525" y="1128" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    Plan
+                </text>
+            </switch>
+        </g>
+        <path d="M 1350.3 1364 L 1462.66 1364.58" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="9 9" pointer-events="stroke"/>
+        <path d="M 1456.99 1369.05 L 1466.02 1364.6 L 1457.04 1360.05" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 30 1356.73 L 30 1326.73 L 140 1326.73 L 140 1356.73 M 30 1356.73 L 660 1356.73 L 660 2600 L 30 2600 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1341px; margin-left: 85px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                Outils
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="85" y="1345" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    Outils
+                </text>
+            </switch>
+        </g>
+        <rect x="47.78" y="1376.73" width="594.44" height="130" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 596px; height: 130px; padding-top: 1377px; margin-left: 48px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 594px; height: 130px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                    <br style="font-size: 14px;"/>
+                                    <b style="font-size: 14px;">
+                                        ParseurXML
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br style="font-size: 14px;"/>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + parseXMLFileContent(fichierXML: MultipartFile) : JSONObject
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - convertToJSONArray(JSONObject) : JSONObject
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br style="font-size: 14px;"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="48" y="1391" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <path d="M 42.22 1582.95 L 42.22 1552.95 L 152.22 1552.95 L 152.22 1582.95 M 42.22 1582.95 L 652.22 1582.95 L 652.22 2600 L 42.22 2600 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1567px; margin-left: 97px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                TSP
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="97" y="1571" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    TSP
+                </text>
+            </switch>
+        </g>
+        <rect x="72.22" y="1600" width="450" height="342.95" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 452px; height: 343px; padding-top: 1600px; margin-left: 72px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 450px; height: 343px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i>
+                                        &lt;&lt;Singleton&gt;&gt;
+                                        <br style="font-size: 14px;"/>
+                                    </i>
+                                    <b style="font-size: 14px;">
+                                        TSPRunner
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - mapPoint: Map&lt;Long, Point&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - mapSegment&lt;Long, Map&lt;Long, Segment&gt;&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - temporaryObjective: Long
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - initiated: boolean
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - WA_weight : Double
+                                </p>
+                                <hr/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        + initiate(plan: Plan): void
+                                    </span>
+                                    <br/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        + isInitiated(): Boolean
+                                    </span>
+                                </p>
+                                <div style="line-height: 17px;">
+                                    + findQuickCircuit(tournee: Tournee): Circuit
+                                </div>
+                                <div style="line-height: 17px;">
+                                    + findCircuit(tournee: Tournee): Circuit
+                                </div>
+                                <div style="line-height: 17px;">
+                                    + getHaversineLength(p1: Point, p2: Point): Double
+                                </div>
+                                <div style="line-height: 17px;">
+                                    + getHaversineLength(p1Id: Long, p2Id: Long): Double
+                                </div>
+                                <div style="line-height: 17px;">
+                                    + testFinal(state: Long): boolean
+                                </div>
+                                <div style="line-height: 17px;">
+                                    + actions(state: Long): Iterable&lt;Segment&gt;
+                                </div>
+                                <div style="line-height: 17px;">
+                                    +
+                                    <span style="background-color: initial;">
+                                        runWA(initialState: Long, endState: Long, w: Double): WARunResult
+                                    </span>
+                                </div>
+                                <div>
+                                    <span style="background-color: initial;">
+                                        <br/>
+                                    </span>
+                                </div>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        <br/>
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="72" y="1614" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <path d="M 112.72 2360 L 112.29 1959.76" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 112.27 1945.76 L 119.28 1952.75 L 112.29 1959.76 L 105.28 1952.76 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="306.86" y="2000" width="227.86" height="130" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 230px; height: 130px; padding-top: 2000px; margin-left: 307px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 228px; height: 130px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        WARunResult
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        + found: boolean
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        + predecessors: Map&lt;Long, Long&gt;
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        + costs: Map&lt;Long, Double&gt;
+                                    </span>
+                                </p>
+                                <hr/>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="307" y="2014" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="60" y="2360" width="475" height="202.95" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 477px; height: 203px; padding-top: 2360px; margin-left: 60px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 475px; height: 203px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Singleton&gt;&gt;
+                                        <br style="font-size: 14px;"/>
+                                    </i>
+                                    <b style="">
+                                        <font style="font-size: 14px;">
+                                            FindCircuitState
+                                        </font>
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <font style="font-size: 14px;">
+                                    <font style="font-size: 14px;">
+                                        + point:  Long
+                                        <br/>
+                                        + pickUPtoDelivery: Map&lt;Long, Liste&lt;Long&gt;&gt;
+                                        <br/>
+                                        + circuit: Circuit
+                                        <br/>
+                                    </font>
+                                    <font style="font-size: 14px;">
+                                        + opened : Liste&lt;Long&gt;
+                                    </font>
+                                    <br/>
+                                </font>
+                                <hr/>
+                                <div style="line-height: 17px;">
+                                    <div style="line-height: 17px;">
+                                        <font style="font-size: 14px;">
+                                            + addNewPossibilities(pickup: Long): void
+                                        </font>
+                                    </div>
+                                    <div style="line-height: 17px;">
+                                        <font style="font-size: 14px;">
+                                            + addSegmentsToStateCircuit(destPoint: Long, result: WARunResult): void
+                                        </font>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="60" y="2374" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="306.86" y="2190" width="227.86" height="92.95" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 230px; height: 93px; padding-top: 2190px; margin-left: 307px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 228px; height: 93px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        WAStateComparator
+                                    </b>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br/>
+                                </p>
+                                <hr/>
+                                + compare(p1: Long, p2: Long) : int
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="307" y="2204" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <path d="M 306.86 2065 L 160 2065 Q 150 2065 150 2055 L 150 1959.76" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 150 1945.76 L 157 1952.76 L 150 1959.76 L 143 1952.76 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 306.86 2251.36 L 240 2251.05 Q 230 2251 230.01 2241 L 230.16 1955.98" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 230.17 1941.98 L 237.17 1948.99 L 230.16 1955.98 L 223.17 1948.98 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 710 1987.93 L 710 1957.93 L 820 1957.93 L 820 1987.93 M 710 1987.93 L 2100 1987.93 L 2100 2490 L 710 2490 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1973px; margin-left: 765px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                DTO
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="765" y="1977" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    DTO
+                </text>
+            </switch>
+        </g>
+        <rect x="737.53" y="2033.94" width="392.47" height="163.99" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 394px; height: 164px; padding-top: 2034px; margin-left: 738px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 392px; height: 164px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        LivraisonDTO
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - pickup: Long (idPoint)
+                                    <br style="font-size: 14px;"/>
+                                    - destination: Long (idPoint)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - dureeEnlevement: Int
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - dureeLivraison: Int
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        + fromListeLivraisons(Liste&lt;Livraison&gt;): Liste&lt;LivraisonDTO&gt;
+                                    </span>
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="738" y="2048" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1160" y="2033.94" width="250" height="133.99" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 252px; height: 134px; padding-top: 2034px; margin-left: 1160px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 250px; height: 134px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b>
+                                        TourneeDTO
+                                    </b>
+                                    <br/>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - livraisons: Liste&lt;LivraisonDTO&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - circuit: CircuitDTO
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + fromTournee(Tournee): TourneeDTO
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1160" y="2048" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1690" y="2032.23" width="390" height="185.7" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 392px; height: 186px; padding-top: 2032px; margin-left: 1690px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 390px; height: 186px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        SegmentDTO
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        - longueur: Double
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial; font-size: 14px;">
+                                        - nom: String
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial; font-size: 14px;">
+                                        - debut: Point
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial; font-size: 14px;">
+                                        - fin: Point
+                                    </span>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + from
+                                    <span style="text-align: center;">
+                                        Segment
+                                    </span>
+                                    (
+                                    <span style="text-align: center;">
+                                        Segment
+                                    </span>
+                                    ):
+                                    <span style="text-align: center;">
+                                        Segment
+                                    </span>
+                                    DTO
+                                    <br style="font-size: 14px;"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + from
+                                    <span style="text-align: center;">
+                                        ListeSegments
+                                    </span>
+                                    (Liste&lt;
+                                    <span style="text-align: center;">
+                                        Segment&gt;
+                                    </span>
+                                    ): Liste&lt;
+                                    <span style="text-align: center;">
+                                        Segment
+                                    </span>
+                                    DTO&gt;
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1690" y="2046" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="737.53" y="2253.31" width="320" height="184.62" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 322px; height: 185px; padding-top: 2253px; margin-left: 738px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 320px; height: 185px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        PointDTO
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - latitude: Double
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - longitude: Double
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - type: TypePoint
+                                </p>
+                                <br style="font-size: 14px;"/>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px;">
+                                    + fromPoint(Point): PointDTO
+                                    <br/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px;">
+                                    + from
+                                    <span style="text-align: center;">
+                                        Liste
+                                    </span>
+                                    Point
+                                    <span style="text-align: center;">
+                                        s
+                                    </span>
+                                    (Liste&lt;Point
+                                    <span style="text-align: center;">
+                                        &gt;
+                                    </span>
+                                    ): Liste&lt;PointDTO&gt;
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="738" y="2267" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1175" y="2187.93" width="220" height="125.75" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 222px; height: 126px; padding-top: 2188px; margin-left: 1175px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 220px; height: 126px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        CircuitDTO
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - segments: Liste&lt;SegmentDTO&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - longueur : Double
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + fromCircuit(Circuit): CircuitDTO
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1175" y="2202" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1830" y="2278.31" width="222.47" height="134.62" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 224px; height: 135px; padding-top: 2278px; margin-left: 1830px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 222px; height: 135px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="background-color: initial;">
+                                        PlanDTO
+                                    </b>
+                                    <br/>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - points: Liste&lt;PointDTO&gt;
+                                    <br style="font-size: 14px;"/>
+                                    - segments: Liste&lt;SegmentDTO&gt;
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + fromPlan(Plan): PlanDTO
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1830" y="2292" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1087.53" y="2330" width="602.47" height="137.93" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 604px; height: 138px; padding-top: 2330px; margin-left: 1088px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 602px; height: 138px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center;">
+                                    <b>
+                                        LivraisonsEntrepotDTO
+                                    </b>
+                                    <br/>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - livraisons: Liste&lt;LivraisonDTO&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - idEntrepot: Long
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + fromLivraisonsEntrepot(livraisons: Liste&lt;Livraison&gt;, idEntrepot: Long): LivraisonEntrepotDTO
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1088" y="2344" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1440" y="2032.23" width="222.47" height="149.3" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 224px; height: 149px; padding-top: 2032px; margin-left: 1440px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 222px; height: 149px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b>
+                                        LivreurDTO
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - nom: String
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - prenom: String
+                                    <br style="font-size: 14px;"/>
+                                    - liraisons: Liste&lt;LivraisonDTO&gt;
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + fromLivreur(Livreur): PlanDTO
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1440" y="2046" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="230" y="1050" width="238.52" height="210" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 241px; height: 210px; padding-top: 1050px; margin-left: 230px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 239px; height: 210px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        Data
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + planVille: Plan
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + livraisonsDues: Liste&lt;Livraison&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + tourneesPrevues: Liste&lt;Tournee&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + idEntrepot: Long
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + livreurs: Liste&lt;Livreur&gt;
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + ajouterLivraison(Livraison): void
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + ajouterTournee(Tournee): void
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + setIdEntrepot(id: Long): void
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="230" y="1064" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <path d="M 345.63 1357.29 L 349.01 1266.7" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="9 9" pointer-events="stroke"/>
+        <path d="M 353.3 1272.51 L 349.13 1263.35 L 344.3 1272.18" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1352.18 1989.32 L 1352.02 1916.71" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="9 9" pointer-events="stroke"/>
+        <path d="M 1356.53 1922.34 L 1352.01 1913.35 L 1347.53 1922.36" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 468.52 1155 L 703.29 1155" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="9 9" pointer-events="stroke"/>
+        <path d="M 697.65 1159.5 L 706.65 1155 L 697.65 1150.5" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 400 1356.73 L 703.54 1271.89" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="9 9" pointer-events="stroke"/>
+        <path d="M 699.31 1277.74 L 706.77 1270.98 L 696.89 1269.07" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 0 30 L 0 0 L 110 0 L 110 30 M 0 30 L 2120 30 L 2120 290 L 0 290 Z" fill="#1ba1e2" stroke="#006eaf" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 15px; margin-left: 55px;">
+                        <div data-drawio-colors="color: #ffffff; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                Vue
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="55" y="19" fill="#ffffff" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    Vue
+                </text>
+            </switch>
+        </g>
+        <rect x="0" y="30" width="2120" height="203" fill="none" stroke="none" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 132px; margin-left: 1060px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                <font style="font-size: 40px;">
+                                    REACT
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1060" y="135" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    REACT
+                </text>
+            </switch>
+        </g>
+        <image x="452.94" y="59.5" width="218.78" height="201.87" xlink:href="data:image/webp;base64,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" preserveAspectRatio="none"/>
+        <path d="M 0 670 L 0 640 L 110 640 L 110 670 M 0 670 L 2130 670 L 2130 849.85 L 0 849.85 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 655px; margin-left: 55px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                Services
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="55" y="659" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    Services
+                </text>
+            </switch>
+        </g>
+        <rect x="16.41" y="699.93" width="310" height="90" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 312px; height: 90px; padding-top: 700px; margin-left: 16px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 310px; height: 90px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        MapService
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        + chargerPlan(fichierXML: MultipartFile): void
+                                    </span>
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="16" y="714" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="350" y="699.93" width="330" height="90" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 332px; height: 90px; padding-top: 700px; margin-left: 350px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 330px; height: 90px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        LivraisonService
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        + chargerLivraisons(fichierXML: MultipartFile): void
+                                    </span>
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="350" y="714" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <path d="M 0 390 L 0 360 L 110 360 L 110 390 M 0 390 L 2130 390 L 2130 600 L 0 600 Z" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 375px; margin-left: 55px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: nowrap;">
+                                Controllers
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="55" y="379" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle" font-weight="bold">
+                    Controllers
+                </text>
+            </switch>
+        </g>
+        <rect x="16.15" y="421.43" width="466.94" height="158.57" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 469px; height: 159px; padding-top: 421px; margin-left: 16px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 467px; height: 159px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        MapController
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + uploadMap(fichierXMLCarte: MultipartFile): ResponseEntitiy&lt;PlanDTO&gt;
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="16" y="435" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="508.76" y="421.43" width="570.76" height="158.57" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 573px; height: 159px; padding-top: 421px; margin-left: 509px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 571px; height: 159px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        LivraisonController
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + uploadDeliveries(fichierXMLCarte: MultipartFile): ResponseEntitiy&lt;Liste&lt;LivraisonDTO&gt;&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px;">
+                                    + updatePickup(oldPickup: Long, newPickup: Long): ResponseEntity&lt;String&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px;">
+                                    + updateDelivery(oldDestination: Long, newDestination: Long): ResponseEntity&lt;String&gt;
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="509" y="435" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1102.15" y="421.43" width="577.85" height="158.57" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 580px; height: 159px; padding-top: 421px; margin-left: 1102px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 578px; height: 159px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        LivreurController
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + getAllLivreurs(): ResponseEntity&lt;List&lt;LivreurDTO&gt;&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px;">
+                                    +
+                                    <span style="background-color: initial;">
+                                        assignDelivery(livreurId: int, pickup: Long,
+                                    </span>
+                                    <span style="background-color: initial;">
+                                        destination: Long): ResponseEntity&lt;String&gt;
+                                    </span>
+                                    <span style="background-color: initial;">
+                                    </span>
+                                </p>
+                                + getTournee(id: int): ResponseEntity&lt;id: int&gt;
+                                <br/>
+                                + exportAllTournees(): ResponseEntity&lt;List&lt;LivreurTourneeDTO&gt;&gt;
+                                <br/>
+                                <font style="font-size: 14px;">
+                                    + unassignDelivery(livreurId: int, pickup: Long, destination: Long) : ResponseEntity&lt;String&gt;
+                                    <font style="font-size: 14px;">
+                                    </font>
+                                </font>
+                                <span style="background-color: rgb(30, 30, 30); font-size: 12.5px;">
+                                    <br/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1102" y="435" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1690" y="420" width="314.9" height="160" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 317px; height: 160px; padding-top: 420px; margin-left: 1690px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 315px; height: 160px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        DataController
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + resetData(): ResponseEntity&lt;String&gt;
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1690" y="434" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <path d="M 1060 290 L 1060 383.29" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="9 9" pointer-events="stroke"/>
+        <path d="M 1055.5 377.65 L 1060 386.65 L 1064.5 377.65" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 339px; margin-left: 1062px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                &lt;&lt;use&gt;&gt;
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1062" y="343" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px" text-anchor="middle">
+                    &lt;&lt;use&gt;&gt;
+                </text>
+            </switch>
+        </g>
+        <path d="M 1065 600 L 1065 663.29" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="9 9" pointer-events="stroke"/>
+        <path d="M 1060.5 657.65 L 1065 666.65 L 1069.5 657.65" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 635px; margin-left: 1067px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                &lt;&lt;use&gt;&gt;
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1067" y="639" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px" text-anchor="middle">
+                    &lt;&lt;use&gt;&gt;
+                </text>
+            </switch>
+        </g>
+        <path d="M 1065 849.85 L 1065 930.33" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" stroke-dasharray="9 9" pointer-events="stroke"/>
+        <path d="M 1060.5 924.69 L 1065 933.69 L 1069.5 924.69" fill="none" stroke="rgb(0, 0, 0)" stroke-width="3" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 893px; margin-left: 1067px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                &lt;&lt;use&gt;&gt;
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1067" y="897" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px" text-anchor="middle">
+                    &lt;&lt;use&gt;&gt;
+                </text>
+            </switch>
+        </g>
+        <rect x="1060" y="1370" width="218.66" height="150" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 221px; height: 150px; padding-top: 1370px; margin-left: 1060px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 219px; height: 150px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        Circuit
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - segments: Liste&lt;Segment&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - longueur : Double
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + ajotuerSegment(Segment): void
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1060" y="1384" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="854" y="1370" width="186.02" height="150" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 188px; height: 150px; padding-top: 1370px; margin-left: 854px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 186px; height: 150px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        Livraison
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - pickup: Long (idPoint)
+                                    <br style="font-size: 14px;"/>
+                                    - destination: Long (idPoint)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        - dureeEnlevement: Int
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - dureeLivraison: Int
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br style="font-size: 14px;"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="854" y="1384" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="859.94" y="1560" width="410" height="138.69" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 412px; height: 139px; padding-top: 1560px; margin-left: 860px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 410px; height: 139px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Factory&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        LivraisonFactory
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br/>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + creerListeLivraisons(schema: JSONObject): Liste&lt;Livraison&gt;
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="860" y="1574" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1507.79" y="1570" width="191.58" height="119.75" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 194px; height: 120px; padding-top: 1570px; margin-left: 1508px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 192px; height: 120px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        Point
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - latitude: Double
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - longitude: Double
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - type: TypePoint
+                                </p>
+                                <br style="font-size: 14px;"/>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1508" y="1584" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1492.6" y="1203.25" width="244.84" height="146.75" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 247px; height: 147px; padding-top: 1203px; margin-left: 1493px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 245px; height: 147px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="background-color: initial;">
+                                        Plan
+                                    </b>
+                                    <br/>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    - points: Liste&lt;Point&gt;
+                                    <br style="font-size: 14px;"/>
+                                    - segments: Liste&lt;Segment&gt;
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + ajotuerSegment(Segment): void
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + ajotuerPoint(Point): void
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1493" y="1217" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1507.79" y="1415.24" width="191.58" height="137.71" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 194px; height: 138px; padding-top: 1415px; margin-left: 1508px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 192px; height: 138px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        Segment
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial;">
+                                        - longueur: Double
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial; font-size: 14px;">
+                                        - nomRue: String
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial; font-size: 14px;">
+                                        - origine: Long (idPoint)
+                                    </span>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <span style="background-color: initial; font-size: 14px;">
+                                        - destination: Long (idPoint)
+                                    </span>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br style="font-size: 14px;"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1508" y="1429" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1726.16" y="1570" width="300.69" height="97.38" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 303px; height: 97px; padding-top: 1570px; margin-left: 1726px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 301px; height: 97px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Enumeration&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    TypePoint
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    entrepot, intersection, pickup, destination
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br style="font-size: 14px;"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1726" y="1584" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Enumeration&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+        <rect x="1759.66" y="1203.25" width="267.19" height="106.37" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 269px; height: 106px; padding-top: 1203px; margin-left: 1760px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left; width: 267px; height: 106px; overflow: hidden;">
+                            <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap;">
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Java Class&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <i style="font-size: 14px;">
+                                        &lt;&lt;Factory&gt;&gt;
+                                    </i>
+                                </p>
+                                <p style="margin: 4px 0px 0px; text-align: center; font-size: 14px;">
+                                    <b style="font-size: 14px;">
+                                        PlanFactory
+                                    </b>
+                                </p>
+                                <hr style="font-size: 14px;"/>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    + creerPlan(schema: JSONObject): Plan
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px; font-size: 14px;">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1760" y="1217" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="14px">
+                    &lt;&lt;Java Class&gt;&gt;...
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>
