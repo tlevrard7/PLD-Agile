@@ -33,7 +33,7 @@ export default function InteractiveMap({
   onUpdatePickup,
   onUpdateDelivery,
 }: InteractiveMapProps) {
-  const [playIndex, setPlayIndex] = useState<number>(0);
+  const [playIndex, setPlayIndex] = useState<number>(-1);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   console.log("assignedDeliveries in InteractiveMap:", assignedDeliveries);

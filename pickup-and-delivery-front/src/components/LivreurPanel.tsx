@@ -58,7 +58,7 @@ export default function LivreurPanel({
     try {
       const circuit = await LivreurService.getTournee(livreurId);
   
-      // Si le circuit est vide, réinitialiser le circuit
+      // Si le circuit est vide, réinitialiser le circuit et les infos
       if (!circuit || circuit.segments.length === 0) {
         setCircuit(null);
         setLivreurInfos((prev) => ({
@@ -70,12 +70,34 @@ export default function LivreurPanel({
   
       setCircuit(circuit);
   
-      // Calculer et stocker la distance totale et la durée pour le livreur
-      const totalDistance = circuit.longueur//calculateTotalDistance(circuit.segments);
-      const duree = calculateDuration(totalDistance);
+      // Calculer la distance totale du circuit
+      const totalDistance = circuit.longueur;
+  
+      // Récupérer les livraisons assignées au livreur
+      const livreur = await LivreurService.getAllLivreurs();
+      const currentLivreur = livreur.find((l) => l.id === livreurId);
+  
+      if (!currentLivreur) {
+        throw new Error("Livreur introuvable");
+      }
+  
+      // Calculer la durée totale des enlèvements et des livraisons
+      const totalPickupAndDeliveryTime = currentLivreur.livraisons.reduce(
+        (total, livraison) => total + livraison.dureeEnlevement + livraison.dureeLivraison,
+        0
+      );
+  
+      // Calculer la durée de trajet en fonction de la distance et de la vitesse (15 km/h)
+      const speed = (15 * 1000) / 3600; // 15 km/h en mètres par seconde
+      const travelTime = totalDistance / speed;
+  
+      // Durée totale = temps de trajet + temps des enlèvements et livraisons
+      const totalDuration = travelTime + totalPickupAndDeliveryTime;
+  
+      // Mettre à jour les informations du livreur
       setLivreurInfos((prev) => ({
         ...prev,
-        [livreurId]: { distance: totalDistance, duree },
+        [livreurId]: { distance: totalDistance, duree: totalDuration },
       }));
     } catch (err) {
       if (err.message.includes("500") || err.message.includes("400")) {
