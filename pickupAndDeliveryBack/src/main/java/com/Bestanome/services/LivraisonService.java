@@ -44,16 +44,17 @@ public class LivraisonService {
     
     public static void chargerLivraisons(MultipartFile file) throws Exception {
         JSONObject PlanLivraisonsJO = ParseurXML.parseXMLFileContent(file);
-        Data.idEntrepot = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons").getJSONArray("entrepot").getJSONObject(0).getLong("adresse");
-        if (MapService.getPoint(Data.idEntrepot) == null) {
+        Long idEntrepot = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons").getJSONArray("entrepot").getJSONObject(0).getLong("adresse");
+        if (MapService.getPoint(idEntrepot) == null) {
             throw new Exception("Invalid warehouse location");
         }
+        Data.resetLivraisons();
+        Data.idEntrepot = idEntrepot;
         Data.livraisonsDues = new ArrayList<Livraison>(LivraisonFactory.creerListeLivraisons(PlanLivraisonsJO)
             .stream()
             .filter(l -> MapService.getPoint(l.getPickup()) != null && MapService.getPoint(l.getDestination()) != null)
             .toList()
         );
-        Data.tourneesPrevues.clear();
     }
 
     public static Long getEntrepot() {

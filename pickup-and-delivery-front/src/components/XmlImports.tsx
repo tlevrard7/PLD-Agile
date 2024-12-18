@@ -53,6 +53,9 @@ export default function XmlImports({
         ...livraison,
         id: uuidv4(), // Assigne un identifiant unique à chaque livraison
       }));
+      setAssignedDeliveries([]);
+      setCircuit(null);
+      setLivreurInfos({}); // Réinitialise les informations des livreurs
       setLivraisons(livraisonsWithIds);
       setEntrepot(uploadedLivraisons.idEntrepot);
       message.success("Demandes de livraisons importées avec succès !");

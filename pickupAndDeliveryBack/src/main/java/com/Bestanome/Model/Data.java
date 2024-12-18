@@ -48,6 +48,11 @@ public class Data {
     // Méthode pour réinitialiser les données
     public static void reset() {
         Data.planVille = null;
+        resetLivraisons();
+    }
+
+    // Méthode pour réinitialiser les données
+    public static void resetLivraisons() {
         Data.livraisonsDues.clear();
         Data.tourneesPrevues.clear();
         Data.idEntrepot = null;
