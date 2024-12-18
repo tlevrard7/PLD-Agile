@@ -5,7 +5,6 @@ import { Livreur } from "@/types/Livreur";
 import TourneeService from "@/services/tournee-service";
 import MapService from "@/services/map-service";
 import { Dispatch, SetStateAction, useState } from "react";
-import { RedoOutlined } from "@ant-design/icons";
 import { v4 as uuidv4 } from 'uuid'; // Installer uuid : npm install uuid
 
 
@@ -35,6 +34,14 @@ export default function XmlImports({
 
   const handleUploadMap = async (file: File) => {
     try {
+      setLivraisons([]);
+      setEntrepot(null);
+      setAssignedDeliveries([]);
+      setCircuit(null);
+      setLivreurs([]); // Réinitialise la liste des livreurs
+      setLivreurInfos({}); // Réinitialise les informations des livreurs
+      setIsDeliveryUploaded(false);
+      
       const uploadedPlan = await MapService.uploadMap(file);
       setPlan(uploadedPlan);
       setIsMapUploaded(true);
@@ -65,27 +72,6 @@ export default function XmlImports({
     }
   };
 
-  const handleReset = async () => {
-    try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/data/reset`, {
-        method: "POST",
-      });
-      setPlan(null);
-      setLivraisons([]);
-      setEntrepot(null);
-      setAssignedDeliveries([]);
-      setCircuit(null);
-      setLivreurs([]); // Réinitialise la liste des livreurs
-      setLivreurInfos({}); // Réinitialise les informations des livreurs
-      setIsMapUploaded(false);
-      setIsDeliveryUploaded(false);
-      message.success("Réinitialisation réussie !");
-    } catch (error) {
-      console.error("Erreur lors de la réinitialisation :", error);
-      message.error("Erreur lors de la réinitialisation.");
-    }
-  };
-
   return (
     <div className="flex flex-col space-y-4 place-items-stretch">
       <Upload
@@ -95,10 +81,9 @@ export default function XmlImports({
           return false;
         }}
         showUploadList={false}
-        disabled={isMapUploaded}
       >
-        <Button type="primary" className="w-full" disabled={isMapUploaded}>
-          Importer une carte
+        <Button type="primary" className="w-full">
+          {isMapUploaded ? "Reinitialiser et importer une carte" : "Importer une carte"}
         </Button>
       </Upload>
 
@@ -119,15 +104,6 @@ export default function XmlImports({
           Importer une demande de livraisons
         </Button>
       </Upload>
-
-      <Button
-        type="primary"
-        danger
-        icon={<RedoOutlined />}
-        onClick={handleReset}
-      >
-        Réinitialiser
-      </Button>
     </div>
   );
 }

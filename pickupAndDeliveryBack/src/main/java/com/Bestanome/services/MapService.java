@@ -19,8 +19,9 @@ public class MapService {
     public static void chargerPlan(MultipartFile file) throws IOException {
         // Convertir le contenu du fichier en JSON
         JSONObject planVilleJo = ParseurXML.parseXMLFileContent(file);
-
+        
         // Construire le Plan à partir du JSON et l'affecter à Data.planVille
+        Data.reset();
         Data.planVille = PlanFactory.creerPlan(planVilleJo);
 
         // Initialiser le TSPRunner avec le plan chargé
