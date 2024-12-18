@@ -147,12 +147,13 @@ public class TSPRunner {
 			Double minCost = Double.MAX_VALUE;
 			Long minPoint = null;
 			for(Long possiblePoint : state.opened){
-				WARunResult possibleResult = runWA(state.point, possiblePoint, WA_weight);
-				if(possibleResult.found && possibleResult.costs.get(possiblePoint) < minCost){
-					minCost = possibleResult.costs.get(possiblePoint);
-					minPoint = possiblePoint;
-					greedyResult = possibleResult;
-					System.out.println(possibleResult.found + " " + minPoint);
+				if(getHaversineLength(state.point, possiblePoint) < minCost){
+					WARunResult possibleResult = runWA(state.point, possiblePoint, WA_weight);
+					if(possibleResult.found && possibleResult.costs.get(possiblePoint) < minCost){
+						minCost = possibleResult.costs.get(possiblePoint);
+						minPoint = possiblePoint;
+						greedyResult = possibleResult;
+					}
 				}
 			}
 			
