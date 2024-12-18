@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.Bestanome.Model.Data;
 import com.Bestanome.Model.Objets.Livraisons.Livraison;
 import com.Bestanome.Model.dto.LivraisonsEntrepotDOT;
-import com.Bestanome.services.TourneeService;
+import com.Bestanome.services.LivraisonService;
 
 @RestController
 @RequestMapping("/delivery")
@@ -25,9 +24,8 @@ public class LivraisonController {
         }
 
         try {
-            TourneeService.chargerLivraisons(file);
-            return ResponseEntity
-                    .ok(LivraisonsEntrepotDOT.fromLivraisonsEntrepot(Data.livraisonsDues, Data.idEntrepot));
+            LivraisonService.chargerLivraisons(file);
+            return ResponseEntity.ok(LivraisonsEntrepotDOT.fromLivraisonsEntrepot(LivraisonService.getAllDues(), LivraisonService.getEntrepot()));
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
@@ -36,21 +34,16 @@ public class LivraisonController {
 
     @PostMapping("/update-pickup")
     public ResponseEntity<String> updatePickup(@RequestParam Long oldPickup, @RequestParam Long newPickup) {
-        System.out
-                .println("Requête reçue pour update-pickup : oldPickup = " + oldPickup + ", newPickup = " + newPickup);
+        System.out.println("Requête reçue pour update-pickup : oldPickup = " + oldPickup + ", newPickup = " + newPickup);
         System.out.println("Livraisons disponibles : ");
-        Data.getLivraisonsDues()
-                .forEach(l -> System.out.println("Pickup: " + l.getPickup() + ", Destination: " + l.getDestination()));
+        for (var livraison : LivraisonService.getAllDues())
+            System.out.println("Pickup: " + livraison.getPickup() + ", Destination: " + livraison.getDestination());
 
-        Livraison livraison = Data.getLivraisonsDues().stream()
-                .filter(l -> l.getPickup().equals(oldPickup))
-                .findFirst()
-                .orElse(null);
+        Livraison livraison = LivraisonService.getDueByPickup(oldPickup);
 
         if (livraison == null) {
             System.out.println("Livraison non trouvée pour le pickup : " + oldPickup);
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Livraison non trouvée pour le pickup donné.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Livraison non trouvée pour le pickup donné.");
         }
 
         livraison.setPickup(newPickup);
@@ -60,14 +53,10 @@ public class LivraisonController {
 
     @PostMapping("/update-delivery")
     public ResponseEntity<String> updateDelivery(@RequestParam Long oldDestination, @RequestParam Long newDestination) {
-        Livraison livraison = Data.getLivraisonsDues().stream()
-                .filter(l -> l.getDestination().equals(oldDestination))
-                .findFirst()
-                .orElse(null);
+        Livraison livraison = LivraisonService.getDueByPickup(oldDestination);
 
         if (livraison == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Livraison non trouvée pour la destination donnée.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Livraison non trouvée pour la destination donnée.");
         }
 
         livraison.setDestination(newDestination);
