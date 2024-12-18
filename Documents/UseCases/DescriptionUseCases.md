@@ -1,4 +1,4 @@
-# Description des use cases (à mettre sous forme En tant que ..., je veux ..., afin de ...? )
+# Description des use cases
 
 ## Charger un plan de ville à partir d'un fichier XML
 
@@ -12,7 +12,6 @@ Ce fichier contient :
 ## Consulter le plan de la ville sur la carte
 
 Après avoir chargé le fichier XML décrivant le plan de la ville, l'utilisateur décide de consulter ce plan sur une carte.
-
 
 ## Charger un programme de Pickup&Delivery à partir d’un fichier XML
 
@@ -35,7 +34,6 @@ Cela permet notamment de prévenir le client.
 
 Pour chaque Pickup&Delivery, le point Pickup doit être visité avant le point Delivery. 
 Enfin, la tournée calculée doit être la meilleure possible, c'est à dire celle de durée minimale sachant que la vitesse du livreur est constante et égale à 15 km/h.
-
 
 ## Assigner un livreur à une livraison
 
@@ -68,8 +66,7 @@ Si cette livraison était déjà assignée à un livreur, sa tournée est recalc
 
 ## Changer l'ordre de passage aux points
 
-L'utilisateur vient de recevoir un appel d'un client qui lui indique qu'il doit impérativement être livré avant 10h.
-??? Comment le faire
+L'utilisateur vient de recevoir un appel d'un client qui lui indique qu'il doit impérativement être livré avant 10h. L'utilisateur clique alors sur la livraison correspondante et indique qu'elle doit être effectuée avant 10h . cela recalcule donc la tournée concernée (s'il y en a une).
 
 ## Sauvegarder des tournées dans un fichier
 
