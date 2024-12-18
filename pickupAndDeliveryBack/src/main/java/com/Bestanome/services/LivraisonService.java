@@ -42,14 +42,18 @@ public class LivraisonService {
         return null;
     }
     
-    public static void chargerLivraisons(MultipartFile file) throws IOException {
+    public static void chargerLivraisons(MultipartFile file) throws Exception {
         JSONObject PlanLivraisonsJO = ParseurXML.parseXMLFileContent(file);
+        Data.idEntrepot = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons").getJSONArray("entrepot").getJSONObject(0).getLong("adresse");
+        if (MapService.getPoint(Data.idEntrepot) == null) {
+            throw new Exception("Invalid warehouse location");
+        }
         Data.livraisonsDues = new ArrayList<Livraison>(LivraisonFactory.creerListeLivraisons(PlanLivraisonsJO)
             .stream()
             .filter(l -> MapService.getPoint(l.getPickup()) != null && MapService.getPoint(l.getDestination()) != null)
             .toList()
         );
-        Data.idEntrepot = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons").getJSONArray("entrepot").getJSONObject(0).getLong("adresse");
+        Data.tourneesPrevues.clear();
     }
 
     public static Long getEntrepot() {
