@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.Bestanome.Model.Data;
 import com.Bestanome.Model.Objets.Plan.Plan;
 import com.Bestanome.Model.Objets.Plan.PlanFactory;
+import com.Bestanome.Model.Objets.Plan.Point;
 import com.Bestanome.Model.Outils.ParseurXML;
 import com.Bestanome.Model.Outils.TSP.TSPRunner;
 
@@ -26,6 +27,13 @@ public class MapService {
         TSPRunner.initiate(Data.getPlanVille());
     }
 
+    public static Point getPoint(Long id) {
+        for (var point : Data.getPlanVille().getPoints()) {
+            if (point.getId().equals(id))
+                return point;
+        }
+        return null;
+    }
     public static Plan getPlan() {
         return Data.getPlanVille();
     }

@@ -44,7 +44,11 @@ public class LivraisonService {
     
     public static void chargerLivraisons(MultipartFile file) throws IOException {
         JSONObject PlanLivraisonsJO = ParseurXML.parseXMLFileContent(file);
-        Data.livraisonsDues = LivraisonFactory.creerListeLivraisons(PlanLivraisonsJO);
+        Data.livraisonsDues = new ArrayList<Livraison>(LivraisonFactory.creerListeLivraisons(PlanLivraisonsJO)
+            .stream()
+            .filter(l -> MapService.getPoint(l.getPickup()) != null && MapService.getPoint(l.getDestination()) != null)
+            .toList()
+        );
         Data.idEntrepot = PlanLivraisonsJO.getJSONObject("demandeDeLivraisons").getJSONArray("entrepot").getJSONObject(0).getLong("adresse");
     }
 
