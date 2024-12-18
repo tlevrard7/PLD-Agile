@@ -388,6 +388,8 @@ Tester le cas où le fichier XML n'a pas de sauts de ligne entre les balises.
 }
 ```
 
+---
+
 ## **Cas 8 : Plusieurs entrepôt**
 
 ### Description  
@@ -412,15 +414,25 @@ Tester le cas où le fichier XML a plusieurs entrepôt.
 ### Réponse attendue :
 
 ```json
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
+{
+    "livraisons": [
+        {
+            "pickup": 26464256,
+            "destination": 239603465,
+            "dureeEnlevement": 0,
+            "dureeLivraison": 600
+        },
+        {
+            "pickup": 25319255,
+            "destination": 1370403192,
+            "dureeEnlevement": 600,
+            "dureeLivraison": 120
+        }
+    ],
+    "idEntrepot": 25327124
+}
 ```
 
+Le deuxième entrepot est ignoré.
+
+---

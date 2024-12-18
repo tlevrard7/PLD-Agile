@@ -6,8 +6,11 @@ Vous pouvez rejoindre l'environnement de test sur Postman via les liens suivants
 
 [Lien 2 - Tests par livreur](https://pldagile.postman.co/workspace/PLD_AGILE-Workspace~3bd4dbed-30d6-4a78-840f-6fb5cfd48a2b/request/40136526-a8e553f0-d455-4f26-b01b-5de3b886cdf2?action=share&creator=40453978&ctx=documentation)
 
-
 [Lien 3 - Test pour l'ensemble des livreurs](https://pldagile.postman.co/workspace/PLD_AGILE-Workspace~3bd4dbed-30d6-4a78-840f-6fb5cfd48a2b/request/40136526-5a3ed576-74a1-4659-bad7-30e8b4a7e062?action=share&creator=40453978&ctx=documentation)
+
+[Lien 4 - Test pour affecter un livreur à une livraison](https://pldagile.postman.co/workspace/PLD_AGILE-Workspace~3bd4dbed-30d6-4a78-840f-6fb5cfd48a2b/request/40136526-339b05fe-e0e9-4689-99fc-c61ce75845f6?action=share&creator=40455199&ctx=documentation)
+
+[Lien 5 - Test pour désaffecter un livreur à une livraison](https://pldagile.postman.co/workspace/PLD_AGILE-Workspace~3bd4dbed-30d6-4a78-840f-6fb5cfd48a2b/request/40136526-9ed198ac-79bd-45a6-9549-ea750636a5ea?action=share&creator=40455199&ctx=documentation)
 
 ---
 Pour l'affichage de la carte, nous avons au préalable testé que les trois cartes fournies par le client s'affichaient correctement, en un temps raisonnable. Nous procédons ensuite aux test unitaires.
@@ -31,28 +34,36 @@ Obtenir la liste de tous les livreurs.
 
 Côté Back : 
 ```
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
+[
+    {
+        "id": 1,
+        "nom": "Corentin",
+        "prenom": "Jeanne",
+        "nombreDeLivraisons": 0,
+        "livraisons": []
+    },
+    {
+        "id": 2,
+        "nom": "Harold",
+        "prenom": "Martin",
+        "nombreDeLivraisons": 0,
+        "livraisons": []
+    },
+    {
+        "id": 3,
+        "nom": "Saad",
+        "prenom": "Elghissassi",
+        "nombreDeLivraisons": 0,
+        "livraisons": []
+    },
+    {
+        "id": 4,
+        "nom": "Thomas",
+        "prenom": "Levrard",
+        "nombreDeLivraisons": 0,
+        "livraisons": []
+    }
+]
 ```
 
 ---
@@ -125,28 +136,7 @@ Changer la valeur du '1' dans l'URL pour sélectionner un autre livreur.
 
 Côté Back : 
 ```
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
+Aucune livraison assignée pour ce livreur.
 ```
 
 ---
@@ -473,5 +463,42 @@ Ne pas avoir affiché une tournée.
 
 ### Réponse attendue :
 Rien ne se passe
+
+---
+
+## **Test 17 : Assigner un livreur à une livraison**
+
+### Interfaces utilisées:
+- IHM (pour l'importation)
+- Postman: [Lien 4](https://pldagile.postman.co/workspace/PLD_AGILE-Workspace~3bd4dbed-30d6-4a78-840f-6fb5cfd48a2b/request/40136526-339b05fe-e0e9-4689-99fc-c61ce75845f6?action=share&creator=40455199&ctx=documentation) à utiliser pour ce test.
+
+### Description  
+Test d'assignation d'un livreur à une livraison
+
+### Pré-requis: 
+Avoir chargé une carte et avoir chargé la livraison "demandePetit1.xml"
+
+### Réponse attendue :
+'''
+Livraison assignée avec succès
+'''
+
+---
+
+## **Test 18 : Désassigner un livreur à sa livraison**
+
+### Interfaces utilisées:
+- Postman: [Lien 5](https://pldagile.postman.co/workspace/PLD_AGILE-Workspace~3bd4dbed-30d6-4a78-840f-6fb5cfd48a2b/request/40136526-9ed198ac-79bd-45a6-9549-ea750636a5ea?action=share&creator=40455199&ctx=documentation) à utiliser pour ce test.
+
+### Description  
+Test de désassignation d'un livreur à une de ses livraison.
+
+### Pré-requis: 
+Avoir effectué le Test 17 : Assigner un livreur à une livraison
+
+### Réponse attendue :
+'''
+Livraison désassignée avec succès
+'''
 
 ---
