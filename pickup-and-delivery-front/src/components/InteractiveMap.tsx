@@ -18,8 +18,9 @@ export interface InteractiveMapProps {
   assignedDeliveries: Livraison[];
   entrepot: number | null;
   circuit: { segments: Segment[] } | null;
-  onUpdatePickup: (updatedLivraison: Livraison) => void;
-  onUpdateDelivery: (updatedLivraison: Livraison) => void;
+  onUpdatePickup: (updatedLivraison: Livraison, index: number) => void;
+  onUpdateDelivery: (updatedLivraison: Livraison, index: number) => void;
+  selectedLivraison: Livraison | null;
 }
 
 export default function InteractiveMap({
@@ -28,6 +29,7 @@ export default function InteractiveMap({
   assignedDeliveries,
   entrepot,
   circuit,
+  selectedLivraison,
   onUpdatePickup,
   onUpdateDelivery,
 }: InteractiveMapProps) {
@@ -36,11 +38,18 @@ export default function InteractiveMap({
 
   console.log("assignedDeliveries in InteractiveMap:", assignedDeliveries);
 
+  // Fonction pour obtenir la position décalée
+  const getOffsetPosition = (position: LatLng, index: number) => {
+    const OFFSET = 0.00001; // Décalage léger (approximativement 0.2 mètres)
+    return new LatLng(position.lat + OFFSET * index, position.lng + OFFSET * index);
+  };
+
   // Fonction pour mettre à jour une livraison
   const handleDragEnd = async (index: number, newPosition: LatLng) => {
     // Log pour vérifier les points du plan
     console.log("Points du plan :", plan.points);
 
+    // Filtrer les points valides pour le déplacement
     const validPoints = plan.points.filter(
       (point) =>
         point.type === "DESTINATION" ||
@@ -56,6 +65,7 @@ export default function InteractiveMap({
       return;
     }
 
+    // Trouver le point le plus proche du nouveau point
     const nearestPoint = validPoints.reduce((closest, point) => {
       const distance = newPosition.distanceTo(
         new LatLng(point.latitude, point.longitude)
@@ -91,7 +101,7 @@ export default function InteractiveMap({
       console.log("Livraison mise à jour avec succès.");
 
       // Mettre à jour l'état du frontend après la mise à jour réussie
-      onUpdateDelivery(updatedLivraison);
+      onUpdateDelivery(updatedLivraison, index);
     } catch (error) {
       console.error("Erreur lors de la mise à jour de la livraison :", error);
       alert(`Erreur lors de la mise à jour de la livraison : ${error.message}`);
@@ -149,7 +159,7 @@ export default function InteractiveMap({
       console.log("Pickup mis à jour avec succès.");
 
       // Mettre à jour l'état du frontend après la mise à jour réussie
-      onUpdatePickup(updatedPickup);
+      onUpdatePickup(updatedPickup, index);
     } catch (error) {
       console.error("Erreur lors de la mise à jour de la livraison :", error);
       alert(`Erreur lors de la mise à jour de la livraison : ${error.message}`);
@@ -188,11 +198,13 @@ export default function InteractiveMap({
       if (index >= circuit.segments.length - 1) {
         clearInterval(interval);
         setIsPlaying(false);
-      } else {
+        setPlayIndex(- 1); // Réaffiche le circuit complet en jaune
+        }
+        else {
         index++;
         setPlayIndex(index);
       }
-    }, 0.1); // Augmentez le délai pour une meilleure visibilité
+    }, 0.01); // ajuster le délai pour contrôler la vitesse de l'animation
   };
 
   // Segments pour le chemin joué en rose
@@ -294,16 +306,16 @@ export default function InteractiveMap({
           return (
             <div key={index}>
               <Marker
-                position={[pickup.latitude, pickup.longitude]}
+                position={getOffsetPosition(new LatLng(pickup.latitude, pickup.longitude), index)}
                 icon={iconPickup}
-                draggable={!isAssigned} // Rend le marqueur draggable uniquement si la livraison n'est pas assignée
+                draggable={!isAssigned} // Rend le marqueur draggable uniquement si la livraison n'est pas assignée et est déjà sélectionnée
                 eventHandlers={{
                   dragend: (e) =>
                     handlePickupDragEnd(index, e.target.getLatLng()),
                 }}
               />
               <Marker
-                position={[delivery.latitude, delivery.longitude]}
+                position={getOffsetPosition(new LatLng(delivery.latitude, delivery.longitude), index)}
                 icon={iconDelivery}
                 draggable={!isAssigned} // Rend le marqueur draggable uniquement si la livraison n'est pas assignée
                 eventHandlers={{

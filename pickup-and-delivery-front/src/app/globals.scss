@@ -38,22 +38,41 @@ body {
   position: relative;
   transform: translate(5px, -1px);
   border: 1px solid #000000;
+  position: relative; /* Ajout pour permettre le positionnement du ::before */
 }
+
+.map-marker::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;   /* Étend la zone vers le haut */
+  left: -0.5rem;  /* Étend la zone vers la gauche */
+  right: -0.5rem; /* Étend la zone vers la droite */
+  bottom: -0.5rem;/* Étend la zone vers le bas */
+  background: transparent;
+}
+
+/* Pickup marker */
 .map-marker-pickup {
   @extend .map-marker;
   border-radius: 0.75rem 0.75rem 0;
   transform: translate(5px, -1px) rotate(45deg);
 }
+
+/* Delivery marker */
 .map-marker-delivery {
   @extend .map-marker;
   border-radius: 0;
   transform: translate(5px, -1px) rotate(45deg);
 }
+
+/* Warehouse marker */
 .map-marker-warehouse {
   @extend .map-marker;
   border-radius: 0;
   background-color: gray;
 }
+
+/* Icon marker */
 .map-marker-icon {
   width: 1em;
   height: 1em;
@@ -64,6 +83,16 @@ body {
   transform: translate(7px, -1px);
   border: 1px solid #000000;
   border-radius: 0.5em;
+}
+
+.map-marker-icon::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  background: transparent;
 }
 
 @layer utilities {

@@ -11,6 +11,7 @@ interface DeliveryManagementPanelProps {
   assignedDeliveries: Livraison[];
   setAssignedDeliveries: (deliveries: Livraison[]) => void;
   entrepot: number | null;
+  onSelectLivraison: (livraison: Livraison) => void;
 }
 
 interface AssignedDelivery extends Livraison {
@@ -22,6 +23,7 @@ export default function DeliveryManagementPanel({
   assignedDeliveries,
   setAssignedDeliveries,
   entrepot,
+  onSelectLivraison,
 }: DeliveryManagementPanelProps) {
   const [livreurs, setLivreurs] = useState<Livreur[]>([]);
   const [remainingDeliveries, setRemainingDeliveries] = useState<Livraison[]>(
@@ -36,7 +38,8 @@ export default function DeliveryManagementPanel({
   useEffect(() => {
     setRemainingDeliveries(
       livraisons.filter(
-        (livraison) => !assignedDeliveries.some((assigned) => assigned.id === livraison.id)
+        (livraison) =>
+          !assignedDeliveries.some((assigned) => assigned.id === livraison.id)
       )
     );
   }, [livraisons, assignedDeliveries]);
@@ -61,20 +64,22 @@ export default function DeliveryManagementPanel({
       alert("Veuillez sélectionner un livreur avant d'assigner une livraison.");
       return;
     }
-  
+
     try {
       await LivreurService.assignDelivery(
         livraison.livreurId,
         livraison.pickup,
         livraison.destination
       );
-  
+
       const livreur = livreurs.find((l) => l.id === livraison.livreurId);
       if (livreur) {
         setAssignedDeliveries((prev) => [...prev, { ...livraison, livreur }]);
-        
+
         // Retirer uniquement la livraison assignée en utilisant son id unique
-        setRemainingDeliveries((prev) => prev.filter((l) => l.id !== livraison.id));
+        setRemainingDeliveries((prev) =>
+          prev.filter((l) => l.id !== livraison.id)
+        );
       }
     } catch (error) {
       alert(`Erreur lors de l'assignation : ${error.message}`);
@@ -92,16 +97,21 @@ export default function DeliveryManagementPanel({
           },
         }
       );
-  
-      setAssignedDeliveries((prev) => prev.filter((assigned) => assigned.id !== livraison.id));
-      setRemainingDeliveries((prev) => [...prev, { ...livraison, livreurId: null }]);
+
+      setAssignedDeliveries((prev) =>
+        prev.filter((assigned) => assigned.id !== livraison.id)
+      );
+      setRemainingDeliveries((prev) => [
+        ...prev,
+        { ...livraison, livreurId: null },
+      ]);
     } catch (error) {
       alert(`Erreur lors de la désassignation : ${error.message}`);
     }
   };
 
   return (
-    <div className="p-4 grow flex gap-10 flex-col">
+    <div className="p-4 grow flex gap-10 flex-col h-screen w-full overflow-y-auto">
       {/* Section Adresse de l'entrepôt */}
       <div>
         <h2 className="text-xl font-bold mb-4 text-black text-center">
@@ -112,7 +122,9 @@ export default function DeliveryManagementPanel({
             className="map-marker-warehouse"
             style={{ position: "unset" }}
           />
-          <span className="text-black text-center">{entrepot ?? "Non défini"}</span>
+          <span className="text-black text-center">
+            {entrepot ?? "Non défini"}
+          </span>
         </div>
       </div>
 
@@ -148,14 +160,18 @@ export default function DeliveryManagementPanel({
                     Destination
                   </div>
                 </th>
-                <th className="border p-2 text-black text-center">Enlèvement (s)</th>
-                <th className="border p-2 text-black text-center">Livraison (s)</th>
+                <th className="border p-2 text-black text-center">
+                  Enlèvement (s)
+                </th>
+                <th className="border p-2 text-black text-center">
+                  Livraison (s)
+                </th>
                 <th className="border p-2 text-black text-center">Livreur</th>
                 <th className="border p-2 text-black text-center">Actions</th>
               </tr>
             </thead>
             <tbody>
-              {remainingDeliveries.map((livraison,index) => (
+              {remainingDeliveries.map((livraison, index) => (
                 <tr key={livraison.id}>
                   <td>
                     <span
@@ -166,7 +182,9 @@ export default function DeliveryManagementPanel({
                       }}
                     />
                   </td>
-                  <td className="border p-2 text-black text-center">{livraison.pickup}</td>
+                  <td className="border p-2 text-black text-center">
+                    {livraison.pickup}
+                  </td>
                   <td className="border p-2 text-black text-center">
                     {livraison.destination}
                   </td>
@@ -197,7 +215,6 @@ export default function DeliveryManagementPanel({
                       </select>
                     </div>
                   </td>
-
                   <td className="border p-2">
                     <button
                       className={`bg-blue-500 text-white px-2 py-1 rounded transition duration-300 ${
@@ -248,8 +265,12 @@ export default function DeliveryManagementPanel({
                     Destination
                   </div>
                 </th>
-                <th className="border p-2 text-black text-center">Enlèvement (s)</th>
-                <th className="border p-2 text-black text-center">Livraison (s)</th>
+                <th className="border p-2 text-black text-center">
+                  Enlèvement (s)
+                </th>
+                <th className="border p-2 text-black text-center">
+                  Livraison (s)
+                </th>
                 <th className="border p-2 text-black text-center">Livreur</th>
                 <th className="border p-2 text-black text-center">Actions</th>
               </tr>
@@ -266,7 +287,9 @@ export default function DeliveryManagementPanel({
                       }}
                     />
                   </td>
-                  <td className="border p-2 text-black text-center">{delivery.pickup}</td>
+                  <td className="border p-2 text-black text-center">
+                    {delivery.pickup}
+                  </td>
                   <td className="border p-2 text-black text-center">
                     {delivery.destination}
                   </td>
