@@ -18,9 +18,39 @@ import com.Bestanome.Model.Objets.Plan.Segment;
 public class TSPRunner {
 	private static Map<Long, Point> mapPoint; // id Point -> objet Point
 	private static Map<Long, Map<Long, Segment>> mapSegment; // id Point origine -> (id Point destination -> Segment)
-	private static Long temporaryObjective; // Objectif temporaire pour l'algorithme WA*
 	private static boolean initiated = false;
 	private static Double WA_weight = 1.0;
+
+	private static class WARunResult {
+		public boolean found = false;
+		public Map<Long, Long> predecessors = new HashMap<>();
+		public Map<Long, Double> costs = new HashMap<>();
+	}
+
+	private static class PointComparator implements Comparator<Long> {
+		private Long referential = null; // Referential point towards which we want to converge for heuristic
+
+		public PointComparator(Long referential) {
+			this.referential = referential;
+		}
+
+		@Override
+		public int compare(Long p1, Long p2) {
+			return Double.compare(getHaversineLength(p1, referential),
+					getHaversineLength(p2, referential));
+		}
+
+		public Double getDistanceToRef(Long point){
+			if (referential == null) {
+				throw new IllegalStateException("Referential point undefined!");
+			}
+			return getHaversineLength(point, referential);
+		}
+
+		public Boolean testFinal(Long currentPoint){
+			return currentPoint.equals(referential);
+		}
+	}
 
 	public static boolean isInitiated() {
 		return initiated;
@@ -100,15 +130,17 @@ public class TSPRunner {
 			WARunResult greedyResult = new WARunResult();
 			Double minCost = Double.MAX_VALUE;
 			Long minPoint = null;
+			PointComparator comparator = new PointComparator(state.point);
+			state.opened.sort(comparator); //ordered neighbours with eagle flight distance to assure optimal search with A* 
 			for(Long possiblePoint : state.opened){
-				if(getHaversineLength(state.point, possiblePoint) < minCost){
-					WARunResult possibleResult = runWA(state.point, possiblePoint, WA_weight);
-					if(possibleResult.found && possibleResult.costs.get(possiblePoint) < minCost){
-						minCost = possibleResult.costs.get(possiblePoint);
-						minPoint = possiblePoint;
-						greedyResult = possibleResult;
-					}
+				if(comparator.getDistanceToRef(possiblePoint) >= minCost) break;
+				WARunResult possibleResult = runWA(state.point, possiblePoint, WA_weight);
+				if(possibleResult.found && possibleResult.costs.get(possiblePoint) < minCost){
+					minCost = possibleResult.costs.get(possiblePoint);
+					minPoint = possiblePoint;
+					greedyResult = possibleResult;
 				}
+				
 			}
 			
 			if (greedyResult.found && minPoint != null) {
@@ -166,26 +198,8 @@ public class TSPRunner {
 		return getHaversineLength(p1, p2);
 	}
 
-	private static boolean testFinal(Long state) {
-		return state.equals(temporaryObjective);
-	}
-
 	private static Iterable<Segment> actions(Long state) {
 		return mapSegment.getOrDefault(state, new HashMap<>()).values();
-	}
-
-	private static class WARunResult {
-		public boolean found = false;
-		public Map<Long, Long> predecessors = new HashMap<>();
-		public Map<Long, Double> costs = new HashMap<>();
-	}
-
-	private static class WAStateComparator implements Comparator<Long> {
-		@Override
-		public int compare(Long p1, Long p2) {
-			return Double.compare(getHaversineLength(p1, temporaryObjective),
-					getHaversineLength(p2, temporaryObjective));
-		}
 	}
 
 	public static WARunResult runWA(Long initialState, Long endState, Double w) {
@@ -193,8 +207,8 @@ public class TSPRunner {
 			throw new IllegalStateException("TSP wasn't initiated with a valid graph");
 		}
 
-		temporaryObjective = endState;
-		PriorityQueue<Long> opened = new PriorityQueue<>(new WAStateComparator());
+		PointComparator comparator = new PointComparator(endState);
+		PriorityQueue<Long> opened = new PriorityQueue<>(comparator);
 		WARunResult result = new WARunResult();
 		result.costs.put(initialState, 0.0);
 		opened.add(initialState);
@@ -202,7 +216,7 @@ public class TSPRunner {
 		while (!opened.isEmpty()) {
 			Long currentState = opened.poll();
 
-			if (testFinal(currentState)) {
+			if (comparator.testFinal(currentState)) {
 				result.found = true;
 				return result;
 			}
