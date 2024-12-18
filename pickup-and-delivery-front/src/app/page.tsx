@@ -19,6 +19,7 @@ export default function Home() {
   const [circuit, setCircuit] = useState<{ segments: Segment[] } | null>(null);
   const [assignedDeliveries, setAssignedDeliveries] = useState<Livraison[]>([]);
   const [livreurs, setLivreurs] = useState<Livreur[]>([]);
+  const [selectedLivraison, setSelectedLivraison] = useState<Livraison | null>(null);
   const [livreurInfos, setLivreurInfos] = useState<{
     [key: number]: { distance: number; tempsTotal: number };
   }>({});
@@ -27,7 +28,7 @@ export default function Home() {
   const handleUpdatePickup = (updatedLivraison: Livraison) => {
     setLivraisons((prevLivraisons) =>
       prevLivraisons.map((livraison) =>
-        livraison.destination === updatedLivraison.destination
+        livraison.id === updatedLivraison.id
           ? { ...livraison, pickup: updatedLivraison.pickup }
           : livraison
       )
@@ -38,11 +39,17 @@ export default function Home() {
   const handleUpdateDelivery = (updatedLivraison: Livraison) => {
     setLivraisons((prevLivraisons) =>
       prevLivraisons.map((livraison) =>
-        livraison.pickup === updatedLivraison.pickup
+        livraison.id === updatedLivraison.id
           ? { ...livraison, destination: updatedLivraison.destination }
           : livraison
       )
     );
+  };
+
+  // Fonction pour sélectionner une livraison
+  const handleSelectLivraison = (livraison: Livraison) => {
+    console.log("Livraison sélectionnée :", livraison);
+    setSelectedLivraison(livraison);
   };
 
   return (
@@ -58,8 +65,14 @@ export default function Home() {
             assignedDeliveries={assignedDeliveries}
             entrepot={entrepot}
             circuit={circuit}
-            onUpdatePickup={handleUpdatePickup}
-            onUpdateDelivery={handleUpdateDelivery}
+            selectedLivraison={selectedLivraison}
+            setSelectedLivraison={setSelectedLivraison}
+            onUpdatePickup={(updatedLivraison, index) =>
+              handleUpdatePickup(updatedLivraison, index)
+            }
+            onUpdateDelivery={(updatedLivraison, index) =>
+              handleUpdateDelivery(updatedLivraison, index)
+            }
           />
         </div>
 
@@ -79,6 +92,7 @@ export default function Home() {
             assignedDeliveries={assignedDeliveries}
             setAssignedDeliveries={setAssignedDeliveries}
             entrepot={entrepot}
+            onSelectLivraison={handleSelectLivraison}
           />
           <LivreurPanel
             setCircuit={setCircuit}

@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.Bestanome.Model.Objets.Livraisons.Circuit;
-import com.Bestanome.Model.dto.SegmentDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,8 +16,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CircuitDTO implements Serializable {
     private ArrayList<SegmentDTO> segments;
+    private Double longueur;
 
     public static CircuitDTO fromCircuit(Circuit Circuit) {
-        return new CircuitDTO(SegmentDTO.fromListeSegments(Circuit.getSegments()));
+        return new CircuitDTO(SegmentDTO.fromListeSegments(Circuit.getSegments()), Circuit.getLongueur());
     }
 }

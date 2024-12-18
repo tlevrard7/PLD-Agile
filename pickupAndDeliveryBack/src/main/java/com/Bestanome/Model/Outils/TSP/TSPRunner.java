@@ -50,7 +50,7 @@ public class TSPRunner {
 
 		initiated = true;
 		System.out.println("TSPRunner initialisé avec succès avec "
-				+ mapPoint.size() + " points et " + mapSegment.size() + " segments.");
+				+ mapPoint.size() + " points et " + mapSegment.size() + " segments."); // log
 	}
 
 	public static class FindCircuitState{
@@ -152,7 +152,6 @@ public class TSPRunner {
 					minCost = possibleResult.costs.get(possiblePoint);
 					minPoint = possiblePoint;
 					greedyResult = possibleResult;
-					System.out.println(possibleResult.found + " " + minPoint);
 				}
 			}
 			

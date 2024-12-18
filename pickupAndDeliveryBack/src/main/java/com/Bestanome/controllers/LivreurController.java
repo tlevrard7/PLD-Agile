@@ -1,6 +1,8 @@
 package com.Bestanome.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -70,6 +72,27 @@ public class LivreurController {
         livreur.assignerLivraison(livraison);
 
         return ResponseEntity.ok("Livraison assignée avec succès");
+    }
+
+    // GET mapping pour exporter les livraisons assignées à chaque livreur
+    @GetMapping("/export-assigned-deliveries")
+    public ResponseEntity<List<Map<String, Object>>> exportAssignedDeliveries() {
+        List<Map<String, Object>> assignedDeliveries = Data.getLivreurs().stream()
+                .filter(livreur -> !livreur.getLivraisonsAssignees().isEmpty())
+                .map(livreur -> {
+                    Map<String, Object> livreurData = new HashMap<>();
+                    livreurData.put("nom", livreur.getNom());
+                    livreurData.put("prenom", livreur.getPrenom());
+                    livreurData.put("livraisons", livreur.getLivraisonsAssignees().stream()
+                            .map(livraison -> Map.of(
+                                    "pickup", livraison.getPickup(),
+                                    "destination", livraison.getDestination()))
+                            .collect(Collectors.toList()));
+                    return livreurData;
+                })
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(assignedDeliveries);
     }
 
     @GetMapping("/{id}/tournee")

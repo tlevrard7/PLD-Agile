@@ -5,13 +5,16 @@ import { Livraison } from "@/types/Livraison";
 export interface MapPlaceholderProps extends Omit<InteractiveMapProps, 'plan'> {
   plan: Plan | null;
   assignedDeliveries: Livraison[];
-  onUpdatePickup: (updatedLivraison: Livraison) => void;
-  onUpdateDelivery: (updatedLivraison: Livraison) => void;
+  selectedLivraison: Livraison | null;
+  setSelectedLivraison: (livraison: Livraison | null) => void;
+  onUpdatePickup: (updatedLivraison: Livraison, index: number) => void;
+  onUpdateDelivery: (updatedLivraison: Livraison, index: number) => void;
 }
 
 export default function MapPlaceholder({
   plan,
   assignedDeliveries,
+  selectedLivraison,
   onUpdatePickup,
   onUpdateDelivery,
   ...props
@@ -22,6 +25,7 @@ export default function MapPlaceholder({
         <InteractiveMap
           plan={plan}
           assignedDeliveries={assignedDeliveries}
+          selectedLivraison={selectedLivraison}
           onUpdatePickup={onUpdatePickup}
           onUpdateDelivery={onUpdateDelivery}
           {...props}
