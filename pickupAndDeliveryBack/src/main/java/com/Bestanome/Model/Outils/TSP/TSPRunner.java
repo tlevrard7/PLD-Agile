@@ -131,7 +131,7 @@ public class TSPRunner {
 			Double minCost = Double.MAX_VALUE;
 			Long minPoint = null;
 			PointComparator comparator = new PointComparator(state.point);
-			state.opened.sort(comparator); //ordered neighbours with eagle flight distance to assure optimal search with A* 
+			state.opened.sort(comparator); //ordered neighbours with bird flight distance to assure optimal search with A* 
 			for(Long possiblePoint : state.opened){
 				if(comparator.getDistanceToRef(possiblePoint) >= minCost) break;
 				WARunResult possibleResult = runWA(state.point, possiblePoint, WA_weight);

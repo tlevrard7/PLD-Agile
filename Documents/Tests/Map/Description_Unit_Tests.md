@@ -36,7 +36,7 @@ Tester le cas où le fichier XML contient des nœuds et des tronçons valides.
 ### Réponse attendue :
 
 Côté Back : 
-```
+```json
 {
     "points": [
         {
@@ -158,7 +158,7 @@ Tester le cas où le fichier XML ne contient pas de segment.
   - **Clé** : `file`  
   - **Valeur** : Fichier `no_lines.xml` avec le contenu suivant :  
 
-```
+```xml
 <reseau>
     <noeud id="25175791" latitude="45.75406" longitude="4.857418"/>
     <noeud id="2129259178" latitude="45.750404" longitude="4.8744674"/>
@@ -295,7 +295,7 @@ Tester le cas où le fichier XML présente une erreur de syntaxe.
 Côté back : 
 
 Les doublons sont éliminés :
-
+```json
 {
     "points": [
         {
@@ -320,5 +320,5 @@ Les doublons sont éliminés :
         }
     ]
 }
-
+```
 Côté front : Pas de "double ligne" Rue Danton

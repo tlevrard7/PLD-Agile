@@ -33,7 +33,7 @@ Obtenir la liste de tous les livreurs.
 ### Réponse attendue:
 
 Côté Back : 
-```
+```json
 [
     {
         "id": 1,
@@ -80,6 +80,7 @@ Avoir importé une carte et une livraison, ainsi que d'avoir affecter au moins u
 ### Description
 Obtenir la tournée d'un livreur spécifique quel que soit le nombre de livraisons assignées à ce livreur.<br/>
 Changer la valeur du '1' dans l'URL pour sélectionner un autre livreur.
+Le résultat a été réalisé avec le petit plan et la petite demande 1, assignée à Corentin.
 
 - **Méthode** : `GET`  
 - **URL** : `http://localhost:8080/api/livreurs/1/tournee`
@@ -88,29 +89,24 @@ Changer la valeur du '1' dans l'URL pour sélectionner un autre livreur.
 ### Réponse attendue:
 
 Côté Back : 
-```
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
+```json
+{
+    "segments": [
+        {
+            "nom": "Rue Richelieu",
+            "longueur": 24.386381,
+            "origine": 342873658,
+            "destination": 208769457
+        },
+        {
+            "nom": "Rue Frédéric Passy",
+            "longueur": 106.73056,
+            "origine": 208769457,
+            "destination": 208769499
+        }//,... autres segments
+    ],
+    "longueur": 5947.780816399999
+}
 ```
 
 ---
@@ -151,7 +147,9 @@ Aucune livraison assignée pour ce livreur.
 Avoir importé une carte et une livraison.
 
 ### Description
-Exporter les tournées de tous les livreurs (quel que soit le nombre de livreur ayant une livraison)
+Exporter les tournées de tous les livreurs (quel que soit le nombre de livreurs ayant une livraison).
+(Il est reccomandé de tester avec le petit plan et d'assigner uniquement une livraison à chaque livreur).
+Le résultat a été réalisé avec le petit plan et la petite demande 2, assigné la première à Corentin et la deuxièm à Harold.
 
 - **Méthode** : `POST`  
 - **URL** : `http://localhost:8080/api/livreurs/export-all-tournees`
@@ -159,29 +157,51 @@ Exporter les tournées de tous les livreurs (quel que soit le nombre de livreur 
 ### Réponse attendue:
 
 Côté Back : 
-```
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
-SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
+```json
+[
+        {
+        "nom": "Corentin",
+        "prenom": "Jeanne",
+        "circuit": {
+            "segments": [
+                {
+                    "nom": "Impasse de l'Ordre",
+                    "longueur": 96.5331,
+                    "origine": 2835339774,
+                    "destination": 2835339775
+                },
+                {
+                    "nom": "Rue Antoine Charial",
+                    "longueur": 61.78396,
+                    "origine": 2835339775,
+                    "destination": 26079654
+                }//,... autres segments
+            ],
+            "longueur": 3133.635603700001
+        }
+    },
+    {
+        "nom": "Harold",
+        "prenom": "Martin",
+        "circuit": {
+            "segments": [
+                {
+                    "nom": "Impasse de l'Ordre",
+                    "longueur": 96.5331,
+                    "origine": 2835339774,
+                    "destination": 2835339775
+                },
+                {
+                    "nom": "Rue Antoine Charial",
+                    "longueur": 61.78396,
+                    "origine": 2835339775,
+                    "destination": 26079654
+                },//,... autres segments
+            ],
+            "longueur": 2766.7339410000004
+        }
+    }
+]
 ```
 ---
 
@@ -478,10 +498,8 @@ Importer une carte et une demande de livraisons. Assigner des livraisons et en l
 
 ### Réponse attendue:
 La nouvelle carte se charge et tout est remis à zero (demande à re-importer, livraisons à re-assigner et tournées à re-calculer).
-```
-{
-SAAD
-}
+```json
+[]
 ```
 ---
 
@@ -503,10 +521,8 @@ Importer une carte et une demande de livraisons. Assigner des livraisons et en l
 
 ### Réponse attendue:
 La demande se charge et tout est remis à zero (livraisons à re-assigner et la carte affiche seulement les nouveaux points de pickup et delivery).
-```
-{
-SAAD
-}
+```json
+[]
 ```
 ---
 
