@@ -88,7 +88,7 @@ export default function InteractiveMap({
     try {
       // Appel API pour mettre à jour la livraison sur le backend
       const response = await fetch(
-        `http://localhost:8080/api/delivery/update-delivery?oldDestination=${oldDestination}&newDestination=${nearestPoint.id}`,
+        `http://localhost:8080/api/delivery/update-delivery?oldDestination=${oldDestination}&newDestination=${nearestPoint.id}&pickup=${livraisons[index].pickup}`,
         {
           method: "POST",
         }
@@ -146,7 +146,7 @@ export default function InteractiveMap({
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/delivery/update-pickup?oldPickup=${oldPickup}&newPickup=${nearestPoint.id}`,
+        `http://localhost:8080/api/delivery/update-pickup?oldPickup=${oldPickup}&newPickup=${nearestPoint.id}&destination=${livraisons[index].destination}`,
         {
           method: "POST",
         }

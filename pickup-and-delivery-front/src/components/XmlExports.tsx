@@ -54,10 +54,7 @@ export default function XmlExports() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Button type="primary" className="w-full" onClick={handleExportAssignedDeliveries}>
-        Exporter les livraisons assignées par livreur
-      </Button>
-      <Button type="primary" className="w-full" onClick={handleExportTournees}>
+     <Button type="primary" className="w-full" onClick={handleExportTournees}>
         Exporter les tournées
       </Button>
     </div>

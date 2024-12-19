@@ -101,7 +101,7 @@ export default function LivreurPanel({
       }));
     } catch (err) {
       if (err.message.includes("500") || err.message.includes("400")) {
-        alert("Aucune livraison assignée à ce livreur.");
+        alert("Aucun chemin disponible.");
       } else {
         alert(`Erreur lors de la récupération de la tournée : ${err.message}`);
       }

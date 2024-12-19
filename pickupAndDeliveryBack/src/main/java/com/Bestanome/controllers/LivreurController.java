@@ -39,6 +39,11 @@ public class LivreurController {
     @PostMapping("/assign")
     public ResponseEntity<String> assignDelivery(@RequestParam Long livreurId, @RequestParam Long pickup, @RequestParam Long destination) {
 
+        System.out.println("Requête reçue pour assign : pickup = " + pickup + ", destination = " + destination);
+        System.out.println("Livraisons disponibles : ");
+        for (var livraison : LivraisonService.getAllDues())
+            System.out.println("Pickup: " + livraison.getPickup() + ", Destination: " + livraison.getDestination());
+
         // Rechercher le livreur
         Livreur livreur = LivreurService.getLivreur(livreurId);
 

@@ -33,13 +33,13 @@ public class LivraisonController {
     }
 
     @PostMapping("/update-pickup")
-    public ResponseEntity<String> updatePickup(@RequestParam Long oldPickup, @RequestParam Long newPickup) {
+    public ResponseEntity<String> updatePickup(@RequestParam Long oldPickup, @RequestParam Long newPickup, @RequestParam Long destination) {
         System.out.println("Requête reçue pour update-pickup : oldPickup = " + oldPickup + ", newPickup = " + newPickup);
         System.out.println("Livraisons disponibles : ");
         for (var livraison : LivraisonService.getAllDues())
             System.out.println("Pickup: " + livraison.getPickup() + ", Destination: " + livraison.getDestination());
 
-        Livraison livraison = LivraisonService.getDueByPickup(oldPickup);
+        Livraison livraison = LivraisonService.getDue(oldPickup, destination);
 
         if (livraison == null) {
             System.out.println("Livraison non trouvée pour le pickup : " + oldPickup);
@@ -52,8 +52,8 @@ public class LivraisonController {
     }
 
     @PostMapping("/update-delivery")
-    public ResponseEntity<String> updateDelivery(@RequestParam Long oldDestination, @RequestParam Long newDestination) {
-        Livraison livraison = LivraisonService.getDueByDestination(oldDestination);
+    public ResponseEntity<String> updateDelivery(@RequestParam Long oldDestination, @RequestParam Long newDestination, @RequestParam Long pickup) {
+        Livraison livraison = LivraisonService.getDue(pickup, oldDestination);
 
         if (livraison == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Livraison non trouvée pour la destination donnée.");
