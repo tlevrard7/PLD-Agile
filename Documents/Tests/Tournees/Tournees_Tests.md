@@ -185,72 +185,143 @@ SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD SAAD
 ```
 ---
 
-## **Test 5 : Modifier un point de delivery non assigné**
+## **Test 5 : Déplacer un point de delivery non assigné sur un point de la carte vide (ne contient ni pickup ni delivery)**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation et déplacement)
 
 ### Description  
-Tester le cas où l'on "drag and drop" un point de delivery sur la carte vers un nouveau emplacement.
-Cet emplacement peut être vide ou contenir déjà un point de delivery d'une autre livraison.
-
+Tester le cas où l'on "drag and drop" un point de delivery sur la carte vers un point de la carte vide (ne contient ni pickup ni delivery). Si l'on drop à un endroit qui n'est pas un point de la carte, le point sera automatiquement déplacé à l'emplacement du point le plus proche du point de drop.
 
 ### Pré-requis: 
 Importer une carte et une demande de livraisons. 
 
 ### Post-condition: 
-Dans le cas où nous deployons le point de delivery sur un autre emplacement qui contenait déjà au moins un point de delivery, tous ces points de delivery 
-ne sont pas modifiés et notre point glissé est correctement ajouté au tas de points de delivery.
+
+Le point de delivery a bien été déplacé sur le point de la carte le plus proche du point de drop.
 
 ### Réponse attendue :
-La verification peut se faire sur l'IHM à la fois en regardant que le nouvel ID assigné correspond à celui du nouveau point et en regardant que 
-lors qu'elle est assignée à un livreur celui le parcours.
 
+La verification peut se faire sur l'IHM à la fois en regardant la carte mais aussi en regardant que le nouvel ID assigné correspond à celui du nouveau point, et en regardant que lorsqu'elle est assignée à un livreur celui-ci le parcours.
 ---
 
-## **Test 6 : Modifier un point de pickup non assigné**
+
+## **Test 5 : Déplacer un point de delivery non assigné sur un point contenant déjà une ou des deliveries et/ou une ou des pickups**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation et déplacement)
 
 ### Description  
-Tester le cas où l'on "drag and drop" un point de pickup sur la carte vers un nouveau emplacement.
-Cet emplacement peut être vide ou contenir déjà un point de pickup d'une autre livraison.
-
+Tester le cas où l'on "drag and drop" un point de delivery (non assigné) sur la carte vers un nouveau point de la carte qui contient déjà un ou plusieurs points de deliveries ou pickups (correspondant à d'autres livraisons)
 
 ### Pré-requis: 
 Importer une carte et une demande de livraisons. 
 
 ### Post-condition: 
-Dans le cas où nous deployons le point de pickup sur un autre emplacement qui contenait déjà au moins un point de pickup, tous ces points de pickup 
-ne sont pas modifiés et notre point glissé est correctement ajouté au tas de points de pickup.
+Dans le cas où nous deplaçons le point de delivery sur un autre emplacement qui contenait déjà au moins un point de delivery ou pickup, les points de deliveries/pickups qui étaient déjà là ne sont pas modifiés et notre point glissé est correctement ajouté au tas de points.
 
 ### Réponse attendue :
-La verification peut se faire sur l'IHM à la fois en regardant que le nouvel ID assigné correspond à celui du nouveau point et en regardant que 
-lors qu'elle est assignée à un livreur celui le parcours.
+La verification peut se faire sur l'IHM à la fois en regardant la carte mais aussi le nouvel ID assigné correspond à celui du nouveau point, et en regardant qu'après qu'elle a été assignée à un livreur, celui-ci la parcours. Sur la carte, dans le cas où il y a plusieurs deliviries/pickups sur le même point, on le voit clairement quand on zoome.
 
 ---
 
-## **Test 7 : Modifier un point de pickup ou delviery assigné**
+## **Test 5 : Déplacer un point de pickup non assigné sur un point de la carte vide (ne contient ni pickup ni delivery)**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation et déplacement)
 
 ### Description  
-Tester le cas où l'on essaie de "drag and drop" un point de pickup ou delivery d'une livraison assignée.
+Tester le cas où l'on "drag and drop" un point de pickup sur la carte vers un point de la carte vide (ne contient ni pickup ni delivery). Si l'on drop à un endroit qui n'est pas un point de la carte, le point sera automatiquement déplacé à l'emplacement du point de la carte le plus proche du point de drop.
+
+### Pré-requis: 
+Importer une carte et une demande de livraisons. 
+
+### Post-condition: 
+
+Le point de pickup a bien été déplacé sur le point de la carte le plus proche du point de drop.
+
+### Réponse attendue :
+
+La verification peut se faire sur l'IHM à la fois en regardant la carte mais aussi en regardant que le nouvel ID assigné correspond à celui du nouveau point, et en regardant que lorsqu'il est assigné à un livreur celui-ci le parcours.
+---
+
+## **Test 6 : Déplacer un point de pickup non assigné sur un point contenant déjà une ou des deliveries et/ou une ou des pickups**
+
+### Interfaces utilisées:
+- IHM (pour l'importation et déplacement)
+
+### Description  
+Tester le cas où l'on "drag and drop" un point de pickup (non assigné) sur la carte vers un nouveau point de la carte qui contient déjà un ou plusieurs points de deliveries ou pickups (correspondant à d'autres livraisons)
+
+### Pré-requis: 
+Importer une carte et une demande de livraisons. 
+
+### Post-condition: 
+Dans le cas où nous deplaçons le point de pickup sur un autre emplacement qui contenait déjà au moins un point de delivery ou pickup, les points de deliveries/pickups qui étaient déjà là ne sont pas modifiés et notre point glissé est correctement ajouté au tas de points.
+
+### Réponse attendue :
+La verification peut se faire sur l'IHM à la fois en regardant la carte mais aussi le nouvel ID assigné correspond à celui du nouveau point, et en regardant qu'après qu'il a été assignée à un livreur, celui-ci le parcours. Sur la carte, dans le cas où il y a plusieurs deliviries/pickups sur le même point, on le voit clairement quand on zoome.
+
+---
+
+## **Test 7 : Déplacer un point de pickup ou delivery déjà assigné**
+
+### Interfaces utilisées:
+- IHM (pour l'importation et déplacement)
+
+### Description  
+Tester le cas où l'on essaie de "drag and drop" un point de pickup ou delivery d'une livraison déjà assignée.
 
 ### Pré-requis: 
 Importer une carte et une demande de livraisons. Assigner à un livreur la livraison des points à déplacer.
 
 ### Post-condition: 
-Les points n'ont pas été modifiés.
+Le point n'a pas été déplacé.
 
 ### Réponse attendue :
-Les points ne peuvent pas être déplacés.
+Le point ne peut pas être déplacé donc il n'est pas déplacé sur la carte et son id dans la liste de droite ne change pas.
 
 ---
 
-## **Test 8 : Afficher une tournée avec une carte**
+## **Test 7 : Déplacer l'entrepôt**
+
+### Interfaces utilisées:
+- IHM (pour l'importation et déplacement)
+
+### Description  
+Tester le cas où l'on essaie de "drag and drop" l'entrepôt sur la carte.
+
+### Pré-requis: 
+Importer une carte et une demande de livraisons.
+
+### Post-condition: 
+Le point n'a pas été déplacé.
+
+### Réponse attendue :
+Le point ne peut pas être déplacé donc il n'est pas déplacé sur la carte et son id ne change pas.
+
+---
+
+## **Test 8 : Afficher sur la carte la tournée d'un livreur à qui on n'a pas assigné de livraisons**
+
+### Interfaces utilisées:
+- IHM (pour l'importation et déplacement)
+
+### Description  
+Tester l'affichage de la tournée d'un livreur à qui on n'a pas assigné de livraisons
+
+### Pré-requis: 
+Importer une carte et une demande de livraisons. Ne pas avoir assigné de livraisons au livreur pour lequel on calcule la tournée.
+
+### Post-condition: 
+/
+
+### Réponse attendue :
+Message indiquant : "Aucune livraison assignée à ce livreur"
+
+---
+
+## **Test 8 : Afficher sur la carte la tournée d'un livreur à qui on a assigné des livraisons**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation et déplacement)
@@ -263,13 +334,18 @@ Importer une carte et une demande de livraisons. Assigner des livraisons au livr
 
 ### Post-condition: 
 Les livraisons ne sont pas modifiées. La tournée du livreur a été modifiée avec le circuit calculé au plus optimal possible.
+La tournée commence bien à l'entrepôt, tous les points pickup & delivery des livraisons assignées à ce livreur sont bien parcourus sachant que pour une livraison donnée, le point pickup est bien parcouru avant le point delivery.
+La tournée finit à l'entrepôt.
+
+La durée estimée prend bien en compte la vitesse de 15 km/h du cycliste et les temps de livraisons et d'enlèvement.
+On a notamment, durée estimée > (distance / vitesse) 
 
 ### Réponse attendue :
-Affiche la tournée sur la carte.
+Affiche la tournée sur la carte, la distance totale parcourue ainsi que la durée estimée du parcours.
 
 ---
 
-## **Test 9 : Afficher une tournée avec une carte après avoir affiché une autre tournée**
+## **Test 9 : Afficher une tournée sur la carte après avoir affiché une autre tournée**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation et déplacement)
@@ -286,7 +362,7 @@ Affiche la nouvelle tournée sur la carte et efface toute trace de l'ancienne to
 
 ---
 
-## **Test 10 : Afficher une tournée avec une carte après avoir cliqué sur le bouton "play"**
+## **Test 10 : Afficher une tournée sur la carte après avoir cliqué sur le bouton "play"**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation et déplacement)
