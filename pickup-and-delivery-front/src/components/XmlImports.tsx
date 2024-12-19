@@ -40,7 +40,6 @@ export default function XmlImports({
       setCircuit(null);
       setLivreurs([]); // Réinitialise la liste des livreurs
       setLivreurInfos({}); // Réinitialise les informations des livreurs
-      setIsDeliveryUploaded(false);
       
       const uploadedPlan = await MapService.uploadMap(file);
       setPlan(uploadedPlan);
@@ -60,6 +59,7 @@ export default function XmlImports({
         ...livraison,
         id: uuidv4(), // Assigne un identifiant unique à chaque livraison
       }));
+      setIsDeliveryUploaded(true);
       setAssignedDeliveries([]);
       setCircuit(null);
       setLivreurInfos({}); // Réinitialise les informations des livreurs
@@ -83,7 +83,7 @@ export default function XmlImports({
         showUploadList={false}
       >
         <Button type="primary" className="w-full">
-          {isMapUploaded ? "Reinitialiser et importer une carte" : "Importer une carte"}
+          {isMapUploaded ? "Réinitialiser et importer une carte" : "Importer une carte"}
         </Button>
       </Upload>
 
@@ -94,14 +94,14 @@ export default function XmlImports({
           return false;
         }}
         showUploadList={false}
-        disabled={!isMapUploaded || isDeliveryUploaded}
+        disabled={!isMapUploaded}
       >
         <Button
           type="primary"
           className="w-full"
-          disabled={!isMapUploaded || isDeliveryUploaded}
+          disabled={!isMapUploaded}
         >
-          Importer une demande de livraisons
+          {isDeliveryUploaded ? "Réinitialiser et importer une demande de livraisons" : "Importer une demande de livraisons"}
         </Button>
       </Upload>
     </div>
