@@ -361,7 +361,7 @@ Affiche la nouvelle tournée sur la carte et efface toute trace de l'ancienne to
 
 ---
 
-## **Test 14 : Afficher l'animation d'une tournée sur la carte en cliquant sur le bouton 'play' **
+## **Test 14 : Afficher l'animation d'une tournée sur la carte en cliquant sur le bouton 'play'**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation et déplacement)
@@ -398,7 +398,7 @@ Message indiquant "Aucun circuit disponible pour jouer"
 
 ---
 
-## **Test 16 : Déplacer un point pickup ou delivery  (assigné ou non assigné) sur la carte pendant l'animation d'une tournée ('play') **
+## **Test 16 : Déplacer un point pickup ou delivery  (assigné ou non assigné) sur la carte pendant l'animation d'une tournée ('play')**
 
 ### Interfaces utilisées:
 - IHM (pour l'importation et déplacement)
@@ -418,31 +418,31 @@ Le point ne peut pas être déplacé donc il n'est pas déplacé sur la carte et
 
 ---
 
-## **Test 17 : Déplacer un point de delivery non assigné sur un point de la carte vide (ne contient ni pickup ni delivery), après avoir affiché une tournée **
+## **Test 17 : Déplacer un point de delivery non assigné sur un point de la carte vide (ne contient ni pickup ni delivery), après avoir affiché une tournée**
 
 Idem que test 5 mais après avoir affiché une tournée ou après la fin de l'animation du play
 
 ---
 
-## **Test 18 : Déplacer un point de delivery non assigné sur un point contenant déjà une ou des deliveries et/ou une ou des pickups, après avoir affiché une tournée ****
+## **Test 18 : Déplacer un point de delivery non assigné sur un point contenant déjà une ou des deliveries et/ou une ou des pickups, après avoir affiché une tournée**
 
 Idem que test 6 mais après avoir affiché une tournée ou après la fin de l'animation du play
 
 ---
 
-## **Test 19 : Déplacer un point de pickup non assigné sur un point de la carte vide (ne contient ni pickup ni delivery), après avoir affiché une tournée **
+## **Test 19 : Déplacer un point de pickup non assigné sur un point de la carte vide (ne contient ni pickup ni delivery), après avoir affiché une tournée**
 
 Idem que test 7 mais après avoir affiché une tournée ou après la fin de l'animation du play
 
 ---
 
-## **Test 20 : Déplacer un point de pickup non assigné sur un point contenant déjà une ou des deliveries et/ou une ou des pickups, après avoir affiché une tournée **
+## **Test 20 : Déplacer un point de pickup non assigné sur un point contenant déjà une ou des deliveries et/ou une ou des pickups, après avoir affiché une tournée**
 
 Idem que test 8 mais après avoir affiché une tournée ou après la fin de l'animation du play
 
 ---
 
-## **Test 21 : Déplacer un point de pickup ou delivery déjà assigné, après avoir affiché une tournée **
+## **Test 21 : Déplacer un point de pickup ou delivery déjà assigné, après avoir affiché une tournée**
 
 Idem que test 9 mais après avoir affiché une tournée ou après la fin de l'animation du play
 
