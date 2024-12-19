@@ -1,46 +1,49 @@
 # PLD Agile
 
-<!--TODO : PRECISER LES CHEMINS SVP-->
+## Install Dependencies
 
-## Web app
+1. [`Install`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) **npm**
 
-The project uses [react](https://react.dev/) and [Next.js](https://nextjs.org/) and is located in the `pickup-and-delivery-front` directory.
+2. [`Install`](https://nodejs.org/fr/download/package-manager) **Node.js** 
+ 18.18 or later 
 
-You need to have [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed tu run it. 
+3.  [`Install`](https://www.oracle.com/java/technologies/downloads/#java21) **Java 21**
+
+4. [`Download`](https://maven.apache.org/download.cgi) and [`Install`](https://maven.apache.org/install.html) **Maven**
+
+## Web app (FrontEnd)
+
+The project uses [react](https://react.dev/) and [Next.js](https://nextjs.org/) and is located in the `pickup-and-delivery-front/` directory.
 
 This project uses [Ant-Design](https://ant.design/components/overview/) for its ui components
 
-### Launching the project
+### Launch the FrontEnd
 
-Before launching the project for the 1st time, run
-```bash
-npm install
-```
+1. Go to the directory `pickup-and-delivery-front/`
 
-To launch the app, run
-```bash
-npm run dev
-```
+2. Open a terminal and execute : 
+    ```bash
+    npm install
+    ```
 
-Alternatively, you can build and deploy the app with the following commands:
-```bash
-npm run build
-npm run start
-```
-
+3. Then, in the same terminal, execute :
+    ```bash
+    npm run dev
+    ```
 The app will be accessible on http://localhost:3000.
 
 ## Backend
 
-The project uses [java](https://www.java.com) and [Spring Boot](https://spring.io/projects/spring-boot) and is located in the `pickupAndDeliveryBack` directory.
+The project uses [java21](https://www.java.com), [Spring Boot](https://spring.io/projects/spring-boot) and [Maven](https://maven.apache.org/index.html) and is located in the `pickupAndDeliveryBack/` directory.
 
-You need to have [`maven`](https://maven.apache.org/install.html) and [`java 21`](https://www.oracle.com/java/technologies/downloads/) installed to run it.
+### Launch the BackEnd
 
-### Launching the project
+1. Go to the directory `pickupAndDeliveryBack/`
 
-To launch the app, run
-```bash
-mvn spring-boot:run
-```
+2. Open a terminal and execute : 
+
+    ```bash
+    mvn spring-boot:run
+    ```
 
 The app will be accessible on http://localhost:8080.
