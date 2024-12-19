@@ -237,10 +237,11 @@ Tester le cas où l'on "drag and drop" un point de pickup sur la carte vers un p
 Importer une carte et une demande de livraisons. 
 
 ### Post-condition: 
-
 Le point de pickup a bien été déplacé sur le point de la carte le plus proche du point de drop.
+
 ### Réponse attendue:
 La verification peut se faire sur l'IHM à la fois en regardant la carte mais aussi en regardant que le nouvel ID assigné correspond à celui du nouveau point, et en regardant que lorsqu'il est assigné à un livreur celui-ci le parcours.
+
 ---
 
 ## **Test 8 : Déplacer un point de pickup non assigné sur un point contenant déjà une ou des deliveries et/ou une ou des pickups**
